@@ -3,6 +3,10 @@
 {
   nixpkgs.config.allowUnfree = true;
 
+  fonts.fonts = with pkgs; [
+    meslo-lgs-nf
+  ];
+
   virtualisation = {
     docker.enable = true;
     virtualbox.host.enable = true;
