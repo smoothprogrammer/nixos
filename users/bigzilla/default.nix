@@ -18,10 +18,10 @@
     ];
 
     imports = [
-      ./git.nix
-      ./gpg.nix
-      ./vim.nix
-      ./zsh.nix
+      ./git
+      ./gpg
+      ./vim
+      ./zsh
     ];
   };
 }
