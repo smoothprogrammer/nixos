@@ -1,4 +1,4 @@
-{ config, pkgs, lib, ... }:
+{ config, pkgs, ... }:
 
 {
   programs.zsh = {
@@ -17,7 +17,7 @@
           owner = "romkatv";
           repo = "powerlevel10k";
           rev = "v1.16.1";
-          sha256 = lib.fakeSha256;
+          sha256 = "0fkfh8j7rd8mkpgz6nsx4v7665d375266shl1aasdad8blgqmf0c";
         };
       }
     ];

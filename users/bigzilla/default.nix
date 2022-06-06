@@ -9,12 +9,11 @@
     shell = pkgs.zsh;
   };
 
-  home-manager.bigzilla = {
+  home-manager.users.bigzilla = {
     home.packages = with pkgs; [
       vscode
       slack
       zoom-us
-      steam
       youtube-dl
     ];
 

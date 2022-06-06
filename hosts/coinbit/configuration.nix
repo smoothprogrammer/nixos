@@ -10,6 +10,7 @@ in
     [
       ./hardware-configuration.nix
       (import "${home-manager}/nixos")
+      ../../systems
       ../../users
     ];
 
