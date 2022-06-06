@@ -10,15 +10,16 @@
     enableAutosuggestions = true;
     enableCompletion = true;
     enableSyntaxHighlighting = true;
-    plugins = [
+    plugins = with pkgs; [
       {
         name = "powerlevel10k";
-        src = pkgs.fetchFromGitHub {
-          owner = "romkatv";
-          repo = "powerlevel10k";
-          rev = "v1.16.1";
-          sha256 = "0fkfh8j7rd8mkpgz6nsx4v7665d375266shl1aasdad8blgqmf0c";
-        };
+        src = "${zsh-powerlevel10k}/share/zsh-powerlevel10k";
+        file = "powerlevel10k.zsh-theme";
+      }
+      {
+        name = "powerlevel10k-config";
+        src = lib.cleanSource ./.;
+        file = "p10k.zsh";
       }
     ];
   };
