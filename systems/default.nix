@@ -14,6 +14,8 @@
 
   environment.systemPackages = with pkgs; [
     firefox
+    wget
+    gnumake
   ];
 
   environment.pathsToLink = [ "/share/zsh" ];
