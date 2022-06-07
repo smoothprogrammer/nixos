@@ -15,6 +15,7 @@
       slack
       zoom-us
       youtube-dl
+      direnv
     ];
 
     imports = [

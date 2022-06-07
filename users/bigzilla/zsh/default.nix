@@ -10,6 +10,12 @@
     enableAutosuggestions = true;
     enableCompletion = true;
     enableSyntaxHighlighting = true;
+    initExtra = ''
+      eval "$(direnv hook zsh)"
+    '';
+    envExtra = ''
+      export DIRENV_LOG_FORMAT=
+    '';
     plugins = with pkgs; [
       {
         name = "powerlevel10k";
