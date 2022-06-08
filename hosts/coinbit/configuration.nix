@@ -6,13 +6,12 @@ let
   home-manager = builtins.fetchTarball "https://github.com/nix-community/home-manager/archive/refs/heads/release-${version}.tar.gz";
 in
 {
-  imports =
-    [
-      ./hardware-configuration.nix
-      (import "${home-manager}/nixos")
-      ../../systems
-      ../../users
-    ];
+  imports = [
+    ./hardware-configuration.nix
+    (import "${home-manager}/nixos")
+    ../../systems
+    ../../users
+  ];
 
   system.stateVersion = version;
 
