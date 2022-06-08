@@ -14,6 +14,7 @@
       vscode
       slack
       zoom-us
+      tdesktop
       youtube-dl
       direnv
     ];
