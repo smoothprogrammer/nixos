@@ -18,6 +18,8 @@
       autocmd VimEnter * if argc() == 0 && !exists('s:std_in') | NERDTree | endif
       " NERDTree show hidden file
       let NERDTreeShowHidden=1
+      " NERDTree hide .swp extension
+      let NERDTreeIgnore = ['\.swp$', '\.git$']
     '';
   };
 }

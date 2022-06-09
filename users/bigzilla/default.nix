@@ -5,22 +5,24 @@
     isNormalUser = true;
     home = "/home/bigzilla";
     description = "Billy Zaelani Malik";
+    initialPassword = "password";
     extraGroups = [ "wheel" "networkmanager" "docker" "vboxusers" ];
     shell = pkgs.zsh;
   };
 
   home-manager.users.bigzilla = {
     home.packages = with pkgs; [
-      vscode
-      slack
-      zoom-us
-      tdesktop
-      youtube-dl
       direnv
+      gnumake
+      slack
+      tdesktop
+      vscode
+      wget
+      youtube-dl
+      zoom-us
     ];
 
     imports = [
-      ./alacritty
       ./git
       ./gpg
       ./vim

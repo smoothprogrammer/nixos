@@ -1,19 +1,12 @@
 # Coinbit - ASUS X415
 { config, pkgs, ... }:
 
-let
-  version = "21.11";
-  home-manager = builtins.fetchTarball "https://github.com/nix-community/home-manager/archive/refs/heads/release-${version}.tar.gz";
-in
 {
   imports = [
     ./hardware-configuration.nix
-    (import "${home-manager}/nixos")
     ../../systems
     ../../users
   ];
-
-  system.stateVersion = version;
 
   boot.loader = {
     systemd-boot.enable = true;
@@ -38,9 +31,6 @@ in
     useDHCP = false;
     interfaces.wlo1.useDHCP = true;
   };
-
-  time.timeZone = "Asia/Jakarta";
-  i18n.defaultLocale = "en_US.UTF-8";
 
   services.xserver = {
     enable = true;
