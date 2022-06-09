@@ -4,8 +4,8 @@
   programs.vim = {
     enable = true;
     plugins = with pkgs.vimPlugins; [
-      vim-nix
       nerdtree
+      vim-nix
     ];
     settings = {
       number = true;

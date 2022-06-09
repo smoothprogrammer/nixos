@@ -12,7 +12,6 @@
 
   home-manager.users.bigzilla = {
     home.packages = with pkgs; [
-      direnv
       gnumake
       slack
       tdesktop
@@ -23,6 +22,7 @@
     ];
 
     imports = [
+      ./direnv
       ./git
       ./gpg
       ./vim
