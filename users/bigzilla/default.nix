@@ -13,6 +13,7 @@
   home-manager.users.bigzilla = {
     home.packages = with pkgs; [
       gnumake
+      neofetch
       slack
       tdesktop
       vscode
@@ -24,7 +25,6 @@
     imports = [
       ./direnv
       ./git
-      ./gpg
       ./vim
       ./zsh
     ];
