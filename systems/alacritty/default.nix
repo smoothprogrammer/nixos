@@ -1,15 +1,8 @@
 { config, pkgs, ... }:
 
 {
-  programs.alacritty = {
-    enable = true;
-    settings = {
-      window = {
-        opacity = 0.8;
-      };
-      font = {
-        size = 9;
-      };
-    };
+  home.packages = [ pkgs.alacritty ];
+  xdg.configFile."alacritty/alacritty.yml" = {
+    source = ./alacritty.yml;
   };
 }
