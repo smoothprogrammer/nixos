@@ -22,9 +22,7 @@
   };
 
   # NixOS configuration entrypoint
-  environment.variables = {
-    NIXOS_CONFIG = "$HOME/.config/nixos/hosts/coinbit/configuration.nix";
-  };
+  environment.variables.NIXOS_CONFIG = "$HOME/.config/nixos/hosts/coinbit/configuration.nix";
 
   # Enable CUPS to print documents.
   # services.printing.enable = true;
