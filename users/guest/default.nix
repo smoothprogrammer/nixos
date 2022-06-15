@@ -6,7 +6,7 @@
     home = "/home/guest";
     description = "Guest";
     initialPassword = "password";
-    extraGroups = [ "networkmanager" ];
+    extraGroups = [ "networkmanager" "audio" ];
   };
 
   home-manager.users.guest = {};

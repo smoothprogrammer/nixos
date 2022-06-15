@@ -6,14 +6,21 @@
     home = "/home/bigzilla";
     description = "Billy Zaelani Malik";
     initialPassword = "password";
-    extraGroups = [ "wheel" "networkmanager" "docker" "vboxusers" ];
+    extraGroups = [ "wheel" "networkmanager" "audio" "docker" "vboxusers" ];
     shell = pkgs.zsh;
   };
 
   home-manager.users.bigzilla = {
+    home.sessionVariables = {
+      EDITOR = "vim";
+      DIRENV_LOG_FORMAT = "";
+    };
+
     home.packages = with pkgs; [
       gnumake
+      lsof
       neofetch
+      nixos-option
       slack
       tdesktop
       vscode
@@ -25,6 +32,7 @@
     imports = [
       ./direnv
       ./git
+      ./neovim
       ./vim
       ./zsh
     ];

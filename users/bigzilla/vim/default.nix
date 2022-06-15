@@ -4,13 +4,20 @@
   programs.vim = {
     enable = true;
     plugins = with pkgs.vimPlugins; [
+      editorconfig-vim
+      nerdcommenter
       nerdtree
+      nerdtree-git-plugin
+      vim-airline
+      vim-css-color
+      vim-devicons
+      vim-gitgutter
+      vim-nerdtree-syntax-highlight
       vim-nix
     ];
     settings = {
       number = true;
       relativenumber = true;
-      tabstop = 4;
     };
     extraConfig = ''
       " Start NERDTree when Vim is started without file arguments.

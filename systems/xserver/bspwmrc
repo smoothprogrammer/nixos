@@ -1,6 +1,17 @@
 #!/bin/sh
 
+# launch hotkey daemon sxhkd
 pgrep -x sxhkd > /dev/null || sxhkd &
+
+# launch status bar polybar
+$HOME/.config/polybar/launch.sh
+
+# setup wallpaper
+if [ -f $HOME/.fehbg ]; then
+	$HOME/.fehbg &
+else
+	feh --bg-fill $HOME/.local/share/wallpaper/wallpaper.jpg
+fi
 
 bspc monitor -d I II III IV V VI VII VIII IX X
 
