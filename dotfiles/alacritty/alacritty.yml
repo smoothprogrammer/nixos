@@ -1,3 +1,5 @@
+import:
+  - ~/.config/alacritty/themes/dracula.yml
 env:
   WINIT_X11_SCALE_FACTOR: "1.0"
 window:
