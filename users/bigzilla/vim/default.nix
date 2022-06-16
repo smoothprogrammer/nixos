@@ -18,6 +18,7 @@
     settings = {
       number = true;
       relativenumber = true;
+      tabstop = 4;
     };
     extraConfig = ''
       " Start NERDTree when Vim is started without file arguments.
