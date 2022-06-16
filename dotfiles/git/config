@@ -1,0 +1,14 @@
+[core]
+	editor = "vim"
+
+[init]
+	defaultBranch = "main"
+
+[includeIf "gitdir:~/coinbit/"]
+	path = "~/.config/git/coinbit"
+
+[includeIf "gitdir:~/personal/"]
+	path = "~/.config/git/personal"
+
+[includeIf "gitdir:~/.config/nixos/.git"]
+	path = "~/.config/git/personal"

@@ -17,6 +17,7 @@
 
     home.packages = with pkgs; [
       direnv
+      git
       gnumake
       lsof
       neofetch
@@ -30,7 +31,6 @@
     ];
 
     imports = [
-      ./git
       ./neovim
       ./vim
       ./zsh
@@ -38,6 +38,7 @@
 
     xdg.configFile = {
       direnv.source = ../../dotfiles/direnv;
+      git.source = ../../dotfiles/git;
     };
   };
 }
