@@ -21,7 +21,7 @@
     networkmanager.enable = true;
   };
 
-  # NixOS configuration entrypoint
+  # Path to the nixos configurations
   environment.variables.NIXOS_CONFIG = "$HOME/.config/nixos/hosts/coinbit/configuration.nix";
 
   # Enable CUPS to print documents.
