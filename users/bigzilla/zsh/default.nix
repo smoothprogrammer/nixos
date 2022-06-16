@@ -8,13 +8,17 @@
       ls = "ls -lhF";
       la = "ls -a";
       wifi = "nmcli device wifi";
+      cfg = "vim $HOME/.config/nixos/";
     };
     enableAutosuggestions = true;
     enableCompletion = true;
     enableSyntaxHighlighting = true;
-    #envExtra = ''
-    #  export DIRENV_LOG_FORMAT=
-    #'';
+    initExtra = ''
+      eval "$(${pkgs.direnv}/bin/direnv hook zsh)"
+    '';
+    envExtra = ''
+      export DIRENV_LOG_FORMAT=
+    '';
     plugins = with pkgs; [
       {
         name = "powerlevel10k";

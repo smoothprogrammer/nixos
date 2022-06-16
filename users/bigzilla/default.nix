@@ -13,10 +13,10 @@
   home-manager.users.bigzilla = {
     home.sessionVariables = {
       EDITOR = "vim";
-      DIRENV_LOG_FORMAT = "";
     };
 
     home.packages = with pkgs; [
+      direnv
       gnumake
       lsof
       neofetch
@@ -30,11 +30,14 @@
     ];
 
     imports = [
-      ./direnv
       ./git
       ./neovim
       ./vim
       ./zsh
     ];
+
+    xdg.configFile = {
+      direnv.source = ../../dotfiles/direnv;
+    };
   };
 }
