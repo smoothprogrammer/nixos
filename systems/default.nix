@@ -78,6 +78,7 @@
       xdg.configFile = {
         bspwm.source = ../dotfiles/bspwm;
         sxhkd.source = ../dotfiles/sxhkd;
+        rofi.source = ../dotfiles/rofi;
         alacritty.source = ../dotfiles/alacritty;
         polybar = {
           source = ../dotfiles/polybar;
