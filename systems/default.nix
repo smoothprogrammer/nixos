@@ -27,6 +27,9 @@
       # Status bar
       polybar
 
+      # File manager
+      ranger
+
       # Image viewer
       feh
 
