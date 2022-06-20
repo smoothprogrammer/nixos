@@ -1,8 +1,8 @@
 { config, pkgs, ... }:
 
 {
-  imports = [
-    ./bigzilla
-    ./guest
-  ];
+	imports = [
+		./bigzilla
+		./guest
+	];
 }
