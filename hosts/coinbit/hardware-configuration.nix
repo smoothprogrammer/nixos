@@ -4,36 +4,41 @@
 { config, lib, pkgs, modulesPath, ... }:
 
 {
-  imports =
-    [ (modulesPath + "/installer/scan/not-detected.nix")
-    ];
+	imports = [
+		(modulesPath + "/installer/scan/not-detected.nix")
+	];
 
-  boot.initrd.availableKernelModules = [ "vmd" "xhci_pci" "ahci" "nvme" "usb_storage" "sd_mod" ];
-  boot.initrd.kernelModules = [ ];
-  boot.kernelModules = [ "kvm-intel" ];
-  boot.extraModulePackages = [ ];
+	boot.initrd.availableKernelModules = [ "vmd" "xhci_pci" "ahci" "nvme" "usb_storage" "sd_mod" ];
+	boot.initrd.kernelModules = [ ];
+	boot.kernelModules = [ "kvm-intel" ];
+	boot.extraModulePackages = [ ];
 
-  fileSystems."/" =
-    { device = "/dev/disk/by-uuid/32c80bcd-d633-46d8-8bc5-b93e90262098";
-      fsType = "ext4";
-    };
+	fileSystems."/" = {
+		device = "/dev/disk/by-uuid/32c80bcd-d633-46d8-8bc5-b93e90262098";
+		fsType = "ext4";
+	};
 
-  boot.initrd.luks.devices."cryptroot".device = "/dev/disk/by-uuid/ebfa78f6-5bfa-4748-ac74-337d94137715";
+	boot.initrd.luks.devices."cryptroot".device = "/dev/disk/by-uuid/ebfa78f6-5bfa-4748-ac74-337d94137715";
 
-  fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/7039-3684";
-      fsType = "vfat";
-    };
+	fileSystems."/boot" = {
+		device = "/dev/disk/by-uuid/7039-3684";
+		fsType = "vfat";
+	};
 
-  swapDevices = [ ];
+	swapDevices = [
+		{
+			device = "/swapfile";
+			size = 10000;
+		}
+	];
 
-  # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
-  # (the default) this is the recommended approach. When using systemd-networkd it's
-  # still possible to use this option, but it's recommended to use it in conjunction
-  # with explicit per-interface declarations with `networking.interfaces.<interface>.useDHCP`.
-  networking.useDHCP = lib.mkDefault true;
-  # networking.interfaces.wlo1.useDHCP = lib.mkDefault true;
+	# Enables DHCP on each ethernet and wireless interface. In case of scripted networking
+	# (the default) this is the recommended approach. When using systemd-networkd it's
+	# still possible to use this option, but it's recommended to use it in conjunction
+	# with explicit per-interface declarations with `networking.interfaces.<interface>.useDHCP`.
+	networking.useDHCP = lib.mkDefault true;
+	# networking.interfaces.wlo1.useDHCP = lib.mkDefault true;
 
-  powerManagement.cpuFreqGovernor = lib.mkDefault "powersave";
-  hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
+	powerManagement.cpuFreqGovernor = lib.mkDefault "powersave";
+	hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
 }
