@@ -13,6 +13,9 @@
 	home-manager.users.bigzilla = {
 		home.sessionVariables = {
 			EDITOR = "vim";
+		};
+
+		home.shellAliases = {
 			ls = "ls -lhF";
 			la = "ls -a";
 			wifi = "nmcli device wifi";
@@ -36,7 +39,6 @@
 			./git
 			./lang
 			./nvim
-			./vim
 			./zsh
 		];
 	};

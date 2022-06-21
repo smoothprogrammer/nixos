@@ -22,7 +22,7 @@
 			{
 				name = "powerlevel10k-config";
 				src = lib.cleanSource ./.;
-				file = "p10k.zsh";
+				file = "p10k.generated.zsh";
 			}
 		];
 	};

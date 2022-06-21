@@ -2,7 +2,7 @@
 
 {
 	xdg.configFile = {
-		"direnv/direnv.toml" = ./direnv.toml;
+		"direnv/direnv.toml".source = ./direnv.toml;
 	};
 
 	home.packages = [ pkgs.direnv ];
