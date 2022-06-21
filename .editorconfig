@@ -6,7 +6,16 @@ charset = utf-8
 end_of_line = lf
 trim_trailing_whitespace = true
 insert_final_newline = true
+
+; tab for flexibility
+[*]
 indent_style = tab
 
+; a YAML file require a space for indentation
+[*.{yml,yaml}]
+indent_style = space
+indent_size = 2
+
+; leave generated code alone
 [*.generated.*]
 indent_style = unset
