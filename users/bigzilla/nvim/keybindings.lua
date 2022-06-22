@@ -1,11 +1,6 @@
 -- Easy escaping insert mode
 vim.keymap.set('i', 'jj', '<Esc>', {noremap = true, desc = 'Escape with jj in the insert mode'})
 
--- Remap Command-line mode and searching key
-vim.keymap.set('', '/', ':', {noremap = true, desc = 'Command-line mode'})
-vim.keymap.set('', ':', ',', {noremap = true, desc = 'Remap searching with f, F, t, T'})
-vim.keymap.set('', '?', '/', {noremap = true, desc = 'Remap Search forward'})
-
 -- Enter newline without going into insert mode
 vim.keymap.set('n', '<CR>', 'o<Esc>', {noremap = true, desc = 'Enter newline below the cursor'})
 vim.keymap.set('n', '<S-CR>', 'O<Esc>', {noremap = true, desc = 'Enter newline above the cursor'})
