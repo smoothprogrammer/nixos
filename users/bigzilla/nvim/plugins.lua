@@ -8,7 +8,7 @@ vim.cmd [[
 	" Nerdcommenter
 	packadd nerdcommenter
 	let g:NERDSpaceDelims = 1
-	let g:NERDCreateDefaultMappings = 1
+	let g:NERDCreateDefaultMappings = 0
 ]]
 
 -- NvimTree file explorer
@@ -38,20 +38,20 @@ require'nvim-treesitter.configs'.setup{
 }
 
 -- Colorizer color highlighter
-require'colorizer'.setup{}
+require'colorizer'.setup()
 
 -- Lualine status line
-require'lualine'.setup{}
+require'lualine'.setup()
 
 -- Indent blankline
-require'indent_blankline'.setup{}
+require'indent_blankline'.setup()
 
 -- Autopairs all kind of bracket
-require'nvim-autopairs'.setup{}
+require'nvim-autopairs'.setup()
 
 -- LSP
 require'lspconfig'.gopls.setup{}
 require'lspconfig'.rnix.setup{}
 
 -- Autocompletion
-require'cmp'.setup{}
+require'cmp'.setup()
