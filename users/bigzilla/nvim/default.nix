@@ -3,6 +3,7 @@
 {
 	xdg.configFile = {
 		"nvim/lua/settings.lua".source = ./settings.lua;
+		"nvim/lua/keybindings.lua".source = ./keybindings.lua;
 		"nvim/lua/plugins.lua".source = ./plugins.lua;
 	};
 
@@ -12,6 +13,7 @@
 		vimAlias = true;
 		extraConfig = ''
 			luafile $HOME/.config/nvim/lua/settings.lua
+			luafile $HOME/.config/nvim/lua/keybindings.lua
 			luafile $HOME/.config/nvim/lua/plugins.lua
 		'';
 		plugins = with pkgs.vimPlugins; [

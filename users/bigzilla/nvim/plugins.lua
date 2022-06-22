@@ -8,6 +8,7 @@ vim.cmd [[
 	" Nerdcommenter
 	packadd nerdcommenter
 	let g:NERDSpaceDelims = 1
+	let g:NERDCreateDefaultMappings = 1
 ]]
 
 -- NvimTree file explorer
