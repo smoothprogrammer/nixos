@@ -9,10 +9,13 @@ vim.cmd [[
 	packadd nerdcommenter
 	let g:NERDSpaceDelims = 1
 	let g:NERDCreateDefaultMappings = 0
+
+	" Hexokinase
+	packadd vim-hexokinase
+	let g:Hexokinase_optInPatterns = 'full_hex,triple_hex,rgb,rgba,hsl,hsla'
 ]]
 
 -- NvimTree file explorer
-vim.opt.termguicolors = true
 require'nvim-tree'.setup{
 	disable_netrw = true,
 	hijack_cursor = true,
@@ -36,9 +39,6 @@ require'nvim-treesitter.configs'.setup{
 		enable = true,
 	},
 }
-
--- Colorizer color highlighter
-require'colorizer'.setup()
 
 -- Lualine status line
 require'lualine'.setup()

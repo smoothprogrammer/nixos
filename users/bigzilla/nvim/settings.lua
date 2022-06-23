@@ -4,6 +4,7 @@ local opt = vim.opt
 vim.g.mapleader = ' '
 
 -- UI
+opt.termguicolors = true
 opt.title = true
 opt.number = true
 opt.relativenumber = true

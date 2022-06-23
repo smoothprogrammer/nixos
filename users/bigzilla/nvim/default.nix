@@ -26,12 +26,12 @@
 
 			# Utility
 			telescope-nvim
-			nvim-colorizer-lua
 			nerdcommenter
 			lualine-nvim
 			indent-blankline-nvim
 			editorconfig-nvim
 			nvim-autopairs
+			vim-hexokinase
 
 			# LSP
 			nvim-lspconfig
