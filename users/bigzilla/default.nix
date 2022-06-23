@@ -12,7 +12,7 @@
 
 	home-manager.users.bigzilla = {
 		home.sessionVariables = {
-			EDITOR = "vim";
+			EDITOR = "nvim";
 		};
 
 		home.shellAliases = {
