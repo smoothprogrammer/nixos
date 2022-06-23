@@ -41,6 +41,7 @@
 		systemPackages = with pkgs; [
 			ranger # File manager
 			firefox # Browser
+			onlyoffice-bin # Office
 			psmisc # Misc fuser, killall, prtstat, pslog, pstree, peekfd
 		];
 	};
