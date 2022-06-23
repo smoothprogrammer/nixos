@@ -16,6 +16,7 @@
 			./feh
 			./polybar
 			./rofi
+			./zathura
 		];
 
 		home.shellAliases = {
