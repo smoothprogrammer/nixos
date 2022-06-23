@@ -28,20 +28,24 @@
 	time.timeZone = "Asia/Jakarta";
 	i18n.defaultLocale = "en_US.UTF-8";
 
-	fonts.fonts = with pkgs; [
-		(nerdfonts.override {
-			fonts = [
-				"FiraCode" # Fira Code Nerd Font
-			];
-		})
-	];
+	fonts = {
+		fontDir.enable = true;
+		enableDefaultFonts = true;
+		fonts = with pkgs; [
+			(nerdfonts.override {
+				fonts = [
+					"FiraCode" # Fira Code Nerd Font
+				];
+			})
+		];
+	};
 
 	environment = {
 		pathsToLink = [ "/share/zsh" ];
 		systemPackages = with pkgs; [
 			ranger # File manager
 			firefox # Browser
-			onlyoffice-bin # Office
+			libreoffice # Office
 			psmisc # Misc fuser, killall, prtstat, pslog, pstree, peekfd
 		];
 	};
