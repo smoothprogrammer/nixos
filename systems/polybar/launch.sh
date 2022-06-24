@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # terminate already running bar instances
-killall -q polybar
+polybar-msg cmd quit
 
 # launch the bar
 polybar top & disown

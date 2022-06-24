@@ -11,5 +11,5 @@
 		};
 	};
 
-	home.packages = [ pkgs.polybar ];
+	home.packages = [ pkgs.polybarFull ];
 }
