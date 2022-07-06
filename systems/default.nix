@@ -3,51 +3,33 @@
 {
 	imports = [
 		<home-manager/nixos>
-		./keys
-		./shell
-		./steam
-		./virtualisation
-		./xserver
+		./wayland
+		./terminal
+		./development
+		./browser
+		./office
+		./social
+		./multimedia
+		./misc
 	];
 
-	home-manager.sharedModules = [{
-		imports = [
-			./alacritty
-			./feh
-			./polybar
-			./rofi
-			./zathura
-		];
-
-		home.shellAliases = {
-			sudo = "sudo ";
-			nixos-rebuild = "nixos-rebuild -I nixos-config=$NIXOS_CONFIG";
-		};
-	}];
+	xdg.mime.defaultApplications = {
+		"text/html" = "librewolf.desktop";
+		"text/xml" = "librewolf.desktop";
+		"x-scheme-handler/ftp" = "librewolf.desktop";
+		"x-scheme-handler/http" = "librewolf.desktop";
+		"x-scheme-handler/https" = "librewolf.desktop";
+	};
 
 	nixpkgs.config.allowUnfree = true;
+	networking.networkmanager.enable = true;
 	time.timeZone = "Asia/Jakarta";
 	i18n.defaultLocale = "en_US.UTF-8";
 
-	fonts = {
-		fontDir.enable = true;
-		enableDefaultFonts = true;
-		fonts = with pkgs; [
-			(nerdfonts.override {
-				fonts = [
-					"FiraCode" # Fira Code Nerd Font
-				];
-			})
-		];
-	};
-
-	environment = {
-		pathsToLink = [ "/share/zsh" ];
-		systemPackages = with pkgs; [
-			ranger # File manager
-			firefox # Browser
-			libreoffice # Office
-			psmisc # Misc fuser, killall, prtstat, pslog, pstree, peekfd
-		];
+	boot = {
+		plymouth.enable = true;
+		initrd.verbose = false;
+		consoleLogLevel = 0;
+		kernelParams = [ "quiet" "udev.log_level=3" ];
 	};
 }

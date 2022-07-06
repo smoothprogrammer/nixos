@@ -12,27 +12,26 @@
 	];
 
 	# Use the systemd-boot EFI boot loader.
-	boot.loader.systemd-boot.enable = true;
 	boot.loader.efi.canTouchEfiVariables = true;
-
-	# Specify hostname and enable networkmanager
-	networking = {
-		hostName = "coinbit";
-		networkmanager.enable = true;
+	boot.loader.grub = {
+		enable = true;
+		version = 2;
+		device = "nodev";
+		efiSupport = true;
+		enableCryptodisk = true;
 	};
 
-	# Path to the nixos configurations
+	# boot.loader.systemd-boot.enable = true;
+	# boot.loader.efi.canTouchEfiVariables = true;
+
+	# Specify hostname.
+	networking.hostName = "coinbit";
+
+	# Path to the nixos configurations.
 	environment.variables.NIXOS_CONFIG = "$HOME/.config/nixos/hosts/coinbit/configuration.nix";
 
 	# Enable CUPS to print documents.
 	# services.printing.enable = true;
-
-	# Enable sound
-	sound.enable = true;
-	hardware.pulseaudio = {
-		enable = true;
-		package = pkgs.pulseaudioFull;
-	};
 
 	# Enable touchpad support (enabled default in most desktopManager).
 	services.xserver.libinput.enable = true;

@@ -5,4 +5,6 @@
 		./bigzilla
 		./guest
 	];
+
+	users.defaultUserShell = pkgs.fish;
 }

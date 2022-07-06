@@ -1,15 +1,15 @@
 { config, pkgs, ... }:
 
 {
-	users.users.bigzilla = {
+	users.users.billyzaelani = {
 		isNormalUser = true;
-		home = "/home/bigzilla";
-		description = "Bigzilla";
+		home = "/home/billyzaelani";
+		description = "Billy Zaelani Malik";
 		initialPassword = "password";
 		extraGroups = [ "wheel" "networkmanager" "audio" "video" "docker" "vboxusers" ];
 	};
 
-	home-manager.users.bigzilla = {
+	home-manager.users.billyzaelani = {
 		xdg.configFile = {
 			"git/config".source = ./git/config;
 		};
