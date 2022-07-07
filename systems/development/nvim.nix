@@ -8,8 +8,8 @@
 			vimAlias = true;
 			extraConfig = ''
 				luafile $HOME/.config/nvim/lua/settings.lua
-				luafile $HOME/.config/nvim/lua/keybindings.lua
-				luafile $HOME/.config/nvim/lua/plugins.lua
+				luafile $HOME/.config/nvim/lua/lsp.lua
+				luafile $HOME/.config/nvim/lua/misc.lua
 			'';
 			plugins = with pkgs.vimPlugins; [
 				# Theme
@@ -31,6 +31,9 @@
 				# LSP
 				nvim-lspconfig
 				nvim-cmp
+				cmp-nvim-lsp
+				luasnip
+				cmp_luasnip
 
 				# Treesitter
 				(nvim-treesitter.withPlugins (
@@ -57,8 +60,8 @@
 
 		xdg.configFile = {
 			"nvim/lua/settings.lua".source = ../config/nvim/lua/settings.lua;
-			"nvim/lua/keybindings.lua".source = ../config/nvim/lua/keybindings.lua;
-			"nvim/lua/plugins.lua".source = ../config/nvim/lua/plugins.lua;
+			"nvim/lua/lsp.lua".source = ../config/nvim/lua/lsp.lua;
+			"nvim/lua/misc.lua".source = ../config/nvim/lua/misc.lua;
 		};
 	}];
 }

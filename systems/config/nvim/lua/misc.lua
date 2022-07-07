@@ -49,9 +49,6 @@ require'indent_blankline'.setup()
 -- Autopairs all kind of bracket
 require'nvim-autopairs'.setup()
 
--- LSP
-require'lspconfig'.gopls.setup{}
-require'lspconfig'.rnix.setup{}
-
--- Autocompletion
-require'cmp'.setup()
+-- Plugins mappings
+vim.keymap.set('', '<C-/>', '<plug>NERDCommenterToggle', {desc = 'Toggle NERDCommenter'})
+vim.keymap.set('', '<C-F>', ':NvimTreeToggle<CR>', {desc = 'Toggle NvimTree'})
