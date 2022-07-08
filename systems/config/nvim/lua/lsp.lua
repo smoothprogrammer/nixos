@@ -1,8 +1,7 @@
--- Use an on_attach function to only map the following keys
--- after the LSP attaches to the current buffer
+-- Map key bindings only after the LSP attaches to the current buffer
 local on_attach = function(_, bufnr)
 	-- See `:help vim.lsp.*` for documentation on any of the below functions
-	local bufopts = {noremap=true, silent=true, buffer=bufnr}
+	local bufopts = { noremap = true, silent = true, buffer = bufnr }
 	vim.keymap.set('n', 'gd', vim.lsp.buf.definition, bufopts)
 	vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, bufopts)
 	vim.keymap.set('n', 'gr', vim.lsp.buf.references, bufopts)
@@ -18,17 +17,16 @@ local on_attach = function(_, bufnr)
 	vim.keymap.set('n', '<space>f', vim.lsp.buf.formatting, bufopts)
 end
 
--- Attach autocompletion capabilities to LSP
-local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
-
 -- Autocompletion configuration
-local luasnip = require'luasnip'
-local cmp = require'cmp'
-cmp.setup{
+local capabilities = require('cmp_nvim_lsp').update_capabilities(
+	vim.lsp.protocol.make_client_capabilities()
+)
+local luasnip = require('luasnip')
+local cmp = require('cmp')
+cmp.setup {
 	sources = {
-		{name = 'nvim_lsp'},
-		{name = 'luasnip'},
+		{ name = 'nvim_lsp' },
+		{ name = 'luasnip' },
 	},
 	snippet = {
 		expand = function(args)
@@ -37,7 +35,7 @@ cmp.setup{
 	},
 	mapping = cmp.mapping.preset.insert({
 		['<C-Space>'] = cmp.mapping.complete(),
-		['<CR>'] = cmp.mapping.confirm{select = true},
+		['<CR>'] = cmp.mapping.confirm { select = true },
 		['<Tab>'] = cmp.mapping(function(fallback)
 			if cmp.visible() then
 				cmp.select_next_item()
@@ -55,31 +53,42 @@ cmp.setup{
 	}),
 }
 
+-- Autoformat on save
+vim.cmd [[autocmd BufWritePre * lua vim.lsp.buf.formatting_sync()]]
+
 -- LSP config
 local lspconfig = require('lspconfig')
-local servers = {'rnix', 'sumneko_lua', 'gopls'}
-for _, lsp in ipairs(servers) do
-	lspconfig[lsp].setup{
-		on_attach = on_attach,
-		capabilities = capabilities,
-	}
-end
 
-lspconfig.sumneko_lua.setup{
+-- nix
+lspconfig.rnix.setup {
+	on_attach = on_attach,
+	capabilities = capabilities,
+}
+
+-- lua
+lspconfig.sumneko_lua.setup {
+	on_attach = on_attach,
+	capabilities = capabilities,
 	settings = {
 		Lua = {
 			runtime = {
 				version = 'LuaJIT',
 			},
 			diagnostics = {
-				globals = {'vim'},
+				globals = { 'vim' },
 			},
 			workspace = {
-				library = vim.api.nvim_get_runtime_file("", true),
+				library = vim.api.nvim_get_runtime_file('', true),
 			},
 			telemetry = {
 				enable = false,
 			},
 		},
 	},
+}
+
+-- go
+lspconfig.gopls.setup {
+	on_attach = on_attach,
+	capabilities = capabilities,
 }

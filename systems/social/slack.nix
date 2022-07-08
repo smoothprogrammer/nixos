@@ -1,5 +1,5 @@
 { config, pkgs, ... }:
 
 {
-	environment.systemPackages = [ pkgs.slack ];
+  environment.systemPackages = [ pkgs.slack ];
 }

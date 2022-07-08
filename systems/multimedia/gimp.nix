@@ -1,5 +1,5 @@
 { config, pkgs, ... }:
 
 {
-	environment.systemPackages = [ pkgs.gimp ];
+  environment.systemPackages = [ pkgs.gimp ];
 }

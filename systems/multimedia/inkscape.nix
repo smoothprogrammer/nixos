@@ -1,5 +1,5 @@
 { config, pkgs, ... }:
 
 {
-	environment.systemPackages = [ pkgs.inkscape ];
+  environment.systemPackages = [ pkgs.inkscape ];
 }

@@ -5,42 +5,42 @@
 { config, pkgs, ... }:
 
 {
-	imports = [
-		./hardware-configuration.nix
-		../../systems
-		../../users
-	];
+  imports = [
+    ./hardware-configuration.nix
+    ../../systems
+    ../../users
+  ];
 
-	# Use the systemd-boot EFI boot loader.
-	boot.loader.efi.canTouchEfiVariables = true;
-	boot.loader.grub = {
-		enable = true;
-		version = 2;
-		device = "nodev";
-		efiSupport = true;
-		enableCryptodisk = true;
-	};
+  # Use the systemd-boot EFI boot loader.
+  boot.loader.efi.canTouchEfiVariables = true;
+  boot.loader.grub = {
+    enable = true;
+    version = 2;
+    device = "nodev";
+    efiSupport = true;
+    enableCryptodisk = true;
+  };
 
-	# boot.loader.systemd-boot.enable = true;
-	# boot.loader.efi.canTouchEfiVariables = true;
+  # boot.loader.systemd-boot.enable = true;
+  # boot.loader.efi.canTouchEfiVariables = true;
 
-	# Specify hostname.
-	networking.hostName = "coinbit";
+  # Specify hostname.
+  networking.hostName = "coinbit";
 
-	# Path to the nixos configurations.
-	environment.variables.NIXOS_CONFIG = "$HOME/.config/nixos/hosts/coinbit/configuration.nix";
+  # Path to the nixos configurations.
+  environment.variables.NIXOS_CONFIG = "$HOME/.config/nixos/hosts/coinbit/configuration.nix";
 
-	# Enable CUPS to print documents.
-	# services.printing.enable = true;
+  # Enable CUPS to print documents.
+  # services.printing.enable = true;
 
-	# Enable touchpad support (enabled default in most desktopManager).
-	services.xserver.libinput.enable = true;
+  # Enable touchpad support (enabled default in most desktopManager).
+  services.xserver.libinput.enable = true;
 
-	# This value determines the NixOS release from which the default
-	# settings for stateful data, like file locations and database versions
-	# on your system were taken. It‘s perfectly fine and recommended to leave
-	# this value at the release version of the first install of this system.
-	# Before changing this value read the documentation for this option
-	# (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
-	system.stateVersion = "22.05"; # Did you read the comment?
+  # This value determines the NixOS release from which the default
+  # settings for stateful data, like file locations and database versions
+  # on your system were taken. It‘s perfectly fine and recommended to leave
+  # this value at the release version of the first install of this system.
+  # Before changing this value read the documentation for this option
+  # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
+  system.stateVersion = "22.05"; # Did you read the comment?
 }

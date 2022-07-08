@@ -1,8 +1,8 @@
 { config, pkgs, ... }:
 
 {
-	imports = [
-		./foot.nix		# Terminal
-		./fish.nix		# Shell
-	];
+  imports = [
+    ./foot.nix # Terminal
+    ./fish.nix # Shell
+  ];
 }

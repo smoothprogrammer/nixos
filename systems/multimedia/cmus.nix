@@ -1,5 +1,5 @@
 { config, pkgs, ... }:
 
 {
-	environment.systemPackages = [ pkgs.cmus ];
+  environment.systemPackages = [ pkgs.cmus ];
 }

@@ -1,5 +1,5 @@
 { config, pkgs, ... }:
 
 {
-	environment.systemPackages = [ pkgs.libreoffice ];
+  environment.systemPackages = [ pkgs.libreoffice ];
 }

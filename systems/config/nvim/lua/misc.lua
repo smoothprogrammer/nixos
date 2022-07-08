@@ -1,3 +1,7 @@
+-- Plugins mappings
+vim.keymap.set('', '<C-/>', '<plug>NERDCommenterToggle', { desc = 'Toggle NERDCommenter' })
+vim.keymap.set('', '<C-F>', ':NvimTreeToggle<CR>', { desc = 'Toggle NvimTree' })
+
 vim.cmd [[
 	" Dracula themes with transparent background
 	packadd dracula-vim
@@ -16,7 +20,7 @@ vim.cmd [[
 ]]
 
 -- NvimTree file explorer
-require'nvim-tree'.setup{
+require('nvim-tree').setup {
 	disable_netrw = true,
 	hijack_cursor = true,
 	open_on_setup = true,
@@ -29,26 +33,22 @@ require'nvim-tree'.setup{
 		},
 	},
 	filters = {
-		custom = {"^\\.git"},
+		custom = { '^\\.git' },
 	},
 }
 
 -- Treesitter syntax highlighter
-require'nvim-treesitter.configs'.setup{
+require('nvim-treesitter.configs').setup {
 	highlight = {
 		enable = true,
 	},
 }
 
 -- Lualine status line
-require'lualine'.setup()
+require('lualine').setup()
 
 -- Indent blankline
-require'indent_blankline'.setup()
+require('indent_blankline').setup()
 
 -- Autopairs all kind of bracket
-require'nvim-autopairs'.setup()
-
--- Plugins mappings
-vim.keymap.set('', '<C-/>', '<plug>NERDCommenterToggle', {desc = 'Toggle NERDCommenter'})
-vim.keymap.set('', '<C-F>', ':NvimTreeToggle<CR>', {desc = 'Toggle NvimTree'})
+require('nvim-autopairs').setup()

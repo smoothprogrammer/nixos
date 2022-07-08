@@ -1,5 +1,5 @@
 { config, pkgs, ... }:
 
 {
-	environment.systemPackages = [ pkgs.mpv-unwrapped ];
+  environment.systemPackages = [ pkgs.mpv-unwrapped ];
 }

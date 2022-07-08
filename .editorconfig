@@ -1,14 +1,21 @@
 ; https://editorconfig.org
 root = true
 
+; default configuration
 [*]
 charset = utf-8
 end_of_line = lf
 trim_trailing_whitespace = true
 insert_final_newline = true
+indent_style = tab
 
-; tab for flexibility
-[*]
+; nixpkgs-fmt trigger by rnix
+[*.nix]
+indent_style = space
+indent_size = 2
+
+; editorconfig trigger by sumneko_lua
+[*.lua]
 indent_style = tab
 
 ; a YAML file require a space for indentation

@@ -1,11 +1,11 @@
 { config, pkgs, ... }:
 
 {
-	environment.systemPackages = with pkgs; [ rofi-wayland ];
+  environment.systemPackages = with pkgs; [ rofi-wayland ];
 
-	home-manager.sharedModules = [{
-		xdg.configFile = {
-			"rofi/config.rasi".source = ../config/rofi/config.rasi;
-		};
-	}];
+  home-manager.sharedModules = [{
+    xdg.configFile = {
+      "rofi/config.rasi".source = ../config/rofi/config.rasi;
+    };
+  }];
 }

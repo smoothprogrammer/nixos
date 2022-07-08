@@ -1,5 +1,5 @@
 { config, pkgs, ... }:
 
 {
-	environment.systemPackages = [ pkgs.obs-studio ];
+  environment.systemPackages = [ pkgs.obs-studio ];
 }
