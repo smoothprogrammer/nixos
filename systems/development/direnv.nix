@@ -1,7 +1,7 @@
 { config, pkgs, ... }:
 
 {
-  environment.systemPackages = [ pkgs.direnv ];
+  environment.systemPackages = [ pkgs.unstable.direnv ];
 
   home-manager.sharedModules = [{
     xdg.configFile = {
