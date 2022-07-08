@@ -5,6 +5,9 @@
 		# Makefile
 		gnumake
 
+		# Lua
+		luajit sumneko-lua-language-server
+
 		#Go
 		go gopls
 

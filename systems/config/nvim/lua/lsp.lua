@@ -1,6 +1,6 @@
 -- Use an on_attach function to only map the following keys
 -- after the LSP attaches to the current buffer
-local on_attach = function(client, bufnr)
+local on_attach = function(_, bufnr)
 	-- See `:help vim.lsp.*` for documentation on any of the below functions
 	local bufopts = {noremap=true, silent=true, buffer=bufnr}
 	vim.keymap.set('n', 'gd', vim.lsp.buf.definition, bufopts)
@@ -57,10 +57,29 @@ cmp.setup{
 
 -- LSP config
 local lspconfig = require('lspconfig')
-local servers = {'gopls', 'rnix'}
+local servers = {'rnix', 'sumneko_lua', 'gopls'}
 for _, lsp in ipairs(servers) do
 	lspconfig[lsp].setup{
 		on_attach = on_attach,
 		capabilities = capabilities,
 	}
 end
+
+lspconfig.sumneko_lua.setup{
+	settings = {
+		Lua = {
+			runtime = {
+				version = 'LuaJIT',
+			},
+			diagnostics = {
+				globals = {'vim'},
+			},
+			workspace = {
+				library = vim.api.nvim_get_runtime_file("", true),
+			},
+			telemetry = {
+				enable = false,
+			},
+		},
+	},
+}
