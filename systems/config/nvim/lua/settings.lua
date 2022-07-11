@@ -1,54 +1,57 @@
+--
 -- Options
-
-local opt = vim.opt
+--
 
 -- Leader key
 vim.g.mapleader = ' '
 
--- UI
-opt.termguicolors = true
-opt.title = true
-opt.number = true
-opt.relativenumber = true
-opt.cursorline = true
-opt.wrap = false
+-- Behaviour
+vim.opt.hidden = true -- always set this on
+vim.opt.wrap = false -- don't wrap line
+vim.opt.tabstop = 4 -- tab is 4 spaces
+vim.opt.shiftwidth = 4 -- autoindenting is 4 spaces
+vim.opt.autoindent = true -- always set this on
+vim.opt.number = true -- show line number
+vim.opt.relativenumber = true -- show relative number
+vim.opt.showmatch = true -- show matching parenthesis
+vim.opt.ignorecase = true -- ignore case when searching
+vim.opt.smartcase = true -- ignore case if search pattern is all lowercase, case-sensitive otherwise
+vim.opt.smarttab = true -- insert tabs on the start of a line according to shiftwidth, not tabstop
+vim.opt.hlsearch = true -- highlight search terms
+vim.opt.incsearch = true -- show search matches as you type
+vim.opt.scrolloff = 5 -- maintain 5 lines when scrolling
+vim.opt.cursorline = true -- easily spot current cursor
+vim.opt.termguicolors = true -- enable some themes
+vim.opt.title = true -- change the terminal title
+vim.opt.backup = false -- no backup
+vim.opt.swapfile = false -- no swapfile
 
--- Indentation
-opt.autoindent = true
-opt.tabstop = 4
-opt.shiftwidth = 4
-
--- Misc
-opt.smartcase = true
-opt.incsearch = true
-opt.scrolloff = 5
-opt.shortmess = opt.shortmess + 'I'
-
+--
 -- Key bindings
+--
 
--- Easy escaping insert mode
-vim.keymap.set('i', 'jj', '<Esc>', { noremap = true, desc = 'Escape with jj in the insert mode' })
+local bufopts = { noremap = true, silent = true }
 
--- Enter newline without going into insert mode
-vim.keymap.set('n', '<CR>', 'o<Esc>', { noremap = true, desc = 'Enter newline below the cursor' })
-vim.keymap.set('n', '<S-CR>', 'O<Esc>', { noremap = true, desc = 'Enter newline above the cursor' })
+-- Behaviour
+vim.keymap.set('n', ';', ':', bufopts) -- easy command
+vim.keymap.set('i', 'jj', '<Esc>', bufopts) -- easy escaping insert mode
+vim.keymap.set('n', '<CR>', 'o<Esc>', bufopts) -- easy newline below the cursor in normal mode
+vim.keymap.set('n', '<S-CR>', 'O<Esc>', bufopts) -- easy newline above the cursor in normal mode
 
--- Switching window
-vim.keymap.set('n', '<M-h>', '<C-w>h', { noremap = true, desc = 'Mapping switch with Alt key' })
-vim.keymap.set('n', '<M-j>', '<C-w>j', { noremap = true, desc = 'Mapping switch with Alt key' })
-vim.keymap.set('n', '<M-k>', '<C-w>k', { noremap = true, desc = 'Mapping switch with Alt key' })
-vim.keymap.set('n', '<M-l>', '<C-w>l', { noremap = true, desc = 'Mapping switch with Alt key' })
+-- Window
+vim.keymap.set('n', '<M-h>', '<C-w>h', bufopts)
+vim.keymap.set('n', '<M-j>', '<C-w>j', bufopts)
+vim.keymap.set('n', '<M-k>', '<C-w>k', bufopts)
+vim.keymap.set('n', '<M-l>', '<C-w>l', bufopts)
+vim.keymap.set('n', '<M-H>', '<C-w>H', bufopts)
+vim.keymap.set('n', '<M-J>', '<C-w>J', bufopts)
+vim.keymap.set('n', '<M-K>', '<C-w>K', bufopts)
+vim.keymap.set('n', '<M-L>', '<C-w>L', bufopts)
 
--- Moving window
-vim.keymap.set('n', '<M-H>', '<C-w>H', { noremap = true, desc = 'Mapping move with Alt key' })
-vim.keymap.set('n', '<M-J>', '<C-w>J', { noremap = true, desc = 'Mapping move with Alt key' })
-vim.keymap.set('n', '<M-K>', '<C-w>K', { noremap = true, desc = 'Mapping move with Alt key' })
-vim.keymap.set('n', '<M-L>', '<C-w>L', { noremap = true, desc = 'Mapping move with Alt key' })
-
--- Nop Arrow key with PageUp and PageDown
-vim.keymap.set({ 'n', 'v', 'i' }, '<Up>', '<nop>', { noremap = true, desc = 'Disable Arrow key' })
-vim.keymap.set({ 'n', 'v', 'i' }, '<DOWN>', '<nop>', { noremap = true, desc = 'Disable Arrow key' })
-vim.keymap.set({ 'n', 'v', 'i' }, '<LEFT>', '<nop>', { noremap = true, desc = 'Disable Arrow key' })
-vim.keymap.set({ 'n', 'v', 'i' }, '<RIGHT>', '<nop>', { noremap = true, desc = 'Disable Arrow key' })
-vim.keymap.set({ 'n', 'v', 'i' }, '<PageUp>', '<nop>', { noremap = true, desc = 'Disable PageUp' })
-vim.keymap.set({ 'n', 'v', 'i' }, '<PageDown>', '<nop>', { noremap = true, desc = 'Disable PageDown' })
+-- Full time vim don't need arrow key
+vim.keymap.set({ 'n', 'v', 'i' }, '<Up>', '<nop>', bufopts)
+vim.keymap.set({ 'n', 'v', 'i' }, '<DOWN>', '<nop>', bufopts)
+vim.keymap.set({ 'n', 'v', 'i' }, '<LEFT>', '<nop>', bufopts)
+vim.keymap.set({ 'n', 'v', 'i' }, '<RIGHT>', '<nop>', bufopts)
+vim.keymap.set({ 'n', 'v', 'i' }, '<PageUp>', '<nop>', bufopts)
+vim.keymap.set({ 'n', 'v', 'i' }, '<PageDown>', '<nop>', bufopts)
