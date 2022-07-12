@@ -1,6 +1,8 @@
 { config, pkgs, ... }:
 
 {
+  environment.systemPackages = [ pkgs.ripgrep ];
+
   home-manager.sharedModules = [{
     programs.neovim = {
       enable = true;
@@ -9,6 +11,8 @@
       extraConfig = ''
         luafile $HOME/.config/nvim/lua/settings.lua
         luafile $HOME/.config/nvim/lua/lsp.lua
+        luafile $HOME/.config/nvim/lua/telescope.lua
+        luafile $HOME/.config/nvim/lua/nvimtree.lua
         luafile $HOME/.config/nvim/lua/misc.lua
       '';
       plugins = with pkgs.vimPlugins; [
@@ -20,13 +24,13 @@
         nvim-tree-lua
 
         # Utility
-        telescope-nvim
         nerdcommenter
         lualine-nvim
         indent-blankline-nvim
         editorconfig-nvim
         nvim-autopairs
         vim-hexokinase
+        clever-f-vim
 
         # LSP
         nvim-lspconfig
@@ -34,6 +38,10 @@
         cmp-nvim-lsp
         luasnip
         cmp_luasnip
+
+        # Telescope
+        telescope-nvim
+        telescope-fzf-native-nvim
 
         # Treesitter
         (nvim-treesitter.withPlugins (
@@ -62,6 +70,8 @@
     xdg.configFile = {
       "nvim/lua/settings.lua".source = ../config/nvim/lua/settings.lua;
       "nvim/lua/lsp.lua".source = ../config/nvim/lua/lsp.lua;
+      "nvim/lua/telescope.lua".source = ../config/nvim/lua/telescope.lua;
+      "nvim/lua/nvimtree.lua".source = ../config/nvim/lua/nvimtree.lua;
       "nvim/lua/misc.lua".source = ../config/nvim/lua/misc.lua;
     };
   }];
