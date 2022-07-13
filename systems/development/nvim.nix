@@ -31,6 +31,7 @@
         nvim-autopairs
         vim-hexokinase
         clever-f-vim
+        gitsigns-nvim
 
         # LSP
         nvim-lspconfig

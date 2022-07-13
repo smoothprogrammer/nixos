@@ -33,3 +33,6 @@ require('indent_blankline').setup()
 
 -- Autopairs all kind of bracket
 require('nvim-autopairs').setup()
+
+-- Git decorations
+require('gitsigns').setup()
