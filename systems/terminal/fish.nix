@@ -9,6 +9,16 @@
       shellAbbrs = {
         rebuild = "sudo nixos-rebuild -I nixos-config=$NIXOS_CONFIG";
         wifi = "nmcli device wifi";
+        g = "git";
+        gs = "git status";
+        ga = "git add";
+        gc = "git commit";
+        gcm = "git commit -m";
+        gca = "git commit --ammend";
+        gco = "git checkout";
+        gb = "git branch";
+        gpl = "git pull";
+        gps = "git push";
       };
       shellInit = ''
         set -g theme_display_date no
