@@ -31,8 +31,9 @@ require('lualine').setup()
 -- Indent blankline
 require('indent_blankline').setup()
 
--- Autopairs all kind of bracket
-require('nvim-autopairs').setup()
+-- Surround (auto and manual)
+require('mini.surround').setup()
+require('mini.pairs').setup()
 
 -- Git decorations
 require('gitsigns').setup()

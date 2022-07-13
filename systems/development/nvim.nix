@@ -24,11 +24,11 @@
         nvim-tree-lua
 
         # Utility
+        mini-nvim
         nerdcommenter
         lualine-nvim
         indent-blankline-nvim
         editorconfig-nvim
-        nvim-autopairs
         vim-hexokinase
         clever-f-vim
         gitsigns-nvim

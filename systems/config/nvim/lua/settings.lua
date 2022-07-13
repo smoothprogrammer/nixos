@@ -25,6 +25,7 @@ vim.opt.termguicolors = true -- enable some themes
 vim.opt.title = true -- change the terminal title
 vim.opt.backup = false -- no backup
 vim.opt.swapfile = false -- no swapfile
+vim.opt.signcolumn = 'yes' -- persist the signcolumn event if no sign present
 
 --
 -- Key bindings
