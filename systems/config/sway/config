@@ -86,7 +86,7 @@ bindsym {
 # Status bar
 bar swaybar_command waybar
 # Wallpaper
-output * bg ~/.config/feh/wallpaper.jpg fill
+output * bg ~/.local/share/backgrounds/birds-eye-view-of-city.png fill
 # Window
 default_border pixel
 gaps inner 8

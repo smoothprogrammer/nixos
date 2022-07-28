@@ -12,5 +12,9 @@
       "sway/config".source = ../config/sway/config;
       "sway/config.d".source = ../config/sway/config.d;
     };
+
+    xdg.dataFile = {
+      "backgrounds/birds-eye-view-of-city.png".source = ../data/backgrounds/birds-eye-view-of-city.png;
+    };
   }];
 }

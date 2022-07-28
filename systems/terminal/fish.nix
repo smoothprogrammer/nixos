@@ -9,6 +9,7 @@
       shellAbbrs = {
         rebuild = "sudo nixos-rebuild -I nixos-config=$NIXOS_CONFIG";
         wifi = "nmcli device wifi";
+        vimdev = ''vim --cmd "set rtp+=./"'';
         g = "git";
         gs = "git status";
         ga = "git add";
@@ -25,6 +26,8 @@
         set -g theme_display_git_master_branch yes
         set -g theme_color_scheme dracula
         set -g theme_nerd_fonts yes
+
+        set -x DIRENV_LOG_FORMAT ""
       '';
       interactiveShellInit = ''
         direnv hook fish | source

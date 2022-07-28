@@ -5,15 +5,19 @@
     # Makefile
     gnumake
 
+    # Nix
+    rnix-lsp
+
+    # C, C++, Objective-C, Fortran, Ada, Go(CGO), D
+    gcc
+
     # Lua
     luajit
     sumneko-lua-language-server
 
-    #Go
+    # Go
     go
     gopls
-
-    # Nix
-    rnix-lsp
+    delve
   ];
 }

@@ -2,8 +2,8 @@
 
 {
   imports = [
+    ./networking.nix # Network
     ./fonts.nix # Fonts
-    ./pipewire.nix # Audio and Video
     ./light.nix # Backlight
   ];
 

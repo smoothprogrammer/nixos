@@ -26,6 +26,7 @@ vim.opt.title = true -- change the terminal title
 vim.opt.backup = false -- no backup
 vim.opt.swapfile = false -- no swapfile
 vim.opt.signcolumn = 'yes' -- persist the signcolumn event if no sign present
+vim.opt.colorcolumn = "81"
 
 --
 -- Key bindings
@@ -34,7 +35,7 @@ vim.opt.signcolumn = 'yes' -- persist the signcolumn event if no sign present
 local bufopts = { noremap = true, silent = true }
 
 -- Behaviour
-vim.keymap.set('n', ';', ':', bufopts) -- easy command
+vim.keymap.set('n', ';', ':', { noremap = true }) -- easy command mode
 vim.keymap.set('i', 'jj', '<Esc>', bufopts) -- easy escaping insert mode
 vim.keymap.set('n', '<CR>', 'o<Esc>', bufopts) -- easy newline below the cursor in normal mode
 vim.keymap.set('n', '<S-CR>', 'O<Esc>', bufopts) -- easy newline above the cursor in normal mode

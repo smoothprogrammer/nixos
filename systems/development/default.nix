@@ -4,6 +4,7 @@
   imports = [
     ./git.nix # Version control
     ./nvim.nix # Text editor and IDE
+    ./vscode.nix # GUI Text editor and IDE
     ./lang.nix # List of programming language
     ./docker.nix # container
     ./virtualbox.nix # Virtual machine

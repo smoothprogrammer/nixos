@@ -2,20 +2,13 @@
 vim.keymap.set('', '<C-/>', '<plug>NERDCommenterToggle', { desc = 'Toggle NERDCommenter' })
 
 vim.cmd [[
-	" Dracula themes with transparent background
-	packadd dracula-vim
-	syntax on
-	colorscheme dracula
-	hi normal guibg=000000
-
 	" Nerdcommenter
 	packadd nerdcommenter
 	let g:NERDSpaceDelims = 1
 	let g:NERDCreateDefaultMappings = 0
 
-	" Hexokinase
-	packadd vim-hexokinase
-	let g:Hexokinase_optInPatterns = 'full_hex,triple_hex,rgb,rgba,hsl,hsla'
+	" Clever f
+	let g:clever_f_across_no_line = 1
 ]]
 
 -- Treesitter syntax highlighter
@@ -24,6 +17,10 @@ require('nvim-treesitter.configs').setup {
 		enable = true,
 	},
 }
+
+require('colorizer').setup({ '*' }, {
+	names = false,
+})
 
 -- Lualine status line
 require('lualine').setup()
@@ -37,3 +34,22 @@ require('mini.pairs').setup()
 
 -- Git decorations
 require('gitsigns').setup()
+
+local nvimtree = require('nvim-tree')
+nvimtree.setup {
+	disable_netrw = true,
+	hijack_cursor = true,
+	open_on_setup = false,
+	view = {
+		hide_root_folder = true,
+	},
+	actions = {
+		open_file = {
+			resize_window = true,
+		},
+	},
+	filters = {
+		custom = { '^\\.git$' },
+	},
+}
+vim.keymap.set('n', '<C-f>', nvimtree.toggle, { desc = 'Toggle NvimTree' })
