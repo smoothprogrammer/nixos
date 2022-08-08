@@ -24,12 +24,12 @@
 }
 
 #waybar {
-	background: transparent;
+	/* background: transparent; */
 	color: @drac-cmt;
 }
 
 #workspaces button {
-	background: transparent;
+	/* background: transparent; */
 	color: @drac-cmt;
 }
 
@@ -53,7 +53,7 @@
 	color: @drac-grn;
 }
 
-#clock {
-	color: @drac-pur;
-	border-bottom: 1px solid;
-}
+/* #clock { */
+	/* color: @drac-pur; */
+	/* border-bottom: 1px solid; */
+/* } */
