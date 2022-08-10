@@ -17,7 +17,7 @@ configuration {
 	drac-red: #ff5555;
 	drac-yel: #f1fa8c;
 
-	font: "Meslo LG M Nerd Font 12";
+	font: "MesloLGM Nerd Font 12";
 
 	foreground: @drac-fgd;
 	background-color: @drac-bgd;

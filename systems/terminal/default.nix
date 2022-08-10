@@ -2,7 +2,7 @@
 
 {
   imports = [
-    ./foot.nix # Terminal
+    ./alacritty.nix # Terminal
     ./fish.nix # Shell
   ];
 }

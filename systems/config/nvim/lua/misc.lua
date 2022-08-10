@@ -1,5 +1,6 @@
 -- Plugins mappings
 vim.keymap.set('', '<C-/>', '<plug>NERDCommenterToggle', { desc = 'Toggle NERDCommenter' })
+vim.keymap.set('', '<C-_>', '<plug>NERDCommenterToggle', { desc = 'Toggle NERDCommenter' })
 
 vim.cmd [[
 	" Nerdcommenter

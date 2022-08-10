@@ -1,5 +1,5 @@
 { config, pkgs, ... }:
 
 {
-  environment.systemPackages = [ pkgs.firefox-wayland ];
+  environment.systemPackages = [ pkgs.firefox ];
 }

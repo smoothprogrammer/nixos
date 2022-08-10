@@ -7,7 +7,7 @@
     fonts = with pkgs; [
       (nerdfonts.override {
         fonts = [
-          "Meslo" # Meslo LG {S, M, L} Nerd Font
+          "Meslo" # MesloLG{S,M,L}{DZ} Nerd Font {Mono}
         ];
       })
     ];

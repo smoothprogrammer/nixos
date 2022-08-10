@@ -3,7 +3,8 @@
 {
   imports = [
     <home-manager/nixos>
-    ./wayland
+    # ./wayland
+    ./xorg
     ./terminal
     ./development
     ./browser
