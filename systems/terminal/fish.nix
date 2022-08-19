@@ -20,6 +20,7 @@
         gb = "git branch";
         gpl = "git pull";
         gps = "git push";
+        gw = "git worktree";
       };
       shellInit = ''
         set -g theme_display_date no
