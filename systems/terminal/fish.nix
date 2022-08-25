@@ -11,15 +11,20 @@
         wifi = "nmcli device wifi";
         vimdev = ''vim --cmd "set rtp+=./"'';
         g = "git";
-        gs = "git status";
         ga = "git add";
+        gb = "git branch";
         gc = "git commit";
         gcm = "git commit -m";
         gca = "git commit --ammend";
         gco = "git checkout";
-        gb = "git branch";
+        gl = "git log";
+        glo = "git log --oneline";
         gpl = "git pull";
         gps = "git push";
+        gr = "git remote";
+        grv = "git remote -v";
+        gs = "git status";
+        gt = "git tag";
         gw = "git worktree";
       };
       shellInit = ''
