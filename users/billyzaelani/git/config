@@ -4,15 +4,6 @@
 [init]
 	defaultBranch = "main"
 
-[commit]
-	gpgsign = true
-
-[tag]
-	gpgsign = true
-
-[url "ssh://git@gitlab.com/"]
-	insteadOf = "https://gitlab.com/"
-
 [user]
 	email = "billy.malik@coinbit.id"
 	name = "Billy Zaelani Malik"
