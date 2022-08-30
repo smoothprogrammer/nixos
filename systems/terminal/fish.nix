@@ -13,6 +13,7 @@
         g = "git";
         ga = "git add";
         gb = "git branch";
+        gba = "git branch -a";
         gc = "git commit";
         gcm = "git commit -m";
         gca = "git commit --ammend";
