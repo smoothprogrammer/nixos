@@ -24,6 +24,18 @@ let
     };
     meta.homepage = "https://github.com/hrsh7th/cmp-nvim-lsp-signature-help/";
   };
+
+  markdown-preview-nvim = pkgs.vimUtils.buildVimPlugin {
+    pname = "markdown-preview.nvim";
+    version = "2022-05-13";
+    src = pkgs.fetchFromGitHub {
+      owner = "iamcco";
+      repo = "markdown-preview.nvim";
+      rev = "02cc3874738bc0f86e4b91f09b8a0ac88aef8e96";
+      sha256 = "sha256-e1Buvu/lkEt9V5LVDFKWTasnSX6EdtRgWyVDZA8LpUE=";
+    };
+    meta.homepage = "https://github.com/iamcco/markdown-preview.nvim/";
+  };
 in
 {
   environment.systemPackages = with pkgs; [ ripgrep tree-sitter ];
