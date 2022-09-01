@@ -1,6 +1,7 @@
 -- Plugins mappings
 vim.keymap.set('', '<C-/>', '<plug>NERDCommenterToggle', { desc = 'Toggle NERDCommenter' })
 vim.keymap.set('', '<C-_>', '<plug>NERDCommenterToggle', { desc = 'Toggle NERDCommenter' })
+vim.keymap.set('', '<leader>mp', '<plug>MarkdownPreviewToggle', { desc = 'Toggle MarkdownPreview' })
 
 vim.cmd [[
 	" Nerdcommenter
@@ -10,6 +11,9 @@ vim.cmd [[
 
 	" Clever f
 	let g:clever_f_across_no_line = 1
+
+	" Markdown Preview
+	packadd markdown-preview.nvim
 ]]
 
 -- Treesitter syntax highlighter

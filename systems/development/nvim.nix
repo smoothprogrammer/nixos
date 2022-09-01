@@ -56,6 +56,7 @@ in
         gitsigns-nvim
         nvim-web-devicons
         nvim-tree-lua
+        markdown-preview-nvim
 
         # LSP
         nvim-lspconfig
