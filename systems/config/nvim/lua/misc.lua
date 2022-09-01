@@ -14,6 +14,10 @@ vim.cmd [[
 
 	" Markdown Preview
 	packadd markdown-preview.nvim
+	function! g:OpenBrowser(url)
+		silent exec "!brave --new-window " . a:url
+	endfunction
+	let g:mkdp_browserfunc = 'g:OpenBrowser'
 ]]
 
 -- Treesitter syntax highlighter
