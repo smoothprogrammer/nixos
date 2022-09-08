@@ -19,5 +19,7 @@
     go
     gopls
     delve
+    golangci-lint
+    pkgs.unstable.golangci-lint-langserver
   ];
 }
