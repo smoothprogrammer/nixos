@@ -1,12 +1,24 @@
 local telescope = require('telescope')
 telescope.setup {
+	defaults = {
+		mappings = {
+			i = {
+				["<Tab>"] = "move_selection_next",
+				["<S-Tab>"] = "move_selection_previous",
+			},
+			n = {
+				["<Tab>"] = "move_selection_next",
+				["<S-Tab>"] = "move_selection_previous",
+			},
+		},
+	},
 	extensions = {
 		fzf = {
 			fuzzy = true,
 			override_generic_sorter = true,
 			override_file_sorter = true,
 		},
-	}
+	},
 }
 telescope.load_extension('fzf')
 
