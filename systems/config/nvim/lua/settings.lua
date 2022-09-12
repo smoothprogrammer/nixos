@@ -35,7 +35,7 @@ vim.opt.colorcolumn = "81"
 local bufopts = { noremap = true, silent = true }
 
 -- Behaviour
-vim.keymap.set('n', ';', ':', { noremap = true }) -- easy command mode
+vim.keymap.set({ 'n', 'v' }, ';', ':', { noremap = true }) -- easy command mode
 vim.keymap.set('i', 'jj', '<Esc>', bufopts) -- easy escaping insert mode
 vim.keymap.set('n', '<CR>', 'o<Esc>', bufopts) -- easy newline below the cursor in normal mode
 vim.keymap.set('n', '<S-CR>', 'O<Esc>', bufopts) -- easy newline above the cursor in normal mode
