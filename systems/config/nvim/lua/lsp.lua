@@ -101,4 +101,8 @@ lspconfig.gopls.setup {
 	capabilities = capabilities,
 }
 
-lspconfig.golangci_lint_ls.setup {}
+lspconfig.golangci_lint_ls.setup {
+	init_options = {
+		command = { "golangci-lint", "run", "--out-format", "json", "--fast" },
+	},
+}
