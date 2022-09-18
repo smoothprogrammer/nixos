@@ -1,5 +1,4 @@
--- Map key bindings only after the LSP attaches to the current buffer
-local on_attach = function(_, bufnr)
+local keymap = function(bufnr)
 	local telescope = require('telescope.builtin')
 
 	-- See `:help vim.lsp.*` for documentation on any of the below functions
@@ -21,9 +20,40 @@ local on_attach = function(_, bufnr)
 	-- modify
 	vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, bufopts)
 	vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, bufopts)
+end
 
-	-- autosave
-	vim.cmd [[autocmd BufWritePre * lua vim.lsp.buf.formatting_sync()]]
+local autosave = function()
+	vim.api.nvim_create_autocmd("BufWritePre", {
+		pattern = { "*" },
+		callback = function()
+			vim.lsp.buf.formatting_sync()
+		end,
+	})
+end
+
+
+local go_autosave = function()
+	local function go_org_imports(wait_ms)
+		local params = vim.lsp.util.make_range_params()
+		params.context = { only = { "source.organizeImports" } }
+		local result = vim.lsp.buf_request_sync(0, "textDocument/codeAction", params, wait_ms)
+		for cid, res in pairs(result or {}) do
+			for _, r in pairs(res.result or {}) do
+				if r.edit then
+					local enc = (vim.lsp.get_client_by_id(cid) or {}).offset_encoding or "utf-16"
+					vim.lsp.util.apply_workspace_edit(r.edit, enc)
+				end
+			end
+		end
+	end
+
+	vim.api.nvim_create_autocmd("BufWritePre", {
+		pattern = { "*" },
+		callback = function()
+			vim.lsp.buf.formatting_sync()
+			go_org_imports()
+		end,
+	})
 end
 
 -- Autocompletion configuration
@@ -69,13 +99,19 @@ local lspconfig = require('lspconfig')
 
 -- nix
 lspconfig.rnix.setup {
-	on_attach = on_attach,
+	on_attach = function(_, bufnr)
+		keymap(bufnr)
+		autosave()
+	end,
 	capabilities = capabilities,
 }
 
 -- lua
 lspconfig.sumneko_lua.setup {
-	on_attach = on_attach,
+	on_attach = function(_, bufnr)
+		keymap(bufnr)
+		autosave()
+	end,
 	capabilities = capabilities,
 	settings = {
 		Lua = {
@@ -97,7 +133,10 @@ lspconfig.sumneko_lua.setup {
 
 -- go
 lspconfig.gopls.setup {
-	on_attach = on_attach,
+	on_attach = function(_, bufnr)
+		keymap(bufnr)
+		go_autosave()
+	end,
 	capabilities = capabilities,
 }
 
