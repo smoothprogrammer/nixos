@@ -2,6 +2,9 @@
 
 {
   environment.systemPackages = with pkgs; [
+    # General
+    editorconfig-checker
+
     # Makefile
     gnumake
 

@@ -8,7 +8,6 @@
   ];
 
   environment.systemPackages = with pkgs; [
-    editorconfig-checker # Check editorconfig compliance
     neofetch # Fetch system information
     nixos-option # Inspect NixOS configuration
     wget # Network downloader
