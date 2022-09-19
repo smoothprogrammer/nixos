@@ -11,5 +11,6 @@
     ./picom.nix # Xorg compositor
     ./polybar.nix # Status bar
     ./rofi.nix # Launcher
+    ./xclip.nix # X11 clipboard
   ];
 }
