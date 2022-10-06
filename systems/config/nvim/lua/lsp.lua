@@ -22,9 +22,9 @@ local keymap = function(bufnr)
 	vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, bufopts)
 end
 
-local autosave = function()
+local autosave = function(bufnr)
 	vim.api.nvim_create_autocmd("BufWritePre", {
-		pattern = { "*" },
+		buffer = bufnr,
 		callback = function()
 			vim.lsp.buf.formatting_sync()
 		end,
@@ -32,7 +32,7 @@ local autosave = function()
 end
 
 
-local go_autosave = function()
+local go_autosave = function(bufnr)
 	local function go_org_imports(wait_ms)
 		local params = vim.lsp.util.make_range_params()
 		params.context = { only = { "source.organizeImports" } }
@@ -48,7 +48,7 @@ local go_autosave = function()
 	end
 
 	vim.api.nvim_create_autocmd("BufWritePre", {
-		pattern = { "*" },
+		buffer = bufnr,
 		callback = function()
 			vim.lsp.buf.formatting_sync()
 			go_org_imports()
@@ -101,7 +101,7 @@ local lspconfig = require('lspconfig')
 lspconfig.rnix.setup {
 	on_attach = function(_, bufnr)
 		keymap(bufnr)
-		autosave()
+		autosave(bufnr)
 	end,
 	capabilities = capabilities,
 }
@@ -110,7 +110,7 @@ lspconfig.rnix.setup {
 lspconfig.sumneko_lua.setup {
 	on_attach = function(_, bufnr)
 		keymap(bufnr)
-		autosave()
+		autosave(bufnr)
 	end,
 	capabilities = capabilities,
 	settings = {
@@ -135,7 +135,7 @@ lspconfig.sumneko_lua.setup {
 lspconfig.gopls.setup {
 	on_attach = function(_, bufnr)
 		keymap(bufnr)
-		go_autosave()
+		go_autosave(bufnr)
 	end,
 	capabilities = capabilities,
 }
