@@ -3,7 +3,7 @@ import:
 env:
   WINIT_X11_SCALE_FACTOR: "1.0"
 window:
-  opacity: 0.9
+  opacity: 0.95
 font:
   normal:
     family: MesloLGM Nerd Font Mono
