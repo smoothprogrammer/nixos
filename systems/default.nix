@@ -32,6 +32,7 @@
   };
 
   nix.settings = {
+    experimental-features = [ "nix-command" ];
     trusted-substituters = [ "file:///tmp/store/" ];
   };
 
