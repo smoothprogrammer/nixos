@@ -27,9 +27,9 @@ require('nvim-treesitter.configs').setup {
 	},
 }
 
-require('colorizer').setup({ '*' }, {
+require('colorizer').setup {
 	names = false,
-})
+}
 
 -- Lualine status line
 require('lualine').setup()
