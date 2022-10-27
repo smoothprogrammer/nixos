@@ -14,6 +14,11 @@
     ./misc
   ];
 
+  system.stateVersion = "22.05";
+  home-manager.sharedModules = [{
+    home.stateVersion = "22.05";
+  }];
+
   xdg.mime.defaultApplications = {
     "text/html" = "librewolf.desktop";
     "text/xml" = "librewolf.desktop";
@@ -24,16 +29,12 @@
 
   nixpkgs.config = {
     allowUnfree = true;
-    packageOverrides = pkgs: {
-      unstable = import <nixos-unstable> {
-        config = config.nixpkgs.config;
-      };
-    };
   };
 
   nix.settings = {
     experimental-features = [ "nix-command" ];
     trusted-substituters = [ "file:///tmp/store/" ];
+    trusted-users = [ "root" "@wheel" ];
   };
 
   networking.networkmanager.enable = true;

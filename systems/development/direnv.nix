@@ -1,7 +1,7 @@
 { config, pkgs, ... }:
 
 {
-  environment.systemPackages = with pkgs; [ unstable.direnv nix-direnv ];
+  environment.systemPackages = with pkgs; [ direnv nix-direnv ];
   environment.pathsToLink = [ "/share/nix-direnv" ];
 
   nix.extraOptions = ''
