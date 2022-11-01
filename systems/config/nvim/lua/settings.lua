@@ -28,6 +28,7 @@ vim.opt.swapfile = false -- no swapfile
 vim.opt.signcolumn = 'yes' -- persist the signcolumn event if no sign present
 vim.opt.colorcolumn = "81"
 vim.opt.clipboard = "unnamedplus"
+vim.opt.mouse = ""
 
 --
 -- Key bindings
