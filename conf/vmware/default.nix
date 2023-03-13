@@ -1,0 +1,5 @@
+{
+  imports = [
+    ./guest.nix
+  ];
+}

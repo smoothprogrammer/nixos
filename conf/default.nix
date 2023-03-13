@@ -1,0 +1,12 @@
+[
+  ./alacritty
+  ./backgrounds
+  ./fonts
+  ./git
+  ./kitty
+  ./rofi
+  ./syncthing
+  ./systemd-boot
+  ./vmware
+  ./xserver
+]

@@ -1,9 +1,0 @@
-[core]
-	editor = "nvim"
-
-[init]
-	defaultBranch = "main"
-
-[user]
-	email = "m.billyzaelani@gmail.com"
-	name = "Billy Zaelani Malik"

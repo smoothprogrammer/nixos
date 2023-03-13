@@ -1,0 +1,7 @@
+[user]
+	email = "billy.malik@coinbit.id"
+	name = "Billy Zaelani Malik"
+[commit]
+	gpgsign = true
+[tag]
+	gpgsign = true
