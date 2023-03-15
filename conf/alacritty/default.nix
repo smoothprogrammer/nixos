@@ -7,7 +7,7 @@ in {
   config = lib.mkIf cfg.enable {
     environment.systemPackages = [ pkgs.alacritty ];
     home-manager.sharedModules = [{
-	  xdg.configFile."alacritty/alacritty.yml".source = ./alacritty.yml;
-	}];
+      xdg.configFile."alacritty/alacritty.yml".source = ./alacritty.yml;
+    }];
   };
 }

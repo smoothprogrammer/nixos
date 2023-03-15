@@ -1,5 +1,5 @@
 configuration {
-  dpi: 192;
-  terminal: "alacritty";
-  modi: "run,drun,ssh";
+	dpi: 192;
+	terminal: "alacritty";
+	modi: "run,drun,ssh";
 }

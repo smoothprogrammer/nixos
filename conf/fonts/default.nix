@@ -11,9 +11,9 @@ in {
       fonts = with pkgs; [
         (nerdfonts.override {
           fonts = [
-		    "Meslo" # MesloLG{S,M,L}{_,DZ} Nerd Font {_,Mono}
-			"FiraCode" # FiraCode Nerd Font {_,Mono}
-		  ];
+            "Meslo" # MesloLG{S,M,L}{_,DZ} Nerd Font {_,Mono}
+            "FiraCode" # FiraCode Nerd Font {_,Mono}
+          ];
         })
       ];
     };

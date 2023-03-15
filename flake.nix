@@ -1,5 +1,5 @@
 {
-  description = "Bigzilla's NixOS Configuration";
+  description = "Minizilla's NixOS Configuration";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
@@ -12,15 +12,13 @@
   outputs = { self, nixpkgs, home-manager }: let
     lib = import ./lib { inherit nixpkgs home-manager; };
   in {
-	nixosConfigurations.mba-m1 = lib.mkNixOS {
-	  system = "aarch64-linux";
-	  machine = "vm/vmware-aarch64";
-	  user = "bigzilla";
-	  hashedPassword = "$y$j9T$oqZGOLzKyffIYTKw1YIzO0$mCNHVpPBvqgI.mwR57uq6YNNykWoAHV6QJKrjvaEG8A";
-	  resolution = { x = 2880; y = 1752; };
-	  dpi = 192;
-	  #resolution = { x = 2560; y = 1440; };
-	  #dpi = 168;
+    nixosConfigurations.mba-m1 = lib.mkNixOS {
+      system = "aarch64-linux";
+      machine = "vm/vmware-aarch64";
+      user = "minizilla";
+      hashedPassword = "$y$j9T$oqZGOLzKyffIYTKw1YIzO0$mCNHVpPBvqgI.mwR57uq6YNNykWoAHV6QJKrjvaEG8A";
+      resolution = { x = 2880; y = 1752; };
+      dpi = 192;
     };
   };
 }

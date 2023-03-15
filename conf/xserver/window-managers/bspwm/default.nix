@@ -7,8 +7,8 @@ in {
   config = lib.mkIf cfg.enable {
     services.xserver.windowManager.bspwm.enable = true;
     home-manager.sharedModules = [{
-	  xdg.configFile."bspwm/bspwmrc".source = ./bspwmrc;
-	  xdg.configFile."sxhkd/sxhkdrc".source = ./sxhkdrc;
+      xdg.configFile."bspwm/bspwmrc".source = ./bspwmrc;
+      xdg.configFile."sxhkd/sxhkdrc".source = ./sxhkdrc;
     }];
   };
 }

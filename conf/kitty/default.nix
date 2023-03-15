@@ -7,7 +7,7 @@ in {
   config = lib.mkIf cfg.enable {
     environment.systemPackages = with pkgs; [ kitty ];
     home-manager.sharedModules = [{
-	  xdg.configFile."kitty/kitty.conf".source = ./kitty.conf;
-	}];
+      xdg.configFile."kitty/kitty.conf".source = ./kitty.conf;
+    }];
   };
 }

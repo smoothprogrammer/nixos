@@ -1,0 +1,6 @@
+require('conf.options')
+require('conf.keymap')
+require('conf.colorscheme')
+require('conf.lualine')
+require('conf.treesitter')
+require('conf.telescope')

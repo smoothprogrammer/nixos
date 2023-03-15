@@ -3,11 +3,11 @@
 let
   cfg = config.conf.rofi;
 in {
-  options.conf.rofi.enable = lib.mkEnableOption "Rofi"; 
+  options.conf.rofi.enable = lib.mkEnableOption "Rofi";
   config = lib.mkIf cfg.enable {
     environment.systemPackages = with pkgs; [ rofi ];
-	home-manager.sharedModules = [{
-	  xdg.configFile."rofi/config.rasi".source = ./config.rasi;
-	}];
+    home-manager.sharedModules = [{
+      xdg.configFile."rofi/config.rasi".source = ./config.rasi;
+    }];
   };
 }

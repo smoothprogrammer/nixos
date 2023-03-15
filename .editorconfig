@@ -10,13 +10,14 @@ insert_final_newline = true
 indent_style = tab
 
 ; nixpkgs-fmt trigger by rnix
-[*.nix]
+[{*.nix,flake.lock}]
 indent_style = space
 indent_size = 2
 
 ; editorconfig trigger by sumneko_lua
 [*.lua]
-indent_style = tab
+indent_style = space
+indent_size = 2
 
 ; a YAML file require a space for indentation
 [*.{yml,yaml}]

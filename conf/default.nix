@@ -4,6 +4,7 @@
   ./fonts
   ./git
   ./kitty
+  ./nvim
   ./rofi
   ./syncthing
   ./systemd-boot

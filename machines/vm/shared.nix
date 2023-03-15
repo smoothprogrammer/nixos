@@ -33,34 +33,36 @@
   # System packages.
   environment.systemPackages = with pkgs; [
     bat
+    editorconfig-checker
     firefox
     gnumake
+    htop
     killall
-    neovim
-    ripgrep
+    neofetch
     xclip
   ];
 
   # Enable configured set of pkgs.
   conf = {
     alacritty.enable = true;
-	backgrounds.enable = true;
-	fonts.enable = true;
-	git.enable = true;
-	kitty.enable = true;
-	rofi.enable = true;
-	syncthing = {
-	  enable = true;
-	  inherit user;
-	};
-	systemd-boot = {
-	  enable = true;
-	  silent = true;
-	};
-	xserver = {
-	  enable = true;
-	  autoLoginUser = user;
-	  windowManager.bspwm.enable = true;
-	};
+    backgrounds.enable = true;
+    fonts.enable = true;
+    git.enable = true;
+    kitty.enable = true;
+    nvim.enable = true;
+    rofi.enable = true;
+    syncthing = {
+      enable = true;
+      inherit user;
+    };
+    systemd-boot = {
+      enable = true;
+      silent = true;
+    };
+    xserver = {
+      enable = true;
+      autoLoginUser = user;
+      windowManager.bspwm.enable = true;
+    };
   };
 }
