@@ -5,6 +5,7 @@ let
 in {
   options.conf.xserver.windowManager.bspwm.enable = lib.mkEnableOption "bspwm";
   config = lib.mkIf cfg.enable {
+    hardware.opengl.enable = true;
     services.xserver.windowManager.bspwm.enable = true;
     home-manager.sharedModules = [{
       xdg.configFile."bspwm/bspwmrc".source = ./bspwmrc;
