@@ -8,6 +8,7 @@ opt.backup = false
 opt.swapfile = false
 opt.clipboard = 'unnamedplus'
 opt.termguicolors = true
+opt.showmode = false
 
 -- line
 opt.number = true
