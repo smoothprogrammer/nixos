@@ -9,7 +9,7 @@ in {
     home-manager.sharedModules = [{
       xdg.configFile."git/config".source = ./config;
       xdg.configFile."git/personal".source = ./personal;
-      xdg.configFile."git/coinbit".source = ./coinbit;
+      xdg.configFile."git/work".source = ./work;
     }];
   };
 }
