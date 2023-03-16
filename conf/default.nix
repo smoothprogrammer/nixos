@@ -1,6 +1,7 @@
 [
   ./alacritty
   ./backgrounds
+  ./direnv
   ./fonts
   ./git
   ./kitty

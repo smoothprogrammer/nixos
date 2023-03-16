@@ -46,6 +46,7 @@
   conf = {
     alacritty.enable = true;
     backgrounds.enable = true;
+    direnv.enable = true;
     fonts.enable = true;
     git.enable = true;
     kitty.enable = true;
