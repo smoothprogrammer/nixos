@@ -23,6 +23,7 @@ in {
           lualine-nvim
           indent-blankline-nvim
           editorconfig-nvim
+          nvim-web-devicons
           (nvim-treesitter.withPlugins (p: with p; [
             tree-sitter-nix
             tree-sitter-make
@@ -52,6 +53,7 @@ in {
         "nvim/lua/conf/telescope.lua".source = ./lua/conf/telescope.lua;
         "nvim/lua/conf/nerdcommenter.lua".source = ./lua/conf/nerdcommenter.lua;
         "nvim/lua/conf/indent_blankline.lua".source = ./lua/conf/indent_blankline.lua;
+        "nvim/lua/conf/web_devicons.lua".source = ./lua/conf/web_devicons.lua;
       };
     }];
   };
