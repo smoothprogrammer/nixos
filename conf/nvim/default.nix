@@ -24,6 +24,7 @@ in {
           indent-blankline-nvim
           editorconfig-nvim
           nvim-web-devicons
+          gitsigns-nvim
           (nvim-treesitter.withPlugins (p: with p; [
             tree-sitter-nix
             tree-sitter-make
@@ -54,6 +55,7 @@ in {
         "nvim/lua/conf/nerdcommenter.lua".source = ./lua/conf/nerdcommenter.lua;
         "nvim/lua/conf/indent_blankline.lua".source = ./lua/conf/indent_blankline.lua;
         "nvim/lua/conf/web_devicons.lua".source = ./lua/conf/web_devicons.lua;
+        "nvim/lua/conf/gitsigns.lua".source = ./lua/conf/gitsigns.lua;
       };
     }];
   };
