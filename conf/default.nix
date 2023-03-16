@@ -2,6 +2,7 @@
   ./alacritty
   ./backgrounds
   ./direnv
+  ./fish
   ./fonts
   ./git
   ./kitty
