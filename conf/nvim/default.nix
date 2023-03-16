@@ -1,7 +1,7 @@
 { config, lib, pkgs, home-manager, ... }:
 
 let
-cfg = config.conf.nvim;
+  cfg = config.conf.nvim;
 in {
   options.conf.nvim.enable = lib.mkEnableOption "Neovim";
   config = lib.mkIf cfg.enable {
@@ -19,6 +19,7 @@ in {
           telescope-fzf-native-nvim
           telescope-project-nvim
           telescope-file-browser-nvim
+          nerdcommenter
           lualine-nvim
           editorconfig-nvim
           (nvim-treesitter.withPlugins (p: with p; [
@@ -48,6 +49,7 @@ in {
         "nvim/lua/conf/lualine.lua".source = ./lua/conf/lualine.lua;
         "nvim/lua/conf/treesitter.lua".source = ./lua/conf/treesitter.lua;
         "nvim/lua/conf/telescope.lua".source = ./lua/conf/telescope.lua;
+        "nvim/lua/conf/nerdcommenter.lua".source = ./lua/conf/nerdcommenter.lua;
       };
     }];
   };
