@@ -1,8 +1,8 @@
 [init]
-	defaultBranch = "main"
+  defaultBranch = "main"
 [includeIf "gitdir:~/.config/nixos/.git"]
-	path = "~/.config/git/personal"
+  path = "~/.config/git/personal"
 [includeIf "gitdir:~/personal/"]
-	path = "~/.config/git/personal"
+  path = "~/.config/git/personal"
 [includeIf "gitdir:~/coinbit/"]
-	path = "~/.config/git/coinbit"
+  path = "~/.config/git/coinbit"
