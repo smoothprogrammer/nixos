@@ -21,6 +21,7 @@ in {
           telescope-file-browser-nvim
           nerdcommenter
           lualine-nvim
+          indent-blankline-nvim
           editorconfig-nvim
           (nvim-treesitter.withPlugins (p: with p; [
             tree-sitter-nix
@@ -45,11 +46,12 @@ in {
       xdg.configFile = {
         "nvim/lua/conf/options.lua".source = ./lua/conf/options.lua;
         "nvim/lua/conf/keymap.lua".source = ./lua/conf/keymap.lua;
+        "nvim/lua/conf/treesitter.lua".source = ./lua/conf/treesitter.lua;
         "nvim/lua/conf/colorscheme.lua".source = ./lua/conf/colorscheme.lua;
         "nvim/lua/conf/lualine.lua".source = ./lua/conf/lualine.lua;
-        "nvim/lua/conf/treesitter.lua".source = ./lua/conf/treesitter.lua;
         "nvim/lua/conf/telescope.lua".source = ./lua/conf/telescope.lua;
         "nvim/lua/conf/nerdcommenter.lua".source = ./lua/conf/nerdcommenter.lua;
+        "nvim/lua/conf/indent_blankline.lua".source = ./lua/conf/indent_blankline.lua;
       };
     }];
   };
