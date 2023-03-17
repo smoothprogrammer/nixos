@@ -45,6 +45,7 @@
     alacritty.enable = true;
     backgrounds.enable = true;
     direnv.enable = true;
+    docker.enable = true;
     fish.enable = true;
     fonts.enable = true;
     git.enable = true;
