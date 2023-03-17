@@ -9,8 +9,8 @@
     };
   };
 
-  outputs = { self, nixpkgs, home-manager }: let
-    lib = import ./lib { inherit nixpkgs home-manager; };
+  outputs = { self, ... }@inputs: let
+    lib = import ./lib inputs;
   in {
     nixosConfigurations.mba-m1 = lib.mkNixOS {
       system = "aarch64-linux";

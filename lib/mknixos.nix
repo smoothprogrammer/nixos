@@ -1,4 +1,6 @@
-{ nixpkgs, home-manager }:
+{ nixpkgs
+, home-manager
+, ... }:
 
 { system
 , machine
@@ -18,20 +20,29 @@ let
   stateVersion = "22.11";
 in nixpkgs.lib.nixosSystem {
   inherit system;
-  specialArgs = { inherit home-manager; };
   modules = [
-    { config._module.args = { inherit user resolution dpi; }; }
+    home-manager.nixosModules.default
 
-    ({ config, ... }: {
+    {
+      config._module.args = {
+        inherit user resolution dpi;
+      };
+    }
+
+    ({ config, lib, pkgs, home-manager, ... }: {
       # Using already configured sets of pkgs.
       imports = import ../conf;
 
       # Overlays to extend lib.
       nixpkgs.overlays = [ (import ./overlays.nix) ];
 
-      # Immutable user and no password for sudo
+      # Immutable user and no password for sudo.
       users.mutableUsers = false;
       security.sudo.wheelNeedsPassword = false;
+
+      # Home Manager settings.
+      home-manager.useGlobalPkgs = true;
+      home-manager.useUserPackages = true;
 
       # Single user mode.
       users.users.${user} = {
@@ -39,18 +50,12 @@ in nixpkgs.lib.nixosSystem {
         extraGroups = [ "wheel" ];
         inherit hashedPassword;
       };
-
+      home-manager.users.${user} = {
+        xdg.enable = true;
+        home.stateVersion = stateVersion;
+      };
       system.stateVersion = stateVersion;
     })
-
-    home-manager.nixosModules.home-manager {
-      home-manager.useGlobalPkgs = true;
-      home-manager.useUserPackages = true;
-      home-manager.users.${user} = {
-        home.stateVersion = stateVersion;
-        xdg.enable = true;
-      };
-    }
 
     ../machines/${machine}
   ];

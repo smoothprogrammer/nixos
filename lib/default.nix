@@ -1,7 +1,5 @@
-{ nixpkgs, home-manager }:
+{ ... }@args:
 
-let
-  args = { inherit nixpkgs home-manager; };
-in {
+{
   mkNixOS = import ./mknixos.nix args;
 }
