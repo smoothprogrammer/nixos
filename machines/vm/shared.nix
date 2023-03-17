@@ -24,9 +24,6 @@
   # Nixpkgs settings.
   nixpkgs.config.allowUnfree = true;
 
-  # Composite manager.
-  services.picom.enable = true;
-
   # SSH and GPG.
   programs.ssh.startAgent = true;
   #programs.gnupg.agent.enable = true;
@@ -53,6 +50,7 @@
     git.enable = true;
     kitty.enable = true;
     nvim.enable = true;
+    picom.enable = true;
     rofi.enable = true;
     syncthing = {
       enable = true;

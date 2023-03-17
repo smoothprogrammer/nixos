@@ -7,6 +7,7 @@
   ./git
   ./kitty
   ./nvim
+  ./picom
   ./rofi
   ./syncthing
   ./systemd-boot
