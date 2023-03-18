@@ -7,6 +7,10 @@ in {
   config = lib.mkIf cfg.enable {
     hardware.opengl.enable = true;
     services.xserver.windowManager.bspwm.enable = true;
+    environment.systemPackages = with pkgs; [
+      xclip
+    ];
+
     home-manager.sharedModules = [{
       xdg.configFile."bspwm/bspwmrc".source = ./bspwmrc;
       xdg.configFile."sxhkd/sxhkdrc".source = ./sxhkdrc;

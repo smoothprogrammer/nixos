@@ -37,7 +37,6 @@
     htop
     killall
     neofetch
-    xclip
   ];
 
   # Enable configured set of pkgs.
