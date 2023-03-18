@@ -35,9 +35,9 @@ map('<PageUp>', '<Nop>')
 map('<PageDown>', '<Nop>')
 
 local telescope = require('telescope.builtin')
-nmap('<C-K>', telescope.find_files)
-nmap('<C-F>', telescope.live_grep)
-nmap('<C-P>', ':Telescope project<CR>')
-nmap('<C-T>', ':Telescope file_browser<CR>')
+nmap('<C-p>', telescope.find_files)
+nmap('<C-f>', telescope.live_grep)
+-- nmap('<C-p>', ':Telescope project<CR>')
+nmap('<C-b>', ':Telescope file_browser<CR>')
 
 map('<C-_>', '<Plug>NERDCommenterToggle')

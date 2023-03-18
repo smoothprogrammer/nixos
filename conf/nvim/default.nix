@@ -5,7 +5,11 @@ let
 in {
   options.conf.nvim.enable = lib.mkEnableOption "Neovim";
   config = lib.mkIf cfg.enable {
-    environment.systemPackages = with pkgs; [ ripgrep fd tree-sitter ];
+    environment.systemPackages = with pkgs; [
+      ripgrep
+      fd
+      tree-sitter
+    ];
     home-manager.sharedModules = [{
       programs.neovim = {
         enable = true;
@@ -24,6 +28,7 @@ in {
           indent-blankline-nvim
           editorconfig-nvim
           nvim-web-devicons
+          nvim-colorizer-lua
           gitsigns-nvim
           (nvim-treesitter.withPlugins (p: with p; [
             tree-sitter-nix
@@ -56,6 +61,7 @@ in {
         "nvim/lua/conf/indent_blankline.lua".source = ./lua/conf/indent_blankline.lua;
         "nvim/lua/conf/web_devicons.lua".source = ./lua/conf/web_devicons.lua;
         "nvim/lua/conf/gitsigns.lua".source = ./lua/conf/gitsigns.lua;
+        "nvim/lua/conf/colorizer.lua".source = ./lua/conf/colorizer.lua;
       };
     }];
   };
