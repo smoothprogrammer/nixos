@@ -51,6 +51,7 @@
     kitty.enable = true;
     nvim.enable = true;
     picom.enable = true;
+    qutebrowser.enable = true;
     rofi.enable = true;
     syncthing = {
       enable = true;

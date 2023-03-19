@@ -9,6 +9,7 @@
   ./kitty
   ./nvim
   ./picom
+  ./qutebrowser
   ./rofi
   ./syncthing
   ./systemd-boot
