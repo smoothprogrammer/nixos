@@ -35,6 +35,9 @@
   programs.ssh.startAgent = true;
   #programs.gnupg.agent.enable = true;
 
+  # Dconf.
+  programs.dconf.enable = true;
+
   # System packages.
   environment.systemPackages = with pkgs; [
     bat
