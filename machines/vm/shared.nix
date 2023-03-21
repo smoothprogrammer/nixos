@@ -42,7 +42,6 @@
   environment.systemPackages = with pkgs; [
     bat
     editorconfig-checker
-    firefox
     gnumake
     htop
     killall
@@ -55,6 +54,7 @@
     backgrounds.enable = true;
     direnv.enable = true;
     docker.enable = true;
+    firefox.enable = true;
     fish.enable = true;
     fonts.enable = true;
     git.enable = true;

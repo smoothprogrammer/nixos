@@ -3,6 +3,7 @@
   ./backgrounds
   ./direnv
   ./docker
+  ./firefox
   ./fish
   ./fonts
   ./git
