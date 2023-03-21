@@ -33,7 +33,7 @@
 
   # SSH and GPG.
   programs.ssh.startAgent = true;
-  #programs.gnupg.agent.enable = true;
+  programs.gnupg.agent.enable = true;
 
   # Dconf.
   programs.dconf.enable = true;
