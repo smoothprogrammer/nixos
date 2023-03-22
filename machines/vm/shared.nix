@@ -7,6 +7,11 @@
   networking.hostName = "dev";
   networking.useDHCP = false;
 
+  # Extra /etc/hosts
+  networking.hostFiles = [
+    ../../etc/hosts/reddit
+  ];
+
   # Halo Dunia!
   time.timeZone = "Asia/Jakarta";
 
