@@ -13,3 +13,7 @@ indent_size = 2
 ; leave generated code alone
 [*.generated.*]
 indent_style = unset
+
+; leave arkenfox user.js alone
+[conf/firefox/user.js]
+indent_style = unset
