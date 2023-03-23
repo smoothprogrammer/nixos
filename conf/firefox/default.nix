@@ -12,6 +12,8 @@ in {
           id = 0;
           isDefault = true;
           extraConfig = builtins.readFile ./user.js + builtins.readFile ./user-overrides.js;
+          bookmarks = import ./bookmarks.nix;
+          search = import ./search-engines.nix { inherit pkgs; };
         };
       };
     }];
