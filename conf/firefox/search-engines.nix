@@ -2,7 +2,8 @@
 
 let
   icon = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
-in {
+in
+{
   force = true;
   default = "Google";
   order = [

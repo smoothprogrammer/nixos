@@ -2,9 +2,10 @@
 
 let
   cfg = config.conf.syncthing;
-in {
+in
+{
   options.conf.syncthing = {
-    enable = lib.mkEnableOption "Syncthing";
+    enable = lib.mkEnableOption "syncthing";
     user = lib.mkOption {
       type = lib.types.str;
       default = "syncthing";

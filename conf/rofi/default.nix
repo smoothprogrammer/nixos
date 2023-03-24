@@ -2,8 +2,9 @@
 
 let
   cfg = config.conf.rofi;
-in {
-  options.conf.rofi.enable = lib.mkEnableOption "Rofi";
+in
+{
+  options.conf.rofi.enable = lib.mkEnableOption "rofi";
   config = lib.mkIf cfg.enable {
     environment.systemPackages = with pkgs; [ rofi ];
     home-manager.sharedModules = [{

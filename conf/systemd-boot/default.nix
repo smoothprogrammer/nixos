@@ -2,7 +2,8 @@
 
 let
   cfg = config.conf.systemd-boot;
-in {
+in
+{
   options.conf.systemd-boot = {
     enable = lib.mkEnableOption "systemd-boot EFI boot manager";
     silent = lib.mkEnableOption "silent boot";

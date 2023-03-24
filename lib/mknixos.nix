@@ -1,6 +1,7 @@
 { nixpkgs
 , home-manager
-, ... }:
+, ...
+}:
 
 { system
 , machine
@@ -18,7 +19,8 @@ let
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   stateVersion = "22.11";
-in nixpkgs.lib.nixosSystem {
+in
+nixpkgs.lib.nixosSystem {
   inherit system;
   modules = [
     home-manager.nixosModules.default

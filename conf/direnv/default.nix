@@ -2,7 +2,8 @@
 
 let
   cfg = config.conf.direnv;
-in {
+in
+{
   options.conf.direnv.enable = lib.mkEnableOption "direnv";
   config = lib.mkIf cfg.enable {
     environment.systemPackages = with pkgs; [ direnv nix-direnv ];

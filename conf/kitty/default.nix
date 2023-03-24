@@ -2,7 +2,8 @@
 
 let
   cfg = config.conf.kitty;
-in {
+in
+{
   options.conf.kitty.enable = lib.mkEnableOption "kitty";
   config = lib.mkIf cfg.enable {
     environment.systemPackages = with pkgs; [ kitty ];

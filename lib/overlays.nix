@@ -1,6 +1,7 @@
 self: super:
 let
   callPackage = super.callPackage;
-in {
+in
+{
   lib = (super.lib or { }) // { };
 }

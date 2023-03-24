@@ -2,7 +2,8 @@
 
 let
   cfg = config.conf.xserver.windowManager.bspwm;
-in {
+in
+{
   options.conf.xserver.windowManager.bspwm.enable = lib.mkEnableOption "bspwm";
   config = lib.mkIf cfg.enable {
     hardware.opengl.enable = true;

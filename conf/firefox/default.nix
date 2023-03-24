@@ -2,7 +2,8 @@
 
 let
   cfg = config.conf.firefox;
-in {
+in
+{
   options.conf.firefox.enable = lib.mkEnableOption "firefox";
   config = lib.mkIf cfg.enable {
     home-manager.sharedModules = [{

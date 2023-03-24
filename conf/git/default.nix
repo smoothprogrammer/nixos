@@ -2,7 +2,8 @@
 
 let
   cfg = config.conf.git;
-in {
+in
+{
   options.conf.git.enable = lib.mkEnableOption "git";
   config = lib.mkIf cfg.enable {
     environment.systemPackages = [ pkgs.git ];

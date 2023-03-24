@@ -2,7 +2,8 @@
 
 let
   cfg = config.conf.nvim;
-in {
+in
+{
   options.conf.nvim.enable = lib.mkEnableOption "Neovim";
   config = lib.mkIf cfg.enable {
     environment.systemPackages = with pkgs; [

@@ -2,7 +2,8 @@
 
 let
   cfg = config.conf.xserver;
-in {
+in
+{
   imports = [
     ./display-managers
     ./window-managers

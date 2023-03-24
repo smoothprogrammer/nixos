@@ -2,7 +2,8 @@
 
 let
   cfg = config.conf.fonts;
-in {
+in
+{
   options.conf.fonts.enable = lib.mkEnableOption "fonts";
   config = lib.mkIf cfg.enable {
     fonts = {

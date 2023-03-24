@@ -2,7 +2,8 @@
 
 let
   cfg = config.conf.picom;
-in {
+in
+{
   options.conf.picom.enable = lib.mkEnableOption "picom";
   config = lib.mkIf cfg.enable {
     home-manager.sharedModules = [{

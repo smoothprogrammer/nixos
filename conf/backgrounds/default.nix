@@ -2,7 +2,8 @@
 
 let
   cfg = config.conf.backgrounds;
-in {
+in
+{
   options.conf.backgrounds = {
     enable = lib.mkEnableOption "backgrounds";
     image = lib.mkOption {
