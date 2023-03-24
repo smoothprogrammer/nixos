@@ -47,6 +47,7 @@ in
           nvim-web-devicons
           nvim-colorizer-lua
           gitsigns-nvim
+          nvim-autopairs
           nvim-lspconfig
           luasnip
           nvim-cmp
@@ -88,6 +89,7 @@ in
         "nvim/lua/conf/web_devicons.lua".source = ./lua/conf/web_devicons.lua;
         "nvim/lua/conf/gitsigns.lua".source = ./lua/conf/gitsigns.lua;
         "nvim/lua/conf/colorizer.lua".source = ./lua/conf/colorizer.lua;
+        "nvim/lua/conf/autopairs.lua".source = ./lua/conf/autopairs.lua;
       };
     }];
   };
