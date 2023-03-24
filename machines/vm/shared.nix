@@ -46,8 +46,6 @@
   # System packages.
   environment.systemPackages = with pkgs; [
     bat
-    editorconfig-checker
-    gnumake
     htop
     killall
     neofetch

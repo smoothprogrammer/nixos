@@ -9,7 +9,23 @@ in {
       ripgrep
       fd
       tree-sitter
+
+      editorconfig-checker
+
+      gnumake
+      gcc
+
+      rnix-lsp
+
+      luajit
+      lua-language-server
+
+      go
+      gopls
+      delve
+      golangci-lint
     ];
+
     home-manager.sharedModules = [{
       programs.neovim = {
         enable = true;
@@ -30,6 +46,13 @@ in {
           nvim-web-devicons
           nvim-colorizer-lua
           gitsigns-nvim
+          nvim-lspconfig
+          luasnip
+          nvim-cmp
+          cmp-nvim-lsp
+          cmp-nvim-lsp-signature-help
+          cmp_luasnip
+          cmp-path
           (nvim-treesitter.withPlugins (p: with p; [
             tree-sitter-nix
             tree-sitter-make
@@ -50,6 +73,7 @@ in {
           ]))
         ];
       };
+
       xdg.configFile = {
         "nvim/lua/conf/options.lua".source = ./lua/conf/options.lua;
         "nvim/lua/conf/keymap.lua".source = ./lua/conf/keymap.lua;
@@ -57,6 +81,7 @@ in {
         "nvim/lua/conf/colorscheme.lua".source = ./lua/conf/colorscheme.lua;
         "nvim/lua/conf/lualine.lua".source = ./lua/conf/lualine.lua;
         "nvim/lua/conf/telescope.lua".source = ./lua/conf/telescope.lua;
+        "nvim/lua/conf/lsp.lua".source = ./lua/conf/lsp.lua;
         "nvim/lua/conf/nerdcommenter.lua".source = ./lua/conf/nerdcommenter.lua;
         "nvim/lua/conf/indent_blankline.lua".source = ./lua/conf/indent_blankline.lua;
         "nvim/lua/conf/web_devicons.lua".source = ./lua/conf/web_devicons.lua;

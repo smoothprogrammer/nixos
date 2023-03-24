@@ -40,4 +40,40 @@ nmap('<C-f>', telescope.live_grep)
 -- nmap('<C-p>', ':Telescope project<CR>')
 nmap('<C-b>', ':Telescope file_browser<CR>')
 
+nmap('<C-,>', vim.diagnostic.goto_prev)
+nmap('<C-.>', vim.diagnostic.goto_next)
+vim.api.nvim_create_autocmd('LspAttach', {
+  group = vim.api.nvim_create_augroup('UserLspConfig', {}),
+  callback = function(ev)
+    local bufopts = { silent = true, buffer = ev.buf }
+    vim.keymap.set('n', 'gd', vim.lsp.buf.definition, bufopts)
+    vim.keymap.set('n', 'gD', vim.lsp.buf.type_definition, bufopts)
+    vim.keymap.set('n', 'gi', telescope.lsp_implementations, bufopts)
+    vim.keymap.set('n', 'gr', telescope.lsp_references, bufopts)
+    vim.keymap.set('n', 'K', vim.lsp.buf.hover, bufopts)
+    vim.keymap.set('n', '<leader>ds', telescope.lsp_document_symbols, bufopts)
+    vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, bufopts)
+    vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, bufopts)
+
+    vim.api.nvim_create_autocmd('BufWritePre', {
+      buffer = ev.buf,
+      callback = function()
+        vim.lsp.buf.formatting_sync()
+      end,
+    })
+
+    vim.api.nvim_create_autocmd('BufWritePre', {
+      pattern = '*.go',
+      callback = function()
+        vim.lsp.buf.code_action({
+          context = {
+            only = { 'source.organizeImports' }
+          },
+          apply = true,
+        })
+      end,
+    })
+  end,
+})
+
 map('<C-_>', '<Plug>NERDCommenterToggle')
