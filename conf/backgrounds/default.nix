@@ -8,7 +8,7 @@ in
     enable = lib.mkEnableOption "backgrounds";
     image = lib.mkOption {
       type = lib.types.path;
-      default = ./birds-eye-view-of-city.png;
+      default = ./light-grey.png;
       description = "The image symlink to ~/.background-image.";
     };
   };
