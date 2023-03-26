@@ -10,6 +10,7 @@
   ./kitty
   ./nvim
   ./picom
+  ./polybar
   ./rofi
   ./syncthing
   ./systemd-boot
