@@ -9,6 +9,7 @@ in
     environment.systemPackages = with pkgs; [ rofi ];
     home-manager.sharedModules = [{
       xdg.configFile."rofi/config.rasi".source = ./config.rasi;
+      xdg.configFile."rofi/themes/nord.rasi".source = ./themes/nord.rasi;
     }];
   };
 }

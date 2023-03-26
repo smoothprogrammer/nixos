@@ -3,3 +3,5 @@ configuration {
   terminal: "alacritty";
   modi: "run,drun,ssh";
 }
+
+@theme "nord"
