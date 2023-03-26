@@ -6,6 +6,7 @@ in
 {
   options.conf.fish.enable = lib.mkEnableOption "fish";
   config = lib.mkIf cfg.enable {
+    environment.systemPackages = [ pkgs.nitch ];
     programs.fish.enable = true;
     users.defaultUserShell = pkgs.fish;
     home-manager.sharedModules = [{
@@ -45,6 +46,7 @@ in
         '';
         interactiveShellInit = ''
           direnv hook fish | source
+          nitch
         '';
         functions = {
           fish_greeting = ""; # Disable greeting
