@@ -56,6 +56,7 @@
   conf = {
     alacritty.enable = true;
     backgrounds.enable = true;
+    conky.enable = true;
     direnv.enable = true;
     docker.enable = true;
     firefox.enable = true;

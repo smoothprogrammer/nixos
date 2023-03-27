@@ -1,6 +1,7 @@
 [
   ./alacritty
   ./backgrounds
+  ./conky
   ./direnv
   ./docker
   ./firefox
