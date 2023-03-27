@@ -30,15 +30,7 @@ in
     ];
 
     home-manager.sharedModules = [{
-      xresources.properties = {
-        "Xft.dpi" = 192;
-        "Xft.autohint" = 0;
-        "Xft.antialias" = 1;
-        "Xft.hinting" = 1;
-        "Xft.hintstyle" = "hintslight";
-        "Xft.lcdfilter" = "lcddefault";
-        "Xft.rgba" = "rgb";
-      };
+      xresources.extraConfig = builtins.readFile ./Xresources;
     }];
   };
 }
