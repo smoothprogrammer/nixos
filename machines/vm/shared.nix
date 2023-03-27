@@ -63,6 +63,7 @@
     fonts.enable = true;
     git.enable = true;
     kitty.enable = true;
+    nordzy.enable = true;
     nvim.enable = true;
     picom.enable = true;
     rofi.enable = true;

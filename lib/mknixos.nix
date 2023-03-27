@@ -54,6 +54,8 @@ nixpkgs.lib.nixosSystem {
       };
       home-manager.users.${user} = {
         xdg.enable = true;
+        gtk.enable = true;
+        xsession.enable = true;
         home.stateVersion = stateVersion;
       };
       system.stateVersion = stateVersion;

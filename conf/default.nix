@@ -8,6 +8,7 @@
   ./fonts
   ./git
   ./kitty
+  ./nordzy
   ./nvim
   ./picom
   ./polybar
