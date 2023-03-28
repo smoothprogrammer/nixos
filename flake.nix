@@ -7,6 +7,10 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    darwin = {
+      url = "github:LnL7/nix-darwin";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = { self, ... }@inputs:
@@ -14,13 +18,19 @@
       lib = import ./lib inputs;
     in
     {
-      nixosConfigurations.mba-m1 = lib.mkNixOS {
+      nixosConfigurations.vm-mba-m1 = lib.mkNixOS {
         system = "aarch64-linux";
         machine = "vm/vmware-aarch64";
         user = "minizilla";
         hashedPassword = "$y$j9T$oqZGOLzKyffIYTKw1YIzO0$mCNHVpPBvqgI.mwR57uq6YNNykWoAHV6QJKrjvaEG8A";
         resolution = { x = 2880; y = 1752; };
         dpi = 192;
+      };
+
+      darwinConfigurations.mba-m1 = lib.mkDarwin {
+        system = "aarch64-darwin";
+        machine = "darwin";
+        user = "minizilla";
       };
     };
 }
