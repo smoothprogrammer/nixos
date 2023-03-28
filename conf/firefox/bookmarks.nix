@@ -15,4 +15,8 @@
     name = "Home Manager Manual";
     url = "https://nix-community.github.io/home-manager/";
   }
+  {
+    name = "Darwin Manual";
+    url = "https://daiderd.com/nix-darwin/manual/index.html";
+  }
 ]
