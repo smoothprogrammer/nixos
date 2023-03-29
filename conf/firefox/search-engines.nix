@@ -5,16 +5,22 @@ let
 in
 {
   force = true;
-  default = "Google";
+  default = "Brave Search";
   order = [
-    "Google"
+    "Brave Search"
     "DuckDuckGo"
+    "Google"
     "Wikipedia (en)"
     "Nix Packages"
     "NixOS Options"
     "NixOS Wiki"
   ];
   engines = {
+    "Brave Search" = {
+      icon = ./brave-favicon.png; # https://brave.com/static-assets/images/brave-favicon.png
+      urls = [{ template = "https://search.brave.com/search?q={searchTerms}"; }];
+      definedAliases = [ "@b" ];
+    };
     "Nix Packages" = {
       inherit icon;
       urls = [{ template = "https://search.nixos.org/packages?type=packages&query={searchTerms}"; }];
