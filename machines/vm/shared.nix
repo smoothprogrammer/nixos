@@ -49,6 +49,7 @@
     htop
     killall
     neofetch
+    pass
   ];
 
   # Enable configured set of pkgs.
