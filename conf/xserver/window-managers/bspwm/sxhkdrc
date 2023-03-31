@@ -6,9 +6,13 @@ super + Return
 super + {_,shift + }space
   rofi -show {drun,run} -show-icons
 
+# Secret manager.
+super + semicolon
+  rofi-pass
+
 # Reload bspwm and sxhkd.
 super + Escape
-  bspc wm -r
+  bspc wm -r && pkill -USR1 -x sxhkd
 
 # Close and kill window.
 super + {_,shift + }q

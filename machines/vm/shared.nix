@@ -49,7 +49,6 @@
     htop
     killall
     neofetch
-    pass
   ];
 
   # Enable configured set of pkgs.
@@ -68,6 +67,7 @@
     nvim.enable = true;
     picom.enable = true;
     rofi.enable = true;
+    rofi-pass.enable = true;
     syncthing = {
       enable = true;
       inherit user;

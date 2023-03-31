@@ -14,6 +14,7 @@
   ./picom
   ./polybar
   ./rofi
+  ./rofi-pass
   ./syncthing
   ./systemd-boot
   ./vmware
