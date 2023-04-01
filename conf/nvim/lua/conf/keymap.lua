@@ -45,8 +45,8 @@ vim.api.nvim_create_autocmd('LspAttach', {
   group = vim.api.nvim_create_augroup('UserLspConfig', {}),
   callback = function(ev)
     local bufopts = { silent = true, buffer = ev.buf }
-    vim.keymap.set('n', 'gd', vim.lsp.buf.definition, bufopts)
-    vim.keymap.set('n', 'gD', vim.lsp.buf.type_definition, bufopts)
+    vim.keymap.set('n', 'gd', telescope.lsp_definitions, bufopts)
+    vim.keymap.set('n', 'gD', telescope.lsp_type_definitions, bufopts)
     vim.keymap.set('n', 'gi', telescope.lsp_implementations, bufopts)
     vim.keymap.set('n', 'gr', telescope.lsp_references, bufopts)
     vim.keymap.set('n', 'K', vim.lsp.buf.hover, bufopts)
