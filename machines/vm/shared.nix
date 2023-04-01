@@ -15,9 +15,6 @@
   # Halo Dunia!
   time.timeZone = "Asia/Jakarta";
 
-  # Run VM on HiDPI machines.
-  hardware.video.hidpi.enable = true;
-
   # Nix settings.
   nix.extraOptions = ''
     experimental-features = nix-command flakes
