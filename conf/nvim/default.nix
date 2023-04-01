@@ -44,6 +44,8 @@ in
           telescope-file-browser-nvim
           telescope-manix
           telescope-github-nvim
+          telescope-dap-nvim
+          nvim-dap
           nerdcommenter
           lualine-nvim
           indent-blankline-nvim
