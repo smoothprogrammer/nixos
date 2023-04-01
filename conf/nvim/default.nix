@@ -17,6 +17,7 @@ in
       gcc
 
       rnix-lsp
+      manix
 
       luajit
       lua-language-server
@@ -40,6 +41,7 @@ in
           telescope-fzf-native-nvim
           telescope-project-nvim
           telescope-file-browser-nvim
+          telescope-manix
           nerdcommenter
           lualine-nvim
           indent-blankline-nvim

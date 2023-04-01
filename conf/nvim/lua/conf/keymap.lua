@@ -38,6 +38,7 @@ local telescope = require('telescope.builtin')
 nmap('<C-f>', telescope.find_files)
 nmap('<C-s>', telescope.live_grep)
 nmap('<C-b>', ':Telescope file_browser<CR>')
+nmap('<C-x>', ':Telescope manix<CR>')
 
 nmap('<C-p>', vim.diagnostic.goto_prev)
 nmap('<C-n>', vim.diagnostic.goto_next)
