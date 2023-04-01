@@ -35,8 +35,8 @@ map('<PageUp>', '<Nop>')
 map('<PageDown>', '<Nop>')
 
 local telescope = require('telescope.builtin')
-nmap('<C-p>', telescope.find_files)
-nmap('<C-f>', telescope.live_grep)
+nmap('<C-f>', telescope.find_files)
+nmap('<C-s>', telescope.live_grep)
 -- nmap('<C-p>', ':Telescope project<CR>')
 nmap('<C-b>', ':Telescope file_browser<CR>')
 
