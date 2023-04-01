@@ -10,6 +10,7 @@ in
       ripgrep
       fd
       tree-sitter
+      gh
 
       editorconfig-checker
 
@@ -42,6 +43,7 @@ in
           telescope-project-nvim
           telescope-file-browser-nvim
           telescope-manix
+          telescope-github-nvim
           nerdcommenter
           lualine-nvim
           indent-blankline-nvim
