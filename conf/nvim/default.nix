@@ -48,6 +48,7 @@ in
           nvim-colorizer-lua
           gitsigns-nvim
           nvim-autopairs
+          leap-nvim
           nvim-lspconfig
           luasnip
           nvim-cmp
@@ -90,6 +91,7 @@ in
         "nvim/lua/conf/gitsigns.lua".source = ./lua/conf/gitsigns.lua;
         "nvim/lua/conf/colorizer.lua".source = ./lua/conf/colorizer.lua;
         "nvim/lua/conf/autopairs.lua".source = ./lua/conf/autopairs.lua;
+        "nvim/lua/conf/leap.lua".source = ./lua/conf/leap.lua;
       };
     }];
   };
