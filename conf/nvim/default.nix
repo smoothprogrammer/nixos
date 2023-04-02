@@ -5,6 +5,7 @@ let
 
   lsp = with pkgs.vimPlugins; [
     nvim-lspconfig
+    neodev-nvim
   ];
 
   dap = with pkgs.vimPlugins; [

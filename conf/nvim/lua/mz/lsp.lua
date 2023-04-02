@@ -61,6 +61,8 @@ cmp.setup {
   }),
 }
 
+require('neodev').setup()
+
 lspconfig.lua_ls.setup {
   capabilities = capabilities,
   settings = {
