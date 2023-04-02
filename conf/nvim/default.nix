@@ -97,21 +97,22 @@ in
       };
 
       xdg.configFile = {
-        "nvim/lua/conf/options.lua".source = ./lua/conf/options.lua;
-        "nvim/lua/conf/keymap.lua".source = ./lua/conf/keymap.lua;
-        "nvim/lua/conf/treesitter.lua".source = ./lua/conf/treesitter.lua;
-        "nvim/lua/conf/colorscheme.lua".source = ./lua/conf/colorscheme.lua;
-        "nvim/lua/conf/lualine.lua".source = ./lua/conf/lualine.lua;
-        "nvim/lua/conf/telescope.lua".source = ./lua/conf/telescope.lua;
-        "nvim/lua/conf/lsp.lua".source = ./lua/conf/lsp.lua;
-        "nvim/lua/conf/dap.lua".source = ./lua/conf/dap.lua;
-        "nvim/lua/conf/nerdcommenter.lua".source = ./lua/conf/nerdcommenter.lua;
-        "nvim/lua/conf/indent_blankline.lua".source = ./lua/conf/indent_blankline.lua;
-        "nvim/lua/conf/web_devicons.lua".source = ./lua/conf/web_devicons.lua;
-        "nvim/lua/conf/gitsigns.lua".source = ./lua/conf/gitsigns.lua;
-        "nvim/lua/conf/colorizer.lua".source = ./lua/conf/colorizer.lua;
-        "nvim/lua/conf/autopairs.lua".source = ./lua/conf/autopairs.lua;
-        "nvim/lua/conf/leap.lua".source = ./lua/conf/leap.lua;
+        "nvim/lua/mz/lib.lua".source = ./lua/mz/lib.lua;
+        "nvim/lua/mz/options.lua".source = ./lua/mz/options.lua;
+        "nvim/lua/mz/keymap.lua".source = ./lua/mz/keymap.lua;
+        "nvim/lua/mz/treesitter.lua".source = ./lua/mz/treesitter.lua;
+        "nvim/lua/mz/colorscheme.lua".source = ./lua/mz/colorscheme.lua;
+        "nvim/lua/mz/lualine.lua".source = ./lua/mz/lualine.lua;
+        "nvim/lua/mz/telescope.lua".source = ./lua/mz/telescope.lua;
+        "nvim/lua/mz/lsp.lua".source = ./lua/mz/lsp.lua;
+        "nvim/lua/mz/dap.lua".source = ./lua/mz/dap.lua;
+        "nvim/lua/mz/nerdcommenter.lua".source = ./lua/mz/nerdcommenter.lua;
+        "nvim/lua/mz/indent_blankline.lua".source = ./lua/mz/indent_blankline.lua;
+        "nvim/lua/mz/web_devicons.lua".source = ./lua/mz/web_devicons.lua;
+        "nvim/lua/mz/gitsigns.lua".source = ./lua/mz/gitsigns.lua;
+        "nvim/lua/mz/colorizer.lua".source = ./lua/mz/colorizer.lua;
+        "nvim/lua/mz/autopairs.lua".source = ./lua/mz/autopairs.lua;
+        "nvim/lua/mz/leap.lua".source = ./lua/mz/leap.lua;
       };
     }];
   };

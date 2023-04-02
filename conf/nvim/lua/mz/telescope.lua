@@ -1,6 +1,15 @@
+local lib = require('mz.lib')
 local telescope = require('telescope')
 local actions = require('telescope.actions')
+local builtin = require('telescope.builtin')
+local extensions = telescope.extensions
 local fb_actions = require('telescope._extensions.file_browser.actions')
+
+local nmap = lib.keymapper('n', { silent = true })
+nmap('<C-p>', builtin.find_files)
+nmap('<C-f>', builtin.live_grep)
+nmap('<C-b>', extensions.file_browser.file_browser)
+nmap('<C-x>', extensions.manix.manix)
 
 telescope.setup {
   defaults = {
@@ -15,8 +24,8 @@ telescope.setup {
       i = {
         ['<Esc>'] = actions.close,
         ['jj'] = actions.close,
-        ['<Tab>'] = actions.toggle_selection,
-        ['<S-Tab>'] = actions.drop_all,
+        ['<Tab>'] = actions.move_selection_next,
+        ['<S-Tab>'] = actions.move_selection_previous,
         ['<S-Down>'] = actions.add_selection + actions.move_selection_next + actions.add_selection,
         ['<S-Up>'] = actions.add_selection + actions.move_selection_previous + actions.add_selection,
       },
@@ -47,6 +56,7 @@ telescope.setup {
     file_browser = {
       theme = 'dropdown',
       previewer = false,
+      cwd_to_path = true,
       hijack_netrw = true,
       grouped = true,
       hidden = true,
