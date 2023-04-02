@@ -56,6 +56,7 @@ telescope.setup {
     file_browser = {
       theme = 'dropdown',
       previewer = false,
+      path = '%:p:h',
       cwd_to_path = true,
       hijack_netrw = true,
       grouped = true,
