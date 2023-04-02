@@ -11,7 +11,6 @@ let
   dap = with pkgs.vimPlugins; [
     nvim-dap
     nvim-dap-virtual-text
-    nvim-dap-go
   ];
 
   autocomplete = with pkgs.vimPlugins; [
