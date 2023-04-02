@@ -2,6 +2,68 @@
 
 let
   cfg = config.conf.nvim;
+
+  lsp = with pkgs.vimPlugins; [
+    nvim-lspconfig
+  ];
+
+  dap = with pkgs.vimPlugins; [
+    nvim-dap
+    nvim-dap-virtual-text
+    nvim-dap-go
+  ];
+
+  autocomplete = with pkgs.vimPlugins; [
+    luasnip
+    nvim-cmp
+    cmp-nvim-lsp
+    cmp-nvim-lsp-signature-help
+    cmp_luasnip
+    cmp-path
+  ];
+
+  telescope = with pkgs.vimPlugins; [
+    telescope-nvim
+    telescope-fzf-native-nvim
+    telescope-project-nvim
+    telescope-file-browser-nvim
+    telescope-manix
+    telescope-github-nvim
+    telescope-dap-nvim
+  ];
+
+  treesitter = with pkgs.vimPlugins; [
+    (nvim-treesitter.withPlugins (p: with p; [
+      tree-sitter-nix
+      tree-sitter-make
+      tree-sitter-bash
+      tree-sitter-dockerfile
+      tree-sitter-go
+      tree-sitter-rust
+      tree-sitter-lua
+      tree-sitter-python
+      tree-sitter-html
+      tree-sitter-css
+      tree-sitter-javascript
+      tree-sitter-json
+      tree-sitter-toml
+      tree-sitter-yaml
+      tree-sitter-markdown
+    ]))
+  ];
+
+  misc = with pkgs.vimPlugins; [
+    nord-nvim
+    nerdcommenter
+    lualine-nvim
+    indent-blankline-nvim
+    editorconfig-nvim
+    nvim-web-devicons
+    nvim-colorizer-lua
+    gitsigns-nvim
+    nvim-autopairs
+    leap-nvim
+  ];
 in
 {
   options.conf.nvim.enable = lib.mkEnableOption "Neovim";
@@ -11,18 +73,13 @@ in
       fd
       tree-sitter
       gh
-
       editorconfig-checker
-
       gnumake
       gcc
-
       rnix-lsp
       manix
-
       luajit
       lua-language-server
-
       go
       gopls
       delve
@@ -36,51 +93,7 @@ in
         vimAlias = true;
         defaultEditor = true;
         extraLuaConfig = builtins.readFile ./init.lua;
-        plugins = with pkgs.vimPlugins; [
-          nord-nvim
-          telescope-nvim
-          telescope-fzf-native-nvim
-          telescope-project-nvim
-          telescope-file-browser-nvim
-          telescope-manix
-          telescope-github-nvim
-          telescope-dap-nvim
-          nvim-dap
-          nerdcommenter
-          lualine-nvim
-          indent-blankline-nvim
-          editorconfig-nvim
-          nvim-web-devicons
-          nvim-colorizer-lua
-          gitsigns-nvim
-          nvim-autopairs
-          leap-nvim
-          nvim-lspconfig
-          luasnip
-          nvim-cmp
-          cmp-nvim-lsp
-          cmp-nvim-lsp-signature-help
-          cmp_luasnip
-          cmp-path
-          (nvim-treesitter.withPlugins (p: with p; [
-            tree-sitter-nix
-            tree-sitter-make
-            tree-sitter-bash
-            tree-sitter-dockerfile
-            tree-sitter-go
-            tree-sitter-rust
-            tree-sitter-lua
-            tree-sitter-python
-            tree-sitter-html
-            tree-sitter-css
-            tree-sitter-javascript
-            tree-sitter-json
-            tree-sitter-toml
-            tree-sitter-yaml
-            # misc
-            tree-sitter-markdown
-          ]))
-        ];
+        plugins = lsp ++ dap ++ autocomplete ++ telescope ++ treesitter ++ misc;
       };
 
       xdg.configFile = {
@@ -91,6 +104,7 @@ in
         "nvim/lua/conf/lualine.lua".source = ./lua/conf/lualine.lua;
         "nvim/lua/conf/telescope.lua".source = ./lua/conf/telescope.lua;
         "nvim/lua/conf/lsp.lua".source = ./lua/conf/lsp.lua;
+        "nvim/lua/conf/dap.lua".source = ./lua/conf/dap.lua;
         "nvim/lua/conf/nerdcommenter.lua".source = ./lua/conf/nerdcommenter.lua;
         "nvim/lua/conf/indent_blankline.lua".source = ./lua/conf/indent_blankline.lua;
         "nvim/lua/conf/web_devicons.lua".source = ./lua/conf/web_devicons.lua;
