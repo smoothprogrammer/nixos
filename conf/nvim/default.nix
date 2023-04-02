@@ -25,7 +25,6 @@ let
   telescope = with pkgs.vimPlugins; [
     telescope-nvim
     telescope-fzf-native-nvim
-    telescope-project-nvim
     telescope-file-browser-nvim
     telescope-manix
     telescope-github-nvim
