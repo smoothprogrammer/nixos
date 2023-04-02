@@ -11,14 +11,15 @@ vim.api.nvim_create_autocmd('LspAttach', {
     nmap('[d', vim.diagnostic.goto_prev)
     nmap(']d', vim.diagnostic.goto_next)
     nmap('gd', telescope_builtin.lsp_definitions, '[g]oto [d]efinitions')
-    nmap('gT', telescope_builtin.lsp_type_definitions, '[g]oto [T]ype definitions')
+    nmap('gD', telescope_builtin.lsp_type_definitions, '[g]oto type [D]efinitions')
     nmap('gi', telescope_builtin.lsp_implementations, '[g]oto [i]mplementations')
     nmap('gr', telescope_builtin.lsp_references, '[g]oto [r]eferences')
     nmap('K', vim.lsp.buf.hover)
-    nmap('<leader>ds', telescope_builtin.lsp_document_symbols)
-    nmap('<leader>ws', telescope_builtin.lsp_workspace_symbols)
-    nmap('<leader>rn', vim.lsp.buf.rename)
-    nmap('<leader>ca', vim.lsp.buf.code_action)
+    nmap('<Leader>ds', telescope_builtin.lsp_document_symbols, '[d]ocument [s]ymbols')
+    nmap('<Leader>ws', telescope_builtin.lsp_workspace_symbols, '[w]orkspace [s]ymbols')
+    nmap('<Leader>rn', vim.lsp.buf.rename, '[r]e[n]ame')
+    nmap('<Leader>ca', vim.lsp.buf.code_action, '[c]ode [a]ction')
+    nmap('<Leader>rr', '<Cmd>LspRestart<CR>')
 
     vim.api.nvim_create_autocmd('BufWritePre', {
       buffer = ev.buf,
