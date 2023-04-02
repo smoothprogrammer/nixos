@@ -26,25 +26,27 @@ map('<Right>', '<Nop>')
 map('<PageUp>', '<Nop>')
 map('<PageDown>', '<Nop>')
 
-local telescope = require('telescope.builtin')
-nmap('<C-p>', telescope.find_files)
-nmap('<C-f>', telescope.live_grep)
-nmap('<C-b>', ':Telescope file_browser<CR>')
-nmap('<C-x>', ':Telescope manix<CR>')
+local telescope_builtin = require('telescope.builtin')
+local telescope_extensions = require('telescope').extensions
+nmap('<C-p>', telescope_builtin.find_files)
+nmap('<C-f>', telescope_builtin.live_grep)
+nmap('<C-b>', telescope_extensions.file_browser.file_browser)
+nmap('<C-x>', telescope_extensions.manix.manix)
 
+-- lsp
 nmap('[d', vim.diagnostic.goto_prev)
 nmap(']d', vim.diagnostic.goto_next)
 vim.api.nvim_create_autocmd('LspAttach', {
   group = vim.api.nvim_create_augroup('UserLspConfig', {}),
   callback = function(ev)
     local bufopts = { silent = true, buffer = ev.buf }
-    vim.keymap.set('n', 'gd', telescope.lsp_definitions, bufopts)
-    vim.keymap.set('n', 'gD', telescope.lsp_type_definitions, bufopts)
-    vim.keymap.set('n', 'gi', telescope.lsp_implementations, bufopts)
-    vim.keymap.set('n', 'gr', telescope.lsp_references, bufopts)
+    vim.keymap.set('n', 'gd', telescope_builtin.lsp_definitions, bufopts)
+    vim.keymap.set('n', 'gD', telescope_builtin.lsp_type_definitions, bufopts)
+    vim.keymap.set('n', 'gi', telescope_builtin.lsp_implementations, bufopts)
+    vim.keymap.set('n', 'gr', telescope_builtin.lsp_references, bufopts)
     vim.keymap.set('n', 'K', vim.lsp.buf.hover, bufopts)
-    vim.keymap.set('n', '<leader>ds', telescope.lsp_document_symbols, bufopts)
-    vim.keymap.set('n', '<leader>ws', telescope.lsp_workspace_symbols, bufopts)
+    vim.keymap.set('n', '<leader>ds', telescope_builtin.lsp_document_symbols, bufopts)
+    vim.keymap.set('n', '<leader>ws', telescope_builtin.lsp_workspace_symbols, bufopts)
     vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, bufopts)
     vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, bufopts)
 
