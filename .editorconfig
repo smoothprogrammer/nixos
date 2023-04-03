@@ -10,6 +10,10 @@ insert_final_newline = true
 indent_style = space
 indent_size = 2
 
+[*.lua]
+quote_style = single
+trailing_table_separator = never
+
 ; leave generated code alone
 [*.generated.*]
 indent_style = unset
