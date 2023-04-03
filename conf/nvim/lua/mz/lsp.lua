@@ -1,3 +1,5 @@
+require('neodev').setup()
+
 local lib = require('mz.lib')
 local cmp = require('cmp')
 local lspconfig = require('lspconfig')
@@ -25,9 +27,9 @@ vim.api.nvim_create_autocmd('LspAttach', {
       buffer = ev.buf,
       callback = function()
         vim.lsp.buf.format { async = false }
-      end,
+      end
     })
-  end,
+  end
 })
 
 cmp.setup {
@@ -35,7 +37,7 @@ cmp.setup {
     { name = 'luasnip' },
     { name = 'nvim_lsp' },
     { name = 'nvim_lsp_signature_help' },
-    { name = 'path' },
+    { name = 'path' }
   },
   snippet = {
     expand = function(args)
@@ -58,42 +60,30 @@ cmp.setup {
       else
         fallback()
       end
-    end, { 'i', 's' }),
-  }),
+    end, { 'i', 's' })
+  })
 }
 
-require('neodev').setup()
 
 lspconfig.lua_ls.setup {
   capabilities = capabilities,
   settings = {
     Lua = {
-      runtime = {
-        version = 'LuaJIT',
-      },
-      diagnostics = {
-        globals = { 'vim' },
-      },
-      workspace = {
-        library = vim.api.nvim_get_runtime_file('', true),
-        checkThirdParty = false,
-      },
-      telemetry = {
-        enable = false,
-      },
-    },
-  },
+      workspace = { checkThirdParty = false, semantic = { enable = false } },
+      telemetry = { enable = false }
+    }
+  }
 }
 
 lspconfig.rnix.setup {
-  capabilities = capabilities,
+  capabilities = capabilities
 }
 
 lspconfig.gopls.setup {
   capabilities = capabilities,
   settings = {
     gopls = {
-      gofumpt = true,
+      gofumpt = true
     }
   }
 }
