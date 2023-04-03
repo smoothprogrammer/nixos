@@ -5,11 +5,11 @@ let
 in
 {
   force = true;
-  default = "Brave Search";
+  default = "Google";
   order = [
+    "Google"
     "Brave Search"
     "DuckDuckGo"
-    "Google"
     "Wikipedia (en)"
     "Nix Packages"
     "NixOS Options"
