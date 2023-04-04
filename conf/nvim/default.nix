@@ -47,6 +47,7 @@ let
   ];
 
   treesitter = with pkgs.vimPlugins; [
+    nvim-treesitter-context
     (nvim-treesitter.withPlugins (p: with p; [
       tree-sitter-nix
       tree-sitter-make
