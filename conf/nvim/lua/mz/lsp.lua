@@ -1,5 +1,5 @@
 require('neodev').setup {
-  library = { plugins = 'neotest' }
+  library = { plugins = 'neotest' },
 }
 
 local lib = require('mz.lib')
@@ -29,9 +29,9 @@ vim.api.nvim_create_autocmd('LspAttach', {
       buffer = ev.buf,
       callback = function()
         vim.lsp.buf.format { async = false }
-      end
+      end,
     })
-  end
+  end,
 })
 
 cmp.setup {
@@ -39,12 +39,12 @@ cmp.setup {
     { name = 'luasnip' },
     { name = 'nvim_lsp' },
     { name = 'nvim_lsp_signature_help' },
-    { name = 'path' }
+    { name = 'path' },
   },
   snippet = {
     expand = function(args)
       require('luasnip').lsp_expand(args.body)
-    end
+    end,
   },
   mapping = cmp.mapping.preset.insert({
     ['<C-Space>'] = cmp.mapping.complete(),
@@ -62,8 +62,8 @@ cmp.setup {
       else
         fallback()
       end
-    end, { 'i', 's' })
-  })
+    end, { 'i', 's' }),
+  }),
 }
 
 
@@ -72,20 +72,20 @@ lspconfig.lua_ls.setup {
   settings = {
     Lua = {
       workspace = { checkThirdParty = false, semantic = { enable = false } },
-      telemetry = { enable = false }
-    }
-  }
+      telemetry = { enable = false },
+    },
+  },
 }
 
 lspconfig.rnix.setup {
-  capabilities = capabilities
+  capabilities = capabilities,
 }
 
 lspconfig.gopls.setup {
   capabilities = capabilities,
   settings = {
     gopls = {
-      gofumpt = true
-    }
-  }
+      gofumpt = true,
+    },
+  },
 }

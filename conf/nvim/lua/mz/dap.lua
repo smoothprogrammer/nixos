@@ -4,8 +4,8 @@ require('nvim-dap-virtual-text').setup {}
 
 local nmap = lib.keymapper('n', { silent = true })
 nmap('<Leader>db', dap.toggle_breakpoint)
-nmap("<leader>dB", function()
-  dap.set_breakpoint(vim.fn.input "[DAP] Condition  ")
+nmap('<leader>dB', function()
+  dap.set_breakpoint(vim.fn.input '[DAP] Condition  ')
 end)
 nmap('<Leader>dd', dap.continue)
 nmap('<Leader>do', dap.repl.open)
@@ -24,23 +24,23 @@ dap.adapters.delve = {
 
 dap.configurations.go = {
   {
-    type = "delve",
-    name = "Debug",
-    request = "launch",
-    program = "${file}"
+    type = 'delve',
+    name = 'Debug',
+    request = 'launch',
+    program = '${file}'
   },
   {
-    type = "delve",
-    name = "Debug test", -- configuration for debugging test files
-    request = "launch",
-    mode = "test",
-    program = "${file}"
+    type = 'delve',
+    name = 'Debug test', -- configuration for debugging test files
+    request = 'launch',
+    mode = 'test',
+    program = '${file}'
   },
   {
-    type = "delve",
-    name = "Debug test (go.mod)",
-    request = "launch",
-    mode = "test",
-    program = "./${relativeFileDirname}"
-  }
+    type = 'delve',
+    name = 'Debug test (go.mod)',
+    request = 'launch',
+    mode = 'test',
+    program = './${relativeFileDirname}'
+  },
 }
