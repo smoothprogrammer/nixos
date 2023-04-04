@@ -46,6 +46,10 @@ let
     telescope-dap-nvim
   ];
 
+  git = with pkgs.vimPlugins; [
+    vim-fugitive
+  ];
+
   treesitter = with pkgs.vimPlugins; [
     nvim-treesitter-context
     (nvim-treesitter.withPlugins (p: with p; [
@@ -110,7 +114,7 @@ in
         defaultEditor = true;
         extraLuaConfig = builtins.readFile ./init.lua;
         plugins = lsp ++ dap ++ test ++
-          autocomplete ++ telescope ++ treesitter ++ misc;
+          autocomplete ++ telescope ++ git ++ treesitter ++ misc;
       };
 
       xdg.configFile = {
@@ -132,6 +136,7 @@ in
         "nvim/lua/mz/autopairs.lua".source = ./lua/mz/autopairs.lua;
         "nvim/lua/mz/leap.lua".source = ./lua/mz/leap.lua;
         "nvim/lua/mz/harpoon.lua".source = ./lua/mz/harpoon.lua;
+        "nvim/lua/mz/git.lua".source = ./lua/mz/git.lua;
       };
     }];
   };
