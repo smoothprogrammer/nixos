@@ -1,0 +1,11 @@
+local lib = require('mz.lib')
+local mark = require('harpoon.mark')
+local ui = require('harpoon.ui')
+
+local nmap = lib.keymapper('n', { silent = true })
+nmap('<Leader>a', mark.add_file)
+nmap('<Leader>o', ui.toggle_quick_menu)
+nmap('<Leader>1', function() ui.nav_file(1) end)
+nmap('<Leader>2', function() ui.nav_file(2) end)
+nmap('<Leader>3', function() ui.nav_file(3) end)
+nmap('<Leader>4', function() ui.nav_file(4) end)

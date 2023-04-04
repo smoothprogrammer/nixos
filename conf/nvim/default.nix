@@ -78,6 +78,7 @@ let
     gitsigns-nvim
     nvim-autopairs
     leap-nvim
+    harpoon
   ];
 in
 {
@@ -130,6 +131,7 @@ in
         "nvim/lua/mz/colorizer.lua".source = ./lua/mz/colorizer.lua;
         "nvim/lua/mz/autopairs.lua".source = ./lua/mz/autopairs.lua;
         "nvim/lua/mz/leap.lua".source = ./lua/mz/leap.lua;
+        "nvim/lua/mz/harpoon.lua".source = ./lua/mz/harpoon.lua;
       };
     }];
   };
