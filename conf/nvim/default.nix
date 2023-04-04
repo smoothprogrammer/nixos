@@ -49,6 +49,7 @@ let
   git = with pkgs.vimPlugins; [
     vim-fugitive
     gitsigns-nvim
+    git-worktree-nvim
   ];
 
   treesitter = with pkgs.vimPlugins; [
