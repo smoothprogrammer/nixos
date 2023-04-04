@@ -7,10 +7,11 @@ local xmap = lib.keymapper('x', { silent = true })
 
 vim.g.mapleader = ' '
 
+imap('jj', '<Esc>')
 map('.', ';')
 map('<Leader>.', '.')
 xmap('<Leader>p', '"_dP')
-imap('jj', '<Esc>')
+nmap('<Leader>cd', function() vim.api.nvim_set_current_dir(vim.fn.expand('%:h')) end)
 nmap(';w', ':w<CR>')
 nmap(';q', ':q<CR>')
 nmap('<CR>', 'o<Esc>')
