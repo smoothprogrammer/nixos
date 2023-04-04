@@ -1,4 +1,6 @@
-require('neodev').setup()
+require('neodev').setup {
+  library = { plugins = 'neotest' }
+}
 
 local lib = require('mz.lib')
 local cmp = require('cmp')

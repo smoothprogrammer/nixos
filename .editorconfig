@@ -12,7 +12,7 @@ indent_size = 2
 
 [*.lua]
 quote_style = single
-trailing_table_separator = never
+trailing_table_separator = smart
 
 ; leave generated code alone
 [*.generated.*]
