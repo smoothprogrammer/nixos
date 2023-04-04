@@ -23,5 +23,5 @@ super + {_,shift + }{h,j,k,l}
   bspc node -{f,s} {west,south,north,east}
 
 # Focus and send to the workspace.
-super + {_,shift + }{1-3}
-  bspc {desktop -f,node -d} '^{1-3}'
+super + {_,shift + }{1-4}
+  bspc {desktop -f,node -d} '^{1-4}'

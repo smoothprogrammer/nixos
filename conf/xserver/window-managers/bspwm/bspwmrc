@@ -4,7 +4,7 @@
 pgrep -x sxhkd > /dev/null || sxhkd &
 
 # Monitor and workspaces.
-bspc monitor -d 1 2 3
+bspc monitor -d 1 2 3 4
 
 # Configuration.
 bspc config split ratio 0.50
