@@ -2,6 +2,16 @@ local lib = require('mz.lib')
 local git_worktree = require('git-worktree')
 local extensions = require('telescope').extensions
 
+require('gitsigns').setup {
+  current_line_blame = true,
+  current_line_blame_opts = {
+    virt_text = true,
+    virt_text_pos = 'eol',
+    delay = 100,
+    ignore_whitespace = false,
+  },
+}
+
 local nmap = lib.keymapper('n', { silent = true })
 nmap('<Leader>gs', vim.cmd.Git)
 nmap('<Leader>gwt', extensions.git_worktree.git_worktrees)

@@ -132,7 +132,6 @@ in
         "nvim/lua/mz/nerdcommenter.lua".source = ./lua/mz/nerdcommenter.lua;
         "nvim/lua/mz/indent_blankline.lua".source = ./lua/mz/indent_blankline.lua;
         "nvim/lua/mz/web_devicons.lua".source = ./lua/mz/web_devicons.lua;
-        "nvim/lua/mz/gitsigns.lua".source = ./lua/mz/gitsigns.lua;
         "nvim/lua/mz/colorizer.lua".source = ./lua/mz/colorizer.lua;
         "nvim/lua/mz/autopairs.lua".source = ./lua/mz/autopairs.lua;
         "nvim/lua/mz/leap.lua".source = ./lua/mz/leap.lua;
