@@ -48,6 +48,7 @@ let
 
   git = with pkgs.vimPlugins; [
     vim-fugitive
+    gitsigns-nvim
   ];
 
   treesitter = with pkgs.vimPlugins; [
@@ -79,7 +80,6 @@ let
     editorconfig-nvim
     nvim-web-devicons
     nvim-colorizer-lua
-    gitsigns-nvim
     nvim-autopairs
     leap-nvim
     harpoon
