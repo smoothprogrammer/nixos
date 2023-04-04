@@ -3,7 +3,9 @@ local neotest = require('neotest')
 
 neotest.setup {
   adapters = {
-    require('neotest-go'),
+    require('neotest-go') {
+      args = { '-cover' },
+    },
   },
   consumers = {
     always_open_output = function(client)
@@ -26,11 +28,6 @@ neotest.setup {
 }
 
 local nmap = lib.keymapper('n', { silent = true })
-nmap('<Leader>tf', function()
-  neotest.run.run(vim.fn.expand('%'))
-end, '[t]est [f]ile')
-nmap('<Leader>tn', neotest.run.run, '[t]est [n]earest')
-nmap('<Leader>tl', neotest.run.run_last, '[t]est [l]ast')
+nmap('<Leader>tt', neotest.run.run, '[t]es[t]')
 nmap('<Leader>tS', neotest.run.stop, '[t]est [S]top')
 nmap('<Leader>to', neotest.output.open, '[t]est [o]pen')
-nmap('<Leader>ts', neotest.summary.toggle, '[t]est [s]ummary')
