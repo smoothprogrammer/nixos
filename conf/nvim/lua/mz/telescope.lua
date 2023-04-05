@@ -5,12 +5,6 @@ local builtin = require('telescope.builtin')
 local extensions = telescope.extensions
 local fb_actions = require('telescope._extensions.file_browser.actions')
 
-local nmap = lib.keymapper('n', { silent = true })
-nmap('<C-p>', builtin.find_files)
-nmap('<C-f>', builtin.live_grep)
-nmap('<C-b>', extensions.file_browser.file_browser)
-nmap('<C-x>', extensions.manix.manix)
-
 telescope.setup {
   defaults = {
     layout_strategy = 'horizontal',
@@ -80,3 +74,14 @@ telescope.load_extension('manix')
 telescope.load_extension('gh')
 telescope.load_extension('dap')
 telescope.load_extension('git_worktree')
+
+local nmap = lib.keymapper('n', { silent = true })
+nmap('<C-p>', builtin.find_files)
+nmap('<C-f>', builtin.live_grep)
+nmap('<Leader>ff', builtin.current_buffer_fuzzy_find)
+nmap('<Leader>fh', builtin.help_tags)
+nmap('<Leader>fo', builtin.vim_options)
+nmap('<Leader>ft', builtin.treesitter)
+nmap('<Leader>fk', builtin.keymaps)
+nmap('<Leader>fb', extensions.file_browser.file_browser)
+nmap('<Leader>fn', extensions.manix.manix)
