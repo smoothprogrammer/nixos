@@ -119,24 +119,10 @@ in
       };
 
       xdg.configFile = {
-        "nvim/lua/mz/lib.lua".source = ./lua/mz/lib.lua;
-        "nvim/lua/mz/options.lua".source = ./lua/mz/options.lua;
-        "nvim/lua/mz/keymap.lua".source = ./lua/mz/keymap.lua;
-        "nvim/lua/mz/treesitter.lua".source = ./lua/mz/treesitter.lua;
-        "nvim/lua/mz/colorscheme.lua".source = ./lua/mz/colorscheme.lua;
-        "nvim/lua/mz/lualine.lua".source = ./lua/mz/lualine.lua;
-        "nvim/lua/mz/telescope.lua".source = ./lua/mz/telescope.lua;
-        "nvim/lua/mz/lsp.lua".source = ./lua/mz/lsp.lua;
-        "nvim/lua/mz/dap.lua".source = ./lua/mz/dap.lua;
-        "nvim/lua/mz/test.lua".source = ./lua/mz/test.lua;
-        "nvim/lua/mz/nerdcommenter.lua".source = ./lua/mz/nerdcommenter.lua;
-        "nvim/lua/mz/indent_blankline.lua".source = ./lua/mz/indent_blankline.lua;
-        "nvim/lua/mz/web_devicons.lua".source = ./lua/mz/web_devicons.lua;
-        "nvim/lua/mz/colorizer.lua".source = ./lua/mz/colorizer.lua;
-        "nvim/lua/mz/autopairs.lua".source = ./lua/mz/autopairs.lua;
-        "nvim/lua/mz/leap.lua".source = ./lua/mz/leap.lua;
-        "nvim/lua/mz/harpoon.lua".source = ./lua/mz/harpoon.lua;
-        "nvim/lua/mz/git.lua".source = ./lua/mz/git.lua;
+        "nvim/lua" = {
+          recursive = true;
+          source = ./lua;
+        };
       };
     }];
   };
