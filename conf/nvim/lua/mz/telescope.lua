@@ -20,8 +20,16 @@ telescope.setup {
         ['jj'] = actions.close,
         ['<Tab>'] = actions.move_selection_next,
         ['<S-Tab>'] = actions.move_selection_previous,
-        ['<S-Down>'] = actions.add_selection + actions.move_selection_next + actions.add_selection,
-        ['<S-Up>'] = actions.add_selection + actions.move_selection_previous + actions.add_selection,
+        ['<S-Down>'] = function(prompt_bufnr)
+          actions.add_selection(prompt_bufnr)
+          actions.move_selection_next(prompt_bufnr)
+          actions.add_selection(prompt_bufnr)
+        end,
+        ['<S-Up>'] = function(prompt_bufnr)
+          actions.add_selection(prompt_bufnr)
+          actions.move_selection_previous(prompt_bufnr)
+          actions.add_selection(prompt_bufnr)
+        end,
       },
     },
   },
