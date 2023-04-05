@@ -14,12 +14,18 @@ in
     "Nix Packages"
     "NixOS Options"
     "NixOS Wiki"
+    "Go Packages"
   ];
   engines = {
     "Brave Search" = {
-      icon = ./brave-favicon.png; # https://brave.com/static-assets/images/brave-favicon.png
+      icon = ./favicon/brave.png; # https://brave.com/static-assets/images/brave-favicon.png
       urls = [{ template = "https://search.brave.com/search?q={searchTerms}"; }];
       definedAliases = [ "@b" ];
+    };
+    "Go Packages" = {
+      icon = ./favicon/go.ico; # https://pkg.go.dev/static/shared/icon/favicon.ico
+      urls = [{ template = "https://pkg.go.dev/search?q={searchTerms}"; }];
+      definedAliases = [ "@gp" ];
     };
     "Nix Packages" = {
       inherit icon;
