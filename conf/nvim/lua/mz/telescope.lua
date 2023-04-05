@@ -36,6 +36,14 @@ telescope.setup {
         '-g', '!**/.direnv/*',
         '-g', '!**/node_modules/*',
       },
+      mappings = {
+        i = {
+          ['<S-CR>'] = function(prompt_bufnr)
+            actions.select_default(prompt_bufnr)
+            vim.api.nvim_set_current_dir(vim.fn.expand('%:h'))
+          end,
+        },
+      },
     },
     live_grep = {
       additional_args = {
