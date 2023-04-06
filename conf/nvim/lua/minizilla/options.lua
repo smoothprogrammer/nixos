@@ -9,6 +9,7 @@ opt.swapfile = false
 opt.clipboard = 'unnamedplus'
 opt.termguicolors = true
 opt.showmode = false
+opt.updatetime = 50
 
 -- line
 opt.number = true
