@@ -2,7 +2,6 @@ require('neodev').setup {
   library = { plugins = 'neotest' },
 }
 
-local lib = require('mz.lib')
 local cmp = require('cmp')
 local lspconfig = require('lspconfig')
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
@@ -11,7 +10,7 @@ local telescope_builtin = require('telescope.builtin')
 vim.api.nvim_create_autocmd('LspAttach', {
   group = vim.api.nvim_create_augroup('UserLspConfig', {}),
   callback = function(ev)
-    local nmap = lib.keymapper('n', { silent = true, buffer = ev.buf })
+    local nmap = Lib.keymapper('n', { silent = true, buffer = ev.buf })
     nmap('[d', vim.diagnostic.goto_prev)
     nmap(']d', vim.diagnostic.goto_next)
     nmap('gd', telescope_builtin.lsp_definitions, '[g]oto [d]efinitions')

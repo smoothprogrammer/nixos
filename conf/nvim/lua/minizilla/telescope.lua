@@ -1,4 +1,3 @@
-local lib = require('mz.lib')
 local telescope = require('telescope')
 local actions = require('telescope.actions')
 local builtin = require('telescope.builtin')
@@ -12,6 +11,7 @@ telescope.setup {
       width = 0.95,
       height = 0.85,
     },
+    sorting_strategy = 'ascending',
     prompt_prefix = '  ',
     selection_caret = ' ',
     mappings = {
@@ -78,6 +78,7 @@ telescope.setup {
           ['<C-D>'] = fb_actions.remove,
           ['<C-R>'] = fb_actions.rename,
           ['<C-Y>'] = fb_actions.copy,
+          ['<C-X>'] = fb_actions.move,
         },
       },
     },
@@ -91,7 +92,7 @@ telescope.load_extension('gh')
 telescope.load_extension('dap')
 telescope.load_extension('git_worktree')
 
-local nmap = lib.keymapper('n', { silent = true })
+local nmap = Lib.keymapper('n', { silent = true })
 nmap('<C-p>', builtin.find_files)
 nmap('<C-f>', builtin.live_grep)
 nmap('<Leader>ff', builtin.current_buffer_fuzzy_find)

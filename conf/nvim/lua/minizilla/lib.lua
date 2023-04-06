@@ -1,6 +1,6 @@
-local M = {}
+Lib = {}
 
-M.keymapper = function(mode, opts)
+Lib.keymapper = function(mode, opts)
   return function(lhs, rhs, desc)
     if desc ~= '' then
       opts['desc'] = desc
@@ -8,5 +8,3 @@ M.keymapper = function(mode, opts)
     vim.keymap.set(mode, lhs, rhs, opts)
   end
 end
-
-return M

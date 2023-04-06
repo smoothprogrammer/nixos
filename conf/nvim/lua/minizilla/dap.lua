@@ -1,8 +1,7 @@
-local lib = require('mz.lib')
 local dap = require('dap')
 require('nvim-dap-virtual-text').setup {}
 
-local nmap = lib.keymapper('n', { silent = true })
+local nmap = Lib.keymapper('n', { silent = true })
 nmap('<Leader>db', dap.toggle_breakpoint)
 nmap('<leader>dB', function()
   dap.set_breakpoint(vim.fn.input '[DAP] Condition  ')

@@ -1,6 +1,8 @@
 { config, lib, pkgs, home-manager, ... }:
 
 let
+  cfg = config.conf.nvim;
+
   neotest-go = pkgs.vimUtils.buildVimPlugin {
     name = "neotest-go";
     src = pkgs.fetchFromGitHub {
@@ -11,45 +13,8 @@ let
     };
   };
 
-  cfg = config.conf.nvim;
-
-  lsp = with pkgs.vimPlugins; [
-    nvim-lspconfig
-    neodev-nvim
-  ];
-
-  dap = with pkgs.vimPlugins; [
-    nvim-dap
-    nvim-dap-virtual-text
-  ];
-
-  test = with pkgs.vimPlugins; [
-    neotest
-    neotest-go
-  ];
-
-  autocomplete = with pkgs.vimPlugins; [
-    luasnip
-    nvim-cmp
-    cmp-nvim-lsp
-    cmp-nvim-lsp-signature-help
-    cmp_luasnip
-    cmp-path
-  ];
-
-  telescope = with pkgs.vimPlugins; [
-    telescope-nvim
-    telescope-fzf-native-nvim
-    telescope-file-browser-nvim
-    telescope-manix
-    telescope-github-nvim
-    telescope-dap-nvim
-  ];
-
-  git = with pkgs.vimPlugins; [
-    vim-fugitive
-    gitsigns-nvim
-    git-worktree-nvim
+  colorscheme = with pkgs.vimPlugins; [
+    nord-nvim
   ];
 
   treesitter = with pkgs.vimPlugins; [
@@ -73,14 +38,52 @@ let
     ]))
   ];
 
-  misc = with pkgs.vimPlugins; [
-    nord-nvim
-    nerdcommenter
+  lsp = with pkgs.vimPlugins; [
+    nvim-lspconfig
+    neodev-nvim
+    luasnip
+    nvim-cmp
+    cmp-nvim-lsp
+    cmp-nvim-lsp-signature-help
+    cmp_luasnip
+    cmp-path
+  ];
+
+  dap = with pkgs.vimPlugins; [
+    nvim-dap
+    nvim-dap-virtual-text
+  ];
+
+  test = with pkgs.vimPlugins; [
+    neotest
+    neotest-go
+  ];
+
+  telescope = with pkgs.vimPlugins; [
+    telescope-nvim
+    telescope-fzf-native-nvim
+    telescope-file-browser-nvim
+    telescope-manix
+    telescope-github-nvim
+    telescope-dap-nvim
+  ];
+
+  ui = with pkgs.vimPlugins; [
     lualine-nvim
     indent-blankline-nvim
-    editorconfig-nvim
     nvim-web-devicons
     nvim-colorizer-lua
+  ];
+
+  git = with pkgs.vimPlugins; [
+    vim-fugitive
+    gitsigns-nvim
+    git-worktree-nvim
+  ];
+
+  misc = with pkgs.vimPlugins; [
+    nerdcommenter
+    editorconfig-nvim
     nvim-autopairs
     leap-nvim
     harpoon
@@ -114,8 +117,16 @@ in
         vimAlias = true;
         defaultEditor = true;
         extraLuaConfig = builtins.readFile ./init.lua;
-        plugins = lsp ++ dap ++ test ++
-          autocomplete ++ telescope ++ git ++ treesitter ++ misc;
+        plugins =
+          colorscheme ++
+          treesitter ++
+          lsp ++
+          dap ++
+          test ++
+          telescope ++
+          ui ++
+          git ++
+          misc;
       };
 
       xdg.configFile = {

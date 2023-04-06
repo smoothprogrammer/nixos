@@ -33,3 +33,13 @@ lualine.setup {
   sections = sections,
   inactive_sections = inactive_sessions,
 }
+
+require('indent_blankline').setup()
+
+require('nvim-web-devicons').setup()
+
+require('colorizer').setup {
+  user_default_options = {
+    names = false,
+  },
+}

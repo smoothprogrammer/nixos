@@ -1,9 +1,7 @@
-local lib = require('mz.lib')
-
-local map = lib.keymapper('', { silent = true })
-local nmap = lib.keymapper('n', { silent = true })
-local imap = lib.keymapper('i', { silent = true })
-local xmap = lib.keymapper('x', { silent = true })
+local map = Lib.keymapper('', { silent = true })
+local nmap = Lib.keymapper('n', { silent = true })
+local imap = Lib.keymapper('i', { silent = true })
+local xmap = Lib.keymapper('x', { silent = true })
 
 vim.g.mapleader = ' '
 
