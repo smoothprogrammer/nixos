@@ -61,6 +61,18 @@ telescope.setup {
         '-g', '!**/node_modules/*',
       },
     },
+    help_tags = {
+      theme = 'dropdown',
+      previewer = false,
+    },
+    vim_options = {
+      theme = 'dropdown',
+      previewer = false,
+    },
+    keymaps = {
+      theme = 'dropdown',
+      previewer = false,
+    },
   },
   extensions = {
     file_browser = {
@@ -94,11 +106,11 @@ telescope.load_extension('git_worktree')
 
 local nmap = Lib.keymapper('n', { silent = true })
 nmap('<C-p>', builtin.find_files)
-nmap('<C-f>', builtin.live_grep)
-nmap('<Leader>ff', builtin.current_buffer_fuzzy_find)
+nmap('<C-f>', builtin.current_buffer_fuzzy_find)
+nmap('<Leader>fg', builtin.live_grep)
+nmap('<Leader>ft', builtin.treesitter)
 nmap('<Leader>fh', builtin.help_tags)
 nmap('<Leader>fo', builtin.vim_options)
-nmap('<Leader>ft', builtin.treesitter)
 nmap('<Leader>fk', builtin.keymaps)
 nmap('<Leader>fb', extensions.file_browser.file_browser)
 nmap('<Leader>fn', extensions.manix.manix)

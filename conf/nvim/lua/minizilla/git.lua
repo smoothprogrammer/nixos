@@ -19,7 +19,9 @@ vim.api.nvim_create_autocmd('BufWinEnter', {
 
 local nmap = Lib.keymapper('n', { silent = true })
 nmap('<Leader>gs', vim.cmd.Git)
-nmap('<Leader>gwt', require('telescope').extensions.git_worktree.git_worktrees)
+nmap('<Leader>gwt', function()
+  require('telescope').extensions.git_worktree.git_worktrees(require('telescope.themes').get_dropdown())
+end)
 nmap('<Leader>gwc', function()
   local input = vim.fn.input('Create git worktree: ')
   if input == '' then
