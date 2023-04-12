@@ -25,6 +25,8 @@ let
       tree-sitter-dockerfile
       tree-sitter-go
       tree-sitter-rust
+      tree-sitter-c
+      tree-sitter-cpp
       tree-sitter-lua
       tree-sitter-python
       tree-sitter-html
