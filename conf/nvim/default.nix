@@ -8,8 +8,8 @@ let
     src = pkgs.fetchFromGitHub {
       owner = "nvim-neotest";
       repo = "neotest-go";
-      rev = "756edf3dddcb3b430110f9582e10b7e730428341";
-      sha256 = "sha256-McofCzxPFksPqrT+Pka9syOgLLwYci3k1EQGx4JzjQ4=";
+      rev = "b6dc0b1c49569273d863d7b96b6c81b3fc153e82";
+      sha256 = "sha256-1xmdl9Me7uCXQXeZAtKP1bR/73tSt5PgF5dlOGzKpNY=";
     };
   };
 
