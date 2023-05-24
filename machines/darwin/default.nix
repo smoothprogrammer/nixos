@@ -28,7 +28,9 @@
     "zoom"
     "telegram"
     "firefox"
+    "google-chrome"
     "postman"
     "inkscape"
+    "slack"
   ];
 }
