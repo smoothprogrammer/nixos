@@ -18,10 +18,12 @@ in
       openDefaultPorts = true;
       user = cfg.user;
       configDir = "/home/${cfg.user}/.config/syncthing";
-      folders = {
-        "ssh" = { path = "~/.ssh"; ignorePerms = false; };
-        "gnupg" = { path = "~/.gnupg"; ignorePerms = false; };
-        "password-store" = { path = "~/.password-store"; ignorePerms = false; };
+      settings = {
+        folders = {
+          "ssh" = { path = "~/.ssh"; ignorePerms = false; };
+          "gnupg" = { path = "~/.gnupg"; ignorePerms = false; };
+          "password-store" = { path = "~/.password-store"; ignorePerms = false; };
+        };
       };
     };
   };
