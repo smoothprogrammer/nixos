@@ -43,6 +43,7 @@ telescope.setup {
         '-g', '!**/.git/*',
         '-g', '!**/.direnv/*',
         '-g', '!**/node_modules/*',
+        '-g', '!**/target/*',
       },
       mappings = {
         i = {
@@ -59,6 +60,7 @@ telescope.setup {
         '-g', '!**/.git/*',
         '-g', '!**/.direnv/*',
         '-g', '!**/node_modules/*',
+        '-g', '!**/target/*',
       },
     },
     help_tags = {
