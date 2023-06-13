@@ -111,6 +111,10 @@ in
       gopls
       delve
       golangci-lint
+      rustc
+      cargo
+      rustfmt
+      rust-analyzer
     ];
 
     home-manager.sharedModules = [{
