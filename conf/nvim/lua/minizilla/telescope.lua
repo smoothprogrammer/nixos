@@ -43,7 +43,7 @@ telescope.setup {
         '-g', '!**/.git/*',
         '-g', '!**/.direnv/*',
         '-g', '!**/node_modules/*',
-        '-g', '!**/target/*',
+        '-g', '!**/worktrees/*',
       },
       mappings = {
         i = {
@@ -61,6 +61,7 @@ telescope.setup {
         '-g', '!**/.direnv/*',
         '-g', '!**/node_modules/*',
         '-g', '!**/target/*',
+        '-g', '!**/worktrees/*',
       },
     },
     help_tags = {
