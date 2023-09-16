@@ -30,10 +30,27 @@ vim.api.nvim_create_autocmd('LspAttach', {
         vim.lsp.buf.format { async = false }
       end,
     })
+
+    vim.api.nvim_set_hl(0, 'FloatBorder', {})
+    vim.lsp.handlers['textDocument/hover'] = vim.lsp.with(
+      vim.lsp.handlers.hover, {
+        border = 'rounded',
+      }
+    )
   end,
 })
 
+require('lspconfig.ui.windows').default_options.border = 'rounded'
+
 cmp.setup {
+  window = {
+    completion = {
+      border = 'rounded',
+    },
+    documentation = {
+      border = 'rounded',
+    },
+  },
   sources = {
     { name = 'luasnip' },
     { name = 'nvim_lsp' },

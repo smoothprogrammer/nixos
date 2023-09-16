@@ -14,7 +14,7 @@ let
   };
 
   colorscheme = with pkgs.vimPlugins; [
-    nord-nvim
+    solarized-nvim
   ];
 
   treesitter = with pkgs.vimPlugins; [
@@ -73,7 +73,6 @@ let
 
   ui = with pkgs.vimPlugins; [
     lualine-nvim
-    indent-blankline-nvim
     nvim-web-devicons
     nvim-colorizer-lua
   ];

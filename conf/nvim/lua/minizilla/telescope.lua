@@ -42,8 +42,9 @@ telescope.setup {
         '--smart-case', '--follow', '--hidden', '--no-ignore',
         '-g', '!**/.git/*',
         '-g', '!**/.direnv/*',
+        '-g', '!**/.worktree/*',
         '-g', '!**/node_modules/*',
-        '-g', '!**/worktrees/*',
+        '-g', '!**/target/*',
       },
       mappings = {
         i = {
@@ -59,9 +60,9 @@ telescope.setup {
         '--smart-case', '--follow', '--hidden', '--no-ignore',
         '-g', '!**/.git/*',
         '-g', '!**/.direnv/*',
+        '-g', '!**/.worktree/*',
         '-g', '!**/node_modules/*',
         '-g', '!**/target/*',
-        '-g', '!**/worktrees/*',
       },
     },
     help_tags = {

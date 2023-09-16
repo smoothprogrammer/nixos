@@ -26,6 +26,8 @@ vmap('K', [[:m '<-2<CR>gv=gv]])
 
 nmap('J', 'mzJ`z')
 
+nmap('<Leader>n', ':set invnumber<CR>')
+
 map('<Left>', '<Nop>')
 map('<Down>', '<Nop>')
 map('<Up>', '<Nop>')

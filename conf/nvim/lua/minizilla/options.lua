@@ -12,7 +12,7 @@ opt.showmode = false
 opt.updatetime = 50
 
 -- line
-opt.number = true
+opt.number = false
 opt.wrap = false
 opt.cursorline = true
 opt.signcolumn = 'yes'

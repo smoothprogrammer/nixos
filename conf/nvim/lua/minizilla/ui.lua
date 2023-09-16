@@ -34,8 +34,6 @@ lualine.setup {
   inactive_sections = inactive_sessions,
 }
 
-require('indent_blankline').setup()
-
 require('nvim-web-devicons').setup()
 
 require('colorizer').setup {
