@@ -12,3 +12,4 @@ user_pref("browser.urlbar.suggest.engines", false);
 user_pref("privacy.resistFingerprinting.letterboxing", false);
 user_pref("browser.cache.disk.enable", true);
 user_pref("devtools.defaultColorUnit", "hex");
+user_pref("browser.urlbar.update2.engineAliasRefresh", true);
