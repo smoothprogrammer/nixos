@@ -9,6 +9,7 @@ in
     environment.systemPackages = [ pkgs.git ];
     home-manager.sharedModules = [{
       xdg.configFile."git/config".source = ./config;
+      xdg.configFile."git/ignore".source = ./ignore;
       xdg.configFile."git/personal".source = ./personal;
       xdg.configFile."git/work".source = ./work;
     }];
