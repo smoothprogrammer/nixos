@@ -48,6 +48,9 @@
     neofetch
   ];
 
+  # Default shell for /bin/sh.
+  environment.binsh = "${pkgs.dash}/bin/dash";
+
   # Enable configured set of pkgs.
   conf = {
     alacritty.enable = true;
