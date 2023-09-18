@@ -8,8 +8,8 @@ in
   config = lib.mkIf cfg.enable {
     fonts = {
       fontDir.enable = true;
-      enableDefaultFonts = true;
-      fonts = with pkgs; [
+      enableDefaultPackages = true;
+      packages = with pkgs; [
         (nerdfonts.override {
           fonts = [
             "Meslo" # MesloLG{S,M,L}{_,DZ} Nerd Font {_,Mono}
