@@ -16,7 +16,6 @@ opt.number = false
 opt.wrap = false
 opt.cursorline = true
 opt.signcolumn = 'yes'
-opt.colorcolumn = '81'
 
 -- tabs and spaces
 opt.tabstop = 4
