@@ -5,7 +5,7 @@ eval "$$(/opt/homebrew/bin/brew shellenv)"
 endef
 export SOURCE_BREW
 
-brew-install:
+install-brew:
   @sudo NONINTERACTIVE=1 curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh | bash
   @echo "$$SOURCE_BREW" >> ~/.zprofile
 
@@ -18,6 +18,6 @@ fi
 endef
 export SOURCE_NIX
 
-nix-install:
+install-nix:
   @sudo curl -L https://nixos.org/nix/install | sh -s -- --daemon --yes
   @echo "$$SOURCE_NIX" >> ~/.zprofile
