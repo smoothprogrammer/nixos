@@ -20,4 +20,4 @@ export SOURCE_NIX
 
 nix-install:
   @sudo curl -L https://nixos.org/nix/install | sh -s -- --daemon --yes
-  @echo "##SOURCE_NIX" >> ~/.zprofile
+  @echo "$$SOURCE_NIX" >> ~/.zprofile
