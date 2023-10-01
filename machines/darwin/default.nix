@@ -23,14 +23,15 @@
 
   homebrew.enable = true;
   homebrew.casks = [
-    "vmware-fusion"
     "dbeaver-community"
-    "zoom"
-    "telegram"
+    "figma"
     "firefox"
     "google-chrome"
-    "postman"
     "inkscape"
+    "postman"
     "slack"
+    "telegram"
+    "vmware-fusion"
+    "zoom"
   ];
 }
