@@ -38,6 +38,12 @@ nixpkgs.lib.nixosSystem {
       # Overlays to extend lib.
       nixpkgs.overlays = [ (import ./overlays.nix) ];
 
+      # Set registry to use nixpkgs specified in this flake.
+      nix.registry.nixpkgs.flake = nixpkgs;
+
+      # Set channel to use nixpkgs from registry.
+      nix.nixPath = [ "nixpkgs=flake:nixpkgs" ];
+
       # Immutable user and no password for sudo.
       users.mutableUsers = false;
       security.sudo.wheelNeedsPassword = false;
