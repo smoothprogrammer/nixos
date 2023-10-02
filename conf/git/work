@@ -1,8 +1,8 @@
 [user]
-  email = "billy.malik@coinbit.id"
-  name = "Billy Zaelani Malik"
-  signingkey = 817598EBDE2D24C5
+	email = "billy.malik@coinbit.id"
+	name = "Billy Zaelani Malik"
+	signingkey = 817598EBDE2D24C5
 [commit]
-  gpgsign = true
+	gpgsign = true
 [tag]
-  gpgsign = true
+	gpgsign = true

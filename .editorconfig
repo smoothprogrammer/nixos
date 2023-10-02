@@ -7,10 +7,22 @@ charset = utf-8
 end_of_line = lf
 trim_trailing_whitespace = true
 insert_final_newline = true
+indent_style = tab
+
+[*.nix]
+indent_style = space
+indent_size = 2
+
+[flake.lock]
+indent_style = unset
+
+[*.{yml,yaml,toml,rasi,conf}]
 indent_style = space
 indent_size = 2
 
 [*.lua]
+indent_style = space
+indent_size = 2
 quote_style = single
 trailing_table_separator = smart
 

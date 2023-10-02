@@ -1,27 +1,27 @@
 # Terminal emulator.
 super + Return
-  alacritty
+	alacritty
 
 # Program launcher.
 super + {_,shift + }space
-  rofi -show {drun,run} -show-icons
+	rofi -show {drun,run} -show-icons
 
 # Secret manager.
 super + semicolon
-  rofi-pass
+	rofi-pass
 
 # Reload bspwm and sxhkd.
 super + Escape
-  bspc wm -r && pkill -USR1 -x sxhkd
+	bspc wm -r && pkill -USR1 -x sxhkd
 
 # Close and kill window.
 super + {_,shift + }q
-  bspc node -{c,k}
+	bspc node -{c,k}
 
 # Focus and swap window.
 super + {_,shift + }{h,j,k,l}
-  bspc node -{f,s} {west,south,north,east}
+	bspc node -{f,s} {west,south,north,east}
 
 # Focus and send to the workspace.
 super + {_,shift + }{1-4}
-  bspc {desktop -f,node -d} '^{1-4}'
+	bspc {desktop -f,node -d} '^{1-4}'
