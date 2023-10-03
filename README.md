@@ -3,6 +3,15 @@ My NixOS Configuration
 
 ## VM
 
+Inside the VM.
+
+```sh
+sudo -i
+passwd
+```
+
+Inside the host.
+
 ```sh
 make vm/nixos-install vm_addr=VM_ADDR hostname=HOSTNAME
 ```
