@@ -24,11 +24,6 @@ ifneq ($(uname), Darwin)
 	@echo Darwin command only; exit 1
 endif
 
-is_linux:
-ifneq ($(uname), Linux)
-	@echo Linux command only; exit 1
-endif
-
 rebuild:
 	@echo reconfigure $(hostname) machine
 ifeq ($(uname), Darwin)
@@ -49,7 +44,7 @@ darwin/nix-install: is_darwin
 	@sudo curl -L https://nixos.org/nix/install | sh -s -- --daemon --yes
 	@echo "$$source_nix" >> ~/.zprofile
 
-vm/nixos-install: is_linux
+vm/nixos-install:
 ifeq ($(vm_addr), unset)
 	@echo vm_addr is unset; exit 1
 endif
@@ -70,7 +65,9 @@ endif
 		mount /dev/disk/by-label/boot /mnt/boot; \
 		swapon /dev/disk/by-label/swap; \
 	"
-	@rsync -av ./minimal/ root@$(vm_addr):/tmp/nixos-install
+	@rsync -av -e "ssh $(ssh_options)" \
+		--exclude=".git/" \
+		./ root@$(vm_addr):/tmp/nixos-install
 	@ssh $(ssh_options) root@$(vm_addr) " \
 		sudo nixos-install --no-channel-copy --no-root-password --flake /tmp/nixos-install#$(hostname); \
 	"
