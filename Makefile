@@ -27,7 +27,7 @@ endif
 rebuild:
 	@echo reconfigure $(hostname) machine
 ifeq ($(uname), Darwin)
-	@nix build .#darwinConfigurations.#$(hostname).system \
+	@nix build .#darwinConfigurations.$(hostname).system \
 		--extra-experimental-features "nix-command flakes"
 	@./result/sw/bin/darwin-rebuild switch --flake .#$(hostname)
 else
