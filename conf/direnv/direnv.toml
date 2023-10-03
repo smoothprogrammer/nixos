@@ -1,5 +1,6 @@
 [whitelist]
 prefix = [
+  "~/.config/nixos",
   "~/personal",
   "~/work",
 ]
