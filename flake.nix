@@ -18,13 +18,15 @@
       lib = import ./lib inputs;
     in
     {
-      nixosConfigurations.vm-mba-m1 = lib.mkNixOS {
-        system = "aarch64-linux";
-        machine = "vm/vmware-aarch64";
-        user = "minizilla";
-        hashedPassword = "$y$j9T$oqZGOLzKyffIYTKw1YIzO0$mCNHVpPBvqgI.mwR57uq6YNNykWoAHV6QJKrjvaEG8A";
-        resolution = { x = 2880; y = 1752; };
-        dpi = 192;
+      nixosConfigurations = lib.mkNixOS {
+        dev = {
+          system = "aarch64-linux";
+          machine = "vm/vmware-aarch64";
+          user = "minizilla";
+          hashedPassword = "$y$j9T$oqZGOLzKyffIYTKw1YIzO0$mCNHVpPBvqgI.mwR57uq6YNNykWoAHV6QJKrjvaEG8A";
+          resolution = { x = 2880; y = 1752; };
+          dpi = 192;
+        };
       };
 
       darwinConfigurations.mba-m1 = lib.mkDarwin {

@@ -1,15 +1,18 @@
 { nixpkgs
 , home-manager
 , ...
-}:
+}: nixosConfigurations:
 
-{ system
-, machine
-, user
-, hashedPassword
-, resolution
-, dpi
-}:
+# nixosConfigurations = {
+#   ${hostname} = {
+#     system = ${system};
+#     machine = ${machine};
+#     user = ${user};
+#     hashedPassword = ${hashedPassword};
+#     resolution = { x = ${x}; y = ${y}; };
+#     dpi = ${dpi};
+#   }
+# }
 
 let
   # This value determines the NixOS release from which the default
@@ -20,53 +23,56 @@ let
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   stateVersion = "22.11";
 in
-nixpkgs.lib.nixosSystem {
-  inherit system;
-  modules = [
-    home-manager.nixosModules.default
+builtins.mapAttrs
+  (hostname: settings: nixpkgs.lib.nixosSystem {
+    inherit (settings) system;
+    modules = [
+      home-manager.nixosModules.default
 
-    {
-      config._module.args = {
-        inherit user resolution dpi;
-      };
-    }
+      {
+        config._module.args = {
+          inherit (settings) user resolution dpi;
+        };
+      }
 
-    ({ config, lib, pkgs, home-manager, ... }: {
-      # Using already configured sets of pkgs.
-      imports = import ../conf;
+      ({ config, lib, pkgs, home-manager, ... }: {
+        # Using already configured sets of pkgs.
+        imports = import ../conf;
 
-      # Overlays to extend lib.
-      nixpkgs.overlays = [ (import ./overlays.nix) ];
+        # Overlays to extend lib.
+        nixpkgs.overlays = [ (import ./overlays.nix) ];
 
-      # Set registry to use nixpkgs specified in this flake.
-      nix.registry.nixpkgs.flake = nixpkgs;
+        # Set registry to use nixpkgs specified in this flake.
+        nix.registry.nixpkgs.flake = nixpkgs;
 
-      # Set channel to use nixpkgs from registry.
-      nix.nixPath = [ "nixpkgs=flake:nixpkgs" ];
+        # Set channel to use nixpkgs from registry.
+        nix.nixPath = [ "nixpkgs=flake:nixpkgs" ];
 
-      # Immutable user and no password for sudo.
-      users.mutableUsers = false;
-      security.sudo.wheelNeedsPassword = false;
+        # Immutable user and no password for sudo.
+        users.mutableUsers = false;
+        security.sudo.wheelNeedsPassword = false;
 
-      # Home Manager settings.
-      home-manager.useGlobalPkgs = true;
-      home-manager.useUserPackages = true;
+        # Home Manager settings.
+        home-manager.useGlobalPkgs = true;
+        home-manager.useUserPackages = true;
 
-      # Single user mode.
-      users.users.${user} = {
-        isNormalUser = true;
-        extraGroups = [ "wheel" ];
-        inherit hashedPassword;
-      };
-      home-manager.users.${user} = {
-        xdg.enable = true;
-        gtk.enable = true;
-        xsession.enable = true;
-        home.stateVersion = stateVersion;
-      };
-      system.stateVersion = stateVersion;
-    })
+        # Single user mode.
+        users.users.${settings.user} = {
+          isNormalUser = true;
+          extraGroups = [ "wheel" ];
+          inherit (settings) hashedPassword;
+        };
+        home-manager.users.${settings.user} = {
+          xdg.enable = true;
+          gtk.enable = true;
+          xsession.enable = true;
+          home.stateVersion = stateVersion;
+        };
+        system.stateVersion = stateVersion;
+      })
 
-    ../machines/${machine}
-  ];
-}
+      ../machines/${settings.machine}
+    ];
+
+  })
+  nixosConfigurations
