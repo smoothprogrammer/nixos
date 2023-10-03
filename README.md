@@ -8,6 +8,7 @@ Inside the VM.
 ```sh
 sudo -i
 passwd
+ip addr
 ```
 
 Inside the host.
