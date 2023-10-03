@@ -23,7 +23,16 @@
           system = "aarch64-linux";
           machine = "vm/vmware-aarch64";
           user = "minizilla";
-          hashedPassword = "$y$j9T$oqZGOLzKyffIYTKw1YIzO0$mCNHVpPBvqgI.mwR57uq6YNNykWoAHV6QJKrjvaEG8A";
+          hashedPassword = "$y$j9T$PBJ.vcjXKANpepO44J7Li/$SGY0lCPkgzTsc70/TJP9ADhkJpkqTGGCJpcF07TnmdA";
+          resolution = { x = 2880; y = 1752; };
+          dpi = 192;
+        };
+
+        quicksilver = {
+          system = "aarch64-linux";
+          machine = "vm/vmware-aarch64";
+          user = "minizilla";
+          hashedPassword = "$y$j9T$jmTClkK2hbljvadc2kkPF/$dtnPG2OntoiGxVJ7gLXh8pXebfghHNbLBtTFm7KUvy7";
           resolution = { x = 2880; y = 1752; };
           dpi = 192;
         };
