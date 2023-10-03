@@ -48,6 +48,12 @@ builtins.mapAttrs
         # Set channel to use nixpkgs from registry.
         nix.nixPath = [ "nixpkgs=flake:nixpkgs" ];
 
+        # Set hostname
+        networking.hostName = hostname;
+
+        # Halo Dunia!
+        time.timeZone = "Asia/Jakarta";
+
         # Immutable user and no password for sudo.
         users.mutableUsers = false;
         security.sudo.wheelNeedsPassword = false;
@@ -68,6 +74,7 @@ builtins.mapAttrs
           xsession.enable = true;
           home.stateVersion = stateVersion;
         };
+
         system.stateVersion = stateVersion;
       })
 

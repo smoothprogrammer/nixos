@@ -19,7 +19,7 @@
     in
     {
       nixosConfigurations = lib.mkNixOS {
-        dev = {
+        work = {
           system = "aarch64-linux";
           machine = "vm/vmware-aarch64";
           user = "minizilla";

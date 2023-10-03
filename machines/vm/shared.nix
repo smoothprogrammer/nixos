@@ -3,17 +3,10 @@
 {
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
-  # No fancy networking setup on VM.
-  networking.hostName = "dev";
-  networking.useDHCP = false;
-
   # Extra /etc/hosts
   networking.hostFiles = [
     ../../etc/hosts/reddit
   ];
-
-  # Halo Dunia!
-  time.timeZone = "Asia/Jakarta";
 
   # Nix settings.
   nix.extraOptions = ''

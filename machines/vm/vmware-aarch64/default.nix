@@ -6,6 +6,7 @@
     ../shared.nix
   ];
 
+  networking.useDHCP = false;
   networking.interfaces.ens160.useDHCP = true;
   services.xserver.dpi = dpi;
   services.xserver.resolutions = [ resolution ];
