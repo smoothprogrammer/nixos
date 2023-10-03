@@ -1,54 +1,76 @@
-define SOURCE_BREW
+vm_addr ?= unset
+ssh_options = -o PubkeyAuthentication=no -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no
+uname := $(shell uname)
+hostname := $(shell hostname)
+
+define source_brew
 # Brew
 eval "$$(/opt/homebrew/bin/brew shellenv)"
 # End Brew
 endef
-export SOURCE_BREW
+export source_brew
 
-darwin/brew-install:
-	@sudo NONINTERACTIVE=1 curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh | bash
-	@echo "$$SOURCE_BREW" >> ~/.zprofile
-
-define SOURCE_NIX
+define source_nix
 # Nix
 if [ -e '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' ]; then
 	. '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh'
 fi
 # End Nix
 endef
-export SOURCE_NIX
+export source_nix
 
-darwin/nix-install:
+is_darwin:
+ifneq ($(uname), Darwin)
+	@echo Darwin command only; exit 1
+endif
+
+is_linux:
+ifneq ($(uname), Linux)
+	@echo Linux command only; exit 1
+endif
+
+rebuild:
+	@echo reconfigure $(hostname) machine
+ifeq ($(uname), Darwin)
+	@nix build .#darwinConfigurations.#$(hostname).system \
+		--extra-experimental-features "nix-command flakes"
+	@./result/sw/bin/darwin-rebuild switch --flake .#$(hostname)
+else
+	@sudo nixos-rebuild switch --flake .#$(hostname)
+endif
+
+darwin/brew-install: is_darwin
+	@echo installing homebrew
+	@sudo NONINTERACTIVE=1 curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh | bash
+	@echo "$$source_brew" >> ~/.zprofile
+
+darwin/nix-install: is_darwin
+	@echo installing nix
 	@sudo curl -L https://nixos.org/nix/install | sh -s -- --daemon --yes
-	@echo "$$SOURCE_NIX" >> ~/.zprofile
+	@echo "$$source_nix" >> ~/.zprofile
 
-VM_ADDR ?= unset
-SSH_OPTIONS = -o PubkeyAuthentication=no -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no
-
-vm/nixos-install:
-	$(MAKE) vm/bootstrap
-	$(MAKE) vm/copy
-	@ssh $(SSH_OPTIONS) root@$(VM_ADDR) " \
-		sudo nixos-install --no-channel-copy --no-root-password --flake /tmp/nixos-install#testing; \
-	"
-
-vm/bootstrap:
-	@ssh $(SSH_OPTIONS) root@$(VM_ADDR) " \
+vm/nixos-install: is_linux
+ifeq ($(vm_addr), unset)
+	@echo vm_addr is unset; exit 1
+endif
+	@echo installing nixos on $(hostname) vm @$(vm_addr)
+	@ssh $(ssh_options) root@$(vm_addr) " \
 		parted /dev/nvme0n1 -- mklabel gpt; \
 		parted /dev/nvme0n1 -- mkpart primary 512MiB -8GiB; \
 		parted /dev/nvme0n1 -- mkpart primary linux-swap -8GiB 100\%; \
 		parted /dev/nvme0n1 -- mkpart ESP fat32 1MiB 512MiB; \
 		parted /dev/nvme0n1 -- set 3 esp on; \
+		sleep 1; \
 		mkfs.ext4 -L nixos /dev/nvme0n1p1; \
 		mkswap -L swap /dev/nvme0n1p2; \
 		mkfs.fat -F 32 -n boot /dev/nvme0n1p3; \
+		sleep 1; \
 		mount /dev/disk/by-label/nixos /mnt; \
 		mkdir -p /mnt/boot; \
 		mount /dev/disk/by-label/boot /mnt/boot; \
 		swapon /dev/disk/by-label/swap; \
 	"
-
-vm/copy:
-	@rsync -av \
-	./minimal/ \
-	root@$(VM_ADDR):/tmp/nixos-install
+	@rsync -av ./minimal/ root@$(vm_addr):/tmp/nixos-install
+	@ssh $(ssh_options) root@$(vm_addr) " \
+		sudo nixos-install --no-channel-copy --no-root-password --flake /tmp/nixos-install#$(hostname); \
+	"
