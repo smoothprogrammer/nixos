@@ -25,7 +25,7 @@ ifneq ($(uname), Darwin)
 endif
 
 rebuild:
-	@echo reconfigure $(hostname) machine
+	@echo reconfigure $(hostname) machine...
 ifeq ($(uname), Darwin)
 	@nix build .#darwinConfigurations.$(hostname).system \
 		--extra-experimental-features "nix-command flakes"
@@ -35,12 +35,12 @@ else
 endif
 
 darwin/brew-install: is_darwin
-	@echo installing homebrew
+	@echo installing homebrew...
 	@sudo NONINTERACTIVE=1 curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh | bash
 	@echo "$$source_brew" >> ~/.zprofile
 
 darwin/nix-install: is_darwin
-	@echo installing nix
+	@echo installing nix...
 	@sudo curl -L https://nixos.org/nix/install | sh -s -- --daemon --yes
 	@echo "$$source_nix" >> ~/.zprofile
 
@@ -48,7 +48,7 @@ vm/nixos-install:
 ifeq ($(vm_addr), unset)
 	@echo vm_addr is unset; exit 1
 endif
-	@echo installing nixos on $(hostname) vm @$(vm_addr)
+	@echo installing nixos... hostname=$(hostname) vm_addr=@$(vm_addr)
 	@ssh $(ssh_options) root@$(vm_addr) " \
 		parted /dev/nvme0n1 -- mklabel gpt; \
 		parted /dev/nvme0n1 -- mkpart primary 512MiB -8GiB; \
