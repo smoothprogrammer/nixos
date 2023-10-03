@@ -24,6 +24,15 @@ ifneq ($(uname), Darwin)
 	@echo Darwin command only; exit 1
 endif
 
+is_linux:
+ifneq ($(uname), Linux)
+	@echo Linux command only; exit 1
+endif
+
+secret: is_linux
+	@echo opening secret management via syncthing...
+	@xdg-open localhost:8384
+
 rebuild:
 	@echo reconfigure $(hostname) machine...
 ifeq ($(uname), Darwin)
