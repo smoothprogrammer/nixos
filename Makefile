@@ -29,6 +29,9 @@ ifneq ($(uname), Linux)
 	@echo Linux command only; exit 1
 endif
 
+lint:
+	@editorconfig-checker && echo "OK"
+
 secret: is_linux
 	@echo opening secret management via syncthing...
 	@xdg-open localhost:8384
