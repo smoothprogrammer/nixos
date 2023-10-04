@@ -14,7 +14,7 @@ builtins.mapAttrs
   (hostname: settings: darwin.lib.darwinSystem {
     inherit (settings) system;
     modules = [
-      ../machines/${machine}
+      ../machines/${settings.machine}
     ];
   })
   darwinConfigurations
