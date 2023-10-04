@@ -1,8 +1,9 @@
 {
-  description = "Minizilla's NixOS Configuration";
+  description = "Minizilla's NixOS Configurations";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
+    flake-utils.url = "github:numtide/flake-utils";
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -13,10 +14,8 @@
     };
   };
 
-  outputs = { self, ... }@inputs:
-    let
-      lib = import ./lib inputs;
-    in
+  outputs = { self, nixpkgs, flake-utils, ... }@inputs:
+    let lib = import ./lib inputs; in
     {
       nixosConfigurations = lib.mkNixOS {
         work = {
@@ -43,5 +42,8 @@
         machine = "darwin";
         user = "minizilla";
       };
-    };
+    } // flake-utils.lib.eachDefaultSystem (system:
+      let pkgs = import inputs.nixpkgs { inherit system; }; in
+      { devShells.default = import ./shell.nix { inherit pkgs; }; }
+    );
 }
