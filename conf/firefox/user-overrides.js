@@ -14,3 +14,4 @@ user_pref("browser.cache.disk.enable", true);
 user_pref("devtools.defaultColorUnit", "hex");
 user_pref("browser.urlbar.update2.engineAliasRefresh", true);
 user_pref("browser.fullscreen.exit_on_escape", false);
+user_pref("browser.tabs.inTitlebar", 0);
