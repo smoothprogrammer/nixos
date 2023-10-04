@@ -11,8 +11,8 @@
 #     hashedPassword = ${hashedPassword};
 #     resolution = { x = ${x}; y = ${y}; };
 #     dpi = ${dpi};
-#   }
-# }
+#   };
+# };
 
 let
   # This value determines the NixOS release from which the default
@@ -80,6 +80,5 @@ builtins.mapAttrs
 
       ../machines/${settings.machine}
     ];
-
   })
   nixosConfigurations

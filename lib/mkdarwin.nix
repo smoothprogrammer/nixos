@@ -1,16 +1,20 @@
-{ nixpkgs
-, darwin
+{ darwin
 , ...
-}:
+}: darwinConfigurations:
 
-{ system
-, machine
-, user
-}:
+# darwinConfigurations = {
+#   ${hostname} = {
+#     system = ${system};
+#     machine = ${machine};
+#     user = ${user};
+#   };
+# };
 
-darwin.lib.darwinSystem {
-  inherit system;
-  modules = [
-    ../machines/${machine}
-  ];
-}
+builtins.mapAttrs
+  (hostname: settings: darwin.lib.darwinSystem {
+    inherit (settings) system;
+    modules = [
+      ../machines/${machine}
+    ];
+  })
+  darwinConfigurations

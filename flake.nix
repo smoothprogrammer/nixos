@@ -37,10 +37,12 @@
         };
       };
 
-      darwinConfigurations.mba-m1 = lib.mkDarwin {
-        system = "aarch64-darwin";
-        machine = "darwin";
-        user = "minizilla";
+      darwinConfigurations = lib.mkDarwin {
+        mba-m1 = {
+          system = "aarch64-darwin";
+          machine = "darwin";
+          user = "minizilla";
+        };
       };
     } // flake-utils.lib.eachDefaultSystem (system:
       let pkgs = import inputs.nixpkgs { inherit system; }; in
