@@ -1,5 +1,6 @@
 { stateVersion
 , darwin
+, nixpkgs
 , home-manager
 , ...
 }: darwinConfigurations:
