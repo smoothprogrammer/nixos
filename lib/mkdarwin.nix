@@ -39,6 +39,11 @@ builtins.mapAttrs
           keep-derivations = true
         '';
 
+        users.users.${settings.user} = {
+          createHome = true;
+          home = "/Users/${settings.user}";
+        };
+
         home-manager.useGlobalPkgs = true;
         home-manager.useUserPackages = true;
         home-manager.users.${settings.user} = {
