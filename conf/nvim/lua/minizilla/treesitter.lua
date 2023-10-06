@@ -5,7 +5,12 @@ require('nvim-treesitter.configs').setup {
   },
 }
 
-require('treesitter-context').setup()
+require('treesitter-context').setup {
+  enable = true,
+  max_lines = 1,
+  min_window_height = 1,
+  separator = '─',
+}
 
 local nmap = Lib.keymapper('n', { silent = true })
 nmap('TP', vim.cmd.TSPlaygroundToggle)
