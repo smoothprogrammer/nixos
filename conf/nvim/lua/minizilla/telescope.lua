@@ -87,6 +87,7 @@ telescope.setup {
       hijack_netrw = true,
       grouped = true,
       hidden = true,
+      follow_symlinks = true,
       quiet = true,
       mappings = {
         ['i'] = {
