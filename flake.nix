@@ -49,7 +49,7 @@
 
       darwinConfigurations = lib.mkDarwin {
         work = {
-          inherit user;
+          user = "bigzilla";
           system = "aarch64-darwin";
           machine = "darwin";
         };
