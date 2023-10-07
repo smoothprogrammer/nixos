@@ -1,4 +1,4 @@
-{ config, lib, pkgs, resolution, dpi, ... }:
+{ config, lib, pkgs, ... }@args:
 
 {
   imports = [
@@ -8,8 +8,8 @@
 
   networking.useDHCP = false;
   networking.interfaces.ens160.useDHCP = true;
-  services.xserver.dpi = dpi;
-  services.xserver.resolutions = [ resolution ];
+  services.xserver.dpi = args.dpi;
+  services.xserver.resolutions = [ args.resolution ];
   conf.vmware.guest.enable = true;
 
   fileSystems."/host" = {

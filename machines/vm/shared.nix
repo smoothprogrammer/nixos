@@ -1,21 +1,68 @@
-{ config, lib, pkgs, user, ... }:
+{ config, lib, pkgs, ... }@args:
 
 {
+  # Using the latest kernel, especially useful for arm64.
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
-  # Extra /etc/hosts
+  # Hostname.
+  networking.hostName = args.hostname;
+
+  # Timezone.
+  time.timeZone = "Asia/Jakarta";
+
+  # Allow unfree packages.
+  nixpkgs.config.allowUnfree = true;
+
+  # Auto garbage collector.
+  nix.gc = {
+    automatic = true;
+    options = "--delete-older-than 14d";
+  };
+
+  # Enable new nix cli and flakes.
+  nix.extraOptions = ''
+    experimental-features = nix-command flakes
+    warn-dirty = false
+    keep-outputs = true
+    keep-derivations = true
+  '';
+
+  # Restrict user modification.
+  users.mutableUsers = false;
+
+  # No password for sudo.
+  security.sudo.wheelNeedsPassword = false;
+
+  # Single user.
+  users.users.${args.user} = {
+    isNormalUser = true;
+    extraGroups = [ "wheel" ];
+    inherit (args) hashedPassword;
+  };
+
+  # A must have home-manager config.
+  home-manager.useGlobalPkgs = true;
+  home-manager.useUserPackages = true;
+
+  # Single user home-manager.
+  home-manager.users.${args.user} = {
+    xdg.enable = true;
+    gtk.enable = true;
+    xsession.enable = true;
+    home.stateVersion = args.stateVersion;
+  };
+
+  # Extra /etc/hosts.
   networking.hostFiles = [
     ../../etc/hosts/reddit
   ];
 
-  # SSH and GPG.
+  # Default programs.
   programs.ssh.startAgent = true;
   programs.gnupg.agent.enable = true;
-
-  # Dconf.
   programs.dconf.enable = true;
 
-  # System packages.
+  # Default system packages.
   environment.systemPackages = with pkgs; [
     bat
     htop
@@ -26,7 +73,7 @@
   # Default shell for /bin/sh.
   environment.binsh = "${pkgs.dash}/bin/dash";
 
-  # Enable configured set of pkgs.
+  # Enable configured sets of packages.
   conf = {
     alacritty.enable = true;
     backgrounds.enable = true;
@@ -45,7 +92,7 @@
     rofi-pass.enable = true;
     syncthing = {
       enable = true;
-      inherit user;
+      inherit (args) user;
     };
     systemd-boot = {
       enable = true;
@@ -53,8 +100,11 @@
     };
     xserver = {
       enable = true;
-      autoLoginUser = user;
+      autoLoginUser = args.user;
       windowManager.bspwm.enable = true;
     };
   };
+
+  # Do not modify this.
+  system.stateVersion = args.stateVersion;
 }

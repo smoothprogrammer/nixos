@@ -23,20 +23,14 @@
       # Before changing this value read the documentation for this option
       # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
       stateVersion = "22.11";
+
+      # Single user.
       user = "minizilla";
+
       lib = import ./lib ({ inherit stateVersion; } // inputs);
     in
     {
       nixosConfigurations = lib.mkNixOS {
-        work = {
-          inherit user;
-          system = "aarch64-linux";
-          machine = "vm/vmware-aarch64";
-          hashedPassword = "$y$j9T$PBJ.vcjXKANpepO44J7Li/$SGY0lCPkgzTsc70/TJP9ADhkJpkqTGGCJpcF07TnmdA";
-          resolution = { x = 2880; y = 1752; };
-          dpi = 192;
-        };
-
         quicksilver = {
           inherit user;
           system = "aarch64-linux";
@@ -45,9 +39,24 @@
           resolution = { x = 2880; y = 1752; };
           dpi = 192;
         };
+
+        work = {
+          inherit user;
+          system = "aarch64-linux";
+          machine = "vm/vmware-aarch64";
+          hashedPassword = "$y$j9T$PBJ.vcjXKANpepO44J7Li/$SGY0lCPkgzTsc70/TJP9ADhkJpkqTGGCJpcF07TnmdA";
+          resolution = { x = 2880; y = 1752; };
+          dpi = 192;
+        };
       };
 
       darwinConfigurations = lib.mkDarwin {
+        quicksilver = {
+          inherit user;
+          system = "aarch64-darwin";
+          machine = "darwin";
+        };
+
         work = {
           user = "bigzilla";
           system = "aarch64-darwin";
