@@ -39,9 +39,7 @@ secret: is_linux
 rebuild:
 	@echo reconfigure $(hostname) machine...
 ifeq ($(uname), Darwin)
-	@nix build .#darwinConfigurations.$(hostname).system \
-		--extra-experimental-features "nix-command flakes"
-	@./result/sw/bin/darwin-rebuild switch --flake .#$(hostname)
+	@darwin-rebuild switch --flake .#$(hostname)
 else
 	@sudo nixos-rebuild switch --flake .#$(hostname)
 endif
@@ -55,6 +53,10 @@ darwin/nix-install: is_darwin
 	@echo installing nix...
 	@sudo curl -L https://nixos.org/nix/install | sh -s -- --daemon --yes
 	@echo "$$source_nix" >> ~/.zprofile
+
+darwin/nix-darwin-install: is_darwin
+	@echo installing nix-darwin...
+	@nix run nix-darwin -- switch --flake .#$(hostname) --extra-experimental-features "nix-command flakes"
 
 vm/nixos-install:
 ifeq ($(vm_addr), unset)
