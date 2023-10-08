@@ -3,7 +3,6 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
-    flake-utils.url = "github:numtide/flake-utils";
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -14,7 +13,7 @@
     };
   };
 
-  outputs = { self, nixpkgs, flake-utils, ... }@inputs:
+  outputs = { self, nixpkgs, ... }@inputs:
     let
       # This value determines the NixOS release from which the default
       # settings for stateful data, like file locations and database versions
@@ -63,8 +62,14 @@
           machine = "darwin";
         };
       };
-    } // flake-utils.lib.eachDefaultSystem (system:
-      let pkgs = import inputs.nixpkgs { inherit system; }; in
-      { devShells.default = import ./shell.nix { inherit pkgs; }; }
+    } // (
+      let
+        forAllSystems = nixpkgs.lib.genAttrs nixpkgs.lib.systems.flakeExposed;
+      in
+      {
+        devShells = forAllSystems (system:
+          { default = import ./shell.nix { pkgs = nixpkgs.legacyPackages.${system}; }; }
+        );
+      }
     );
 }
