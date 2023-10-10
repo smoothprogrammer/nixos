@@ -55,6 +55,7 @@
   homebrew.enable = true;
   homebrew.casks = [
     "dbeaver-community"
+    "discord"
     "figma"
     "firefox"
     "google-chrome"
