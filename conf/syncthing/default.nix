@@ -23,6 +23,7 @@ in
           "ssh" = { path = "~/.ssh"; ignorePerms = false; };
           "gnupg" = { path = "~/.gnupg"; ignorePerms = false; };
           "password-store" = { path = "~/.password-store"; ignorePerms = false; };
+          "document" = { path = "~/.document"; ignorePerms = false; };
         };
       };
     };
