@@ -3,3 +3,4 @@
 help_color='#4872FF'
 
 default_autotype='pass'
+delay=0.2
