@@ -56,7 +56,7 @@ darwin/nix-install: is_darwin
 
 darwin/nix-darwin-install: is_darwin
 	@echo installing nix-darwin...
-	@nix run nix-darwin -- switch --flake .#$(hostname) --extra-experimental-features "nix-command flakes"
+	@nix run nix-darwin -- switch --flake .#$(hostname)
 
 vm/nixos-install:
 ifeq ($(vm_addr), unset)
