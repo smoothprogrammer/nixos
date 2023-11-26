@@ -70,6 +70,8 @@
     htop
     killall
     neofetch
+    pass
+    rofi-pass
   ];
 
   # Manage dotfiles using Homini.
@@ -95,7 +97,6 @@
     nvim.enable = true;
     picom.enable = true;
     rofi.enable = true;
-    rofi-pass.enable = true;
     syncthing = {
       enable = true;
       inherit (args) user;
