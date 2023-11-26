@@ -7,7 +7,6 @@
   ./firefox
   ./fish
   ./fonts
-  ./git
   ./kitty
   ./nordzy
   ./nvim
