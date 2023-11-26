@@ -66,15 +66,19 @@
   environment.systemPackages = with pkgs; [
     alacritty
     bat
+    direnv
     git
     htop
     killall
     kitty
     neofetch
+    nix-direnv
     pass
     rofi
     rofi-pass
   ];
+
+  environment.pathsToLink = [ "/share/nix-direnv" ];
 
   # Manage dotfiles using Homini.
   homini = {
@@ -89,7 +93,6 @@
   conf = {
     backgrounds.enable = true;
     conky.enable = true;
-    direnv.enable = true;
     docker.enable = true;
     firefox.enable = true;
     fish.enable = true;

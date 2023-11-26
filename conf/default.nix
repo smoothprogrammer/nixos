@@ -1,7 +1,6 @@
 [
   ./backgrounds
   ./conky
-  ./direnv
   ./docker
   ./firefox
   ./fish
