@@ -9,7 +9,6 @@
   ./nordzy
   ./nvim
   ./picom
-  ./polybar
   ./syncthing
   ./systemd-boot
   ./vmware
