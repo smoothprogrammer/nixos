@@ -1,6 +1,7 @@
 { stateVersion
 , nixpkgs
 , home-manager
+, homini
 , ...
 }: nixosConfigurations:
 
@@ -24,6 +25,7 @@ builtins.mapAttrs
     };
     modules = [
       home-manager.nixosModules.default
+      homini.nixosModules.default
 
       ({ config, lib, pkgs, ... }: {
         imports = import ../conf;

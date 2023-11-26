@@ -40,6 +40,26 @@
         "type": "github"
       }
     },
+    "homini": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1700635991,
+        "narHash": "sha256-B7V9GiRvxFim+sHfjQjYGpgJPVlZ6RuWaKSFdh/y6ok=",
+        "owner": "minizilla",
+        "repo": "homini",
+        "rev": "fb5c600706bb897e1677fb7255580405364de055",
+        "type": "github"
+      },
+      "original": {
+        "owner": "minizilla",
+        "repo": "homini",
+        "type": "github"
+      }
+    },
     "nixpkgs": {
       "locked": {
         "lastModified": 1694948089,
@@ -60,6 +80,7 @@
       "inputs": {
         "darwin": "darwin",
         "home-manager": "home-manager",
+        "homini": "homini",
         "nixpkgs": "nixpkgs"
       }
     }

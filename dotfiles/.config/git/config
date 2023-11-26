@@ -1,0 +1,14 @@
+[core]
+	editor = "nvim"
+[init]
+	defaultBranch = "main"
+[push]
+	default = "current"
+[color]
+	ui = true
+[includeIf "gitdir:~/.config/nixos/.git"]
+	path = "~/.config/git/personal"
+[includeIf "gitdir:~/personal/"]
+	path = "~/.config/git/personal"
+[includeIf "gitdir:~/work/"]
+	path = "~/.config/git/work"

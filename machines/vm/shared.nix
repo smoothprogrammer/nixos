@@ -65,10 +65,17 @@
   # Default system packages.
   environment.systemPackages = with pkgs; [
     bat
+    git
     htop
     killall
     neofetch
   ];
+
+  # Manage dotfiles using Homini.
+  homini = {
+    enable = true;
+    dir = ../../dotfiles;
+  };
 
   # Default shell for /bin/sh.
   environment.binsh = "${pkgs.dash}/bin/dash";
@@ -83,7 +90,6 @@
     firefox.enable = true;
     fish.enable = true;
     fonts.enable = true;
-    git.enable = true;
     kitty.enable = true;
     nordzy.enable = true;
     nvim.enable = true;
