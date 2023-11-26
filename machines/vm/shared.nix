@@ -64,6 +64,7 @@
 
   # Default system packages.
   environment.systemPackages = with pkgs; [
+    alacritty
     bat
     git
     htop
@@ -82,7 +83,6 @@
 
   # Enable configured sets of packages.
   conf = {
-    alacritty.enable = true;
     backgrounds.enable = true;
     conky.enable = true;
     direnv.enable = true;

@@ -1,5 +1,4 @@
 [
-  ./alacritty
   ./backgrounds
   ./conky
   ./direnv
