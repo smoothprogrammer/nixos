@@ -71,6 +71,7 @@
     killall
     neofetch
     pass
+    rofi
     rofi-pass
   ];
 
@@ -96,7 +97,6 @@
     nordzy.enable = true;
     nvim.enable = true;
     picom.enable = true;
-    rofi.enable = true;
     syncthing = {
       enable = true;
       inherit (args) user;
