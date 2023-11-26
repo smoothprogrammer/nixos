@@ -69,6 +69,7 @@
     git
     htop
     killall
+    kitty
     neofetch
     pass
     rofi
@@ -93,7 +94,6 @@
     firefox.enable = true;
     fish.enable = true;
     fonts.enable = true;
-    kitty.enable = true;
     nordzy.enable = true;
     nvim.enable = true;
     picom.enable = true;

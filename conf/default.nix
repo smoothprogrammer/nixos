@@ -6,7 +6,6 @@
   ./firefox
   ./fish
   ./fonts
-  ./kitty
   ./nordzy
   ./nvim
   ./picom
