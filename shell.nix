@@ -6,7 +6,7 @@ pkgs.mkShell {
     git config pull.rebase true
     ${pkgs.neo-cowsay}/bin/cowsay -f sage "Minizilla's NixOS Configurations"
   '';
-  builtInputs = with pkgs; [
+  buildInputs = with pkgs; [
     editorconfig-checker
   ];
 }
