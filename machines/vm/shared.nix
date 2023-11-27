@@ -62,6 +62,10 @@
   programs.gnupg.agent.enable = true;
   programs.dconf.enable = true;
 
+  # Enable Docker.
+  virtualisation.docker.enable = true;
+  users.extraGroups.docker.members = [ args.user ];
+
   # Default system packages.
   environment.systemPackages = with pkgs; [
     alacritty
@@ -93,7 +97,6 @@
   conf = {
     backgrounds.enable = true;
     conky.enable = true;
-    docker.enable = true;
     firefox.enable = true;
     fish.enable = true;
     fonts.enable = true;

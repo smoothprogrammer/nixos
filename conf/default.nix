@@ -1,7 +1,6 @@
 [
   ./backgrounds
   ./conky
-  ./docker
   ./firefox
   ./fish
   ./fonts
