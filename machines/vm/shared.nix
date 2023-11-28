@@ -3,6 +3,10 @@
 {
   # Using the latest kernel, especially useful for arm64.
   boot.kernelPackages = pkgs.linuxPackages_latest;
+  boot.kernel.sysctl = {
+    "net.core.rmem_max" = 2500000;
+    "net.core.wmem_max" = 2500000;
+  };
 
   # Hostname.
   networking.hostName = args.hostname;
