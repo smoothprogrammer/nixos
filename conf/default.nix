@@ -4,7 +4,6 @@
   ./firefox
   ./fish
   ./fonts
-  ./nordzy
   ./nvim
   ./picom
   ./syncthing

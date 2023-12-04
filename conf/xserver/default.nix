@@ -30,7 +30,7 @@ in
     ];
 
     home-manager.sharedModules = [{
-      xresources.extraConfig = builtins.readFile ./Xresources;
+      # xresources.extraConfig = builtins.readFile ./Xresources;
     }];
   };
 }

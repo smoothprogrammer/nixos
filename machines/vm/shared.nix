@@ -81,6 +81,7 @@
     kitty
     neofetch
     nix-direnv
+    nordzy-cursor-theme # TODO: https://github.com/nix-community/home-manager/blob/948703f3e71f1332a0cb535ebaf5cb14946e3724/modules/config/home-cursor.nix#L167-L168
     pass
     rofi
     rofi-pass
@@ -104,7 +105,6 @@
     firefox.enable = true;
     fish.enable = true;
     fonts.enable = true;
-    nordzy.enable = true;
     nvim.enable = true;
     picom.enable = true;
     syncthing = {
