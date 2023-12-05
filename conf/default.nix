@@ -9,5 +9,4 @@
   ./syncthing
   ./systemd-boot
   ./vmware
-  ./xserver
 ]

@@ -1,5 +1,0 @@
-{
-  imports = [
-    # TODO: more displayManager
-  ];
-}

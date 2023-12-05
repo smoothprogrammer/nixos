@@ -85,6 +85,7 @@
     pass
     rofi
     rofi-pass
+    xclip
   ];
 
   environment.pathsToLink = [ "/share/nix-direnv" ];
@@ -97,6 +98,17 @@
 
   # Default shell for /bin/sh.
   environment.binsh = "${pkgs.dash}/bin/dash";
+
+  hardware.opengl.enable = true;
+
+  services.xserver = {
+    enable = true;
+    excludePackages = with pkgs; [ xterm ];
+    desktopManager.xterm.enable = false;
+    desktopManager.wallpaper.mode = "fill";
+    displayManager.autoLogin.user = args.user;
+    windowManager.bspwm.enable = true;
+  };
 
   # Enable configured sets of packages.
   conf = {
@@ -114,11 +126,6 @@
     systemd-boot = {
       enable = true;
       silent = true;
-    };
-    xserver = {
-      enable = true;
-      autoLoginUser = args.user;
-      windowManager.bspwm.enable = true;
     };
   };
 
