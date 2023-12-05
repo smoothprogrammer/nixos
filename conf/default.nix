@@ -1,5 +1,4 @@
 [
-  ./backgrounds
   ./conky
   ./firefox
   ./fish

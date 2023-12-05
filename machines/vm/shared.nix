@@ -112,7 +112,6 @@
 
   # Enable configured sets of packages.
   conf = {
-    backgrounds.enable = true;
     conky.enable = true;
     firefox.enable = true;
     fish.enable = true;
