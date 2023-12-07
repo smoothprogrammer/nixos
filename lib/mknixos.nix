@@ -28,7 +28,7 @@ builtins.mapAttrs
       homini.nixosModules.default
 
       ({ config, lib, pkgs, ... }: {
-        imports = import ../conf;
+        imports = import ../modules;
         nixpkgs.overlays = [ (import ./overlays.nix) ];
         nix.registry.nixpkgs.flake = nixpkgs;
         nix.nixPath = [ "nixpkgs=flake:nixpkgs" ];
