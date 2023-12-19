@@ -10,7 +10,6 @@ in
       xsession.initExtra = ''
         ${pkgs.conky}/bin/conky
       '';
-      xdg.configFile."conky/conky.conf".source = ./conky.conf;
     }];
   };
 }
