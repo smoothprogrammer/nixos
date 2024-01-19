@@ -60,6 +60,7 @@ let
   test = with pkgs.vimPlugins; [
     neotest
     neotest-go
+    nvim-coverage
   ];
 
   telescope = with pkgs.vimPlugins; [
