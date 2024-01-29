@@ -1,7 +1,7 @@
 vm_addr ?= unset
 ssh_options = -o PubkeyAuthentication=no -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no
 uname := $(shell uname)
-hostname := $(shell hostname)
+hostname := $(shell hostname -s)
 
 define source_brew
 # Brew
@@ -56,7 +56,7 @@ darwin/nix-install: is_darwin
 
 darwin/nix-darwin-install: is_darwin
 	@echo installing nix-darwin...
-	@nix run nix-darwin -- switch --flake .#$(hostname)
+	@nix --extra-experimental-features 'nix-command flakes' run nix-darwin -- switch --flake .#$(hostname)
 
 vm/nixos-install:
 ifeq ($(vm_addr), unset)

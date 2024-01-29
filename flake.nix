@@ -36,6 +36,7 @@
       nixosConfigurations = lib.mkNixOS {
         quicksilver = {
           inherit user;
+          stateVersion = "22.11";
           system = "aarch64-linux";
           machine = "vm/vmware-aarch64";
           hashedPassword = "$y$j9T$jmTClkK2hbljvadc2kkPF/$dtnPG2OntoiGxVJ7gLXh8pXebfghHNbLBtTFm7KUvy7";
@@ -43,8 +44,9 @@
           dpi = 192;
         };
 
-        work = {
+        amartha = {
           inherit user;
+          stateVersion = "23.11";
           system = "aarch64-linux";
           machine = "vm/vmware-aarch64";
           hashedPassword = "$y$j9T$PBJ.vcjXKANpepO44J7Li/$SGY0lCPkgzTsc70/TJP9ADhkJpkqTGGCJpcF07TnmdA";
@@ -60,8 +62,8 @@
           machine = "darwin";
         };
 
-        work = {
-          user = "bigzilla";
+        NB-BillyZaelaniMalik-Tech = {
+          user = "billyzaelanimalik";
           system = "aarch64-darwin";
           machine = "darwin";
         };

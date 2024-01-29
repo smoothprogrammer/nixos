@@ -1,5 +1,4 @@
-{ stateVersion
-, nixpkgs
+{ nixpkgs
 , home-manager
 , homini
 , ...
@@ -9,6 +8,7 @@
 #   ${hostname} = {
 #     system = ${system};
 #     machine = ${machine};
+#     stateVersion = ${stateVersion};
 #     user = ${user};
 #     hashedPassword = ${hashedPassword};
 #     resolution = { x = ${x}; y = ${y}; };
@@ -20,8 +20,8 @@ builtins.mapAttrs
   (hostname: settings: nixpkgs.lib.nixosSystem {
     inherit (settings) system;
     specialArgs = {
-      inherit stateVersion hostname;
-      inherit (settings) user hashedPassword resolution dpi;
+      inherit hostname;
+      inherit (settings) stateVersion user hashedPassword resolution dpi;
     };
     modules = [
       home-manager.nixosModules.default
