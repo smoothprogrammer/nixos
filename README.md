@@ -15,16 +15,12 @@ Download the [image](https://nixos.org/download).
 
 Setup VMWare.
 
-Inside the VM.
-
 ```sh
+# vm
 sudo -i
 passwd
 ip addr
-```
 
-Inside the host.
-
-```sh
+# host
 make vm/nixos-install vm_addr=VM_ADDR hostname=HOSTNAME
 ```

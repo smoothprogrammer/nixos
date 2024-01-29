@@ -58,6 +58,7 @@ darwin/nix-darwin-install: is_darwin
 	@echo installing nix-darwin...
 	@nix --extra-experimental-features 'nix-command flakes' run nix-darwin -- switch --flake .#$(hostname)
 
+# TODO: rsync not installed in the vm
 vm/nixos-install:
 ifeq ($(vm_addr), unset)
 	@echo vm_addr is unset; exit 1
@@ -78,6 +79,7 @@ endif
 		mkdir -p /mnt/boot; \
 		mount /dev/disk/by-label/boot /mnt/boot; \
 		swapon /dev/disk/by-label/swap; \
+		nix-env -iA nixos.rsync
 	"
 	@rsync -av -e "ssh $(ssh_options)" \
 		--exclude=".git/" \
