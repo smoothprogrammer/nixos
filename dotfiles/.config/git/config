@@ -12,3 +12,5 @@
 	path = "~/.config/git/personal"
 [includeIf "gitdir:~/work/"]
 	path = "~/.config/git/work"
+[url "ssh://git@bitbucket.org/"]
+	insteadOf = https://bitbucket.org/
