@@ -13,7 +13,7 @@ let g:NERDDefaultAlign = 'left'
 let g:NERDCommentEmptyLines = 1
 let g:NERDTrimTrailingWhitespace = 1
 ]]
-map('<C-_>', '<Plug>NERDCommenterToggle')
+map('<C-/>', '<Plug>NERDCommenterToggle')
 
 local mark = require('harpoon.mark')
 local ui = require('harpoon.ui')
