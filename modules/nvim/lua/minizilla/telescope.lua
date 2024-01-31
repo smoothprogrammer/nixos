@@ -45,6 +45,7 @@ telescope.setup {
         '-g', '!**/.worktree/*',
         '-g', '!**/node_modules/*',
         '-g', '!**/target/*',
+        '-g', '!*.out',
       },
       mappings = {
         i = {
@@ -63,6 +64,7 @@ telescope.setup {
         '-g', '!**/.worktree/*',
         '-g', '!**/node_modules/*',
         '-g', '!**/target/*',
+        '-g', '!*.out',
       },
     },
     help_tags = {
