@@ -74,6 +74,7 @@
   environment.systemPackages = with pkgs; [
     alacritty
     bat
+    dbeaver
     direnv
     git
     htop
