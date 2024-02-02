@@ -60,6 +60,7 @@
     "firefox"
     "google-chrome"
     "inkscape"
+    "openvpn-connect"
     "postman"
     "slack"
     "telegram"
