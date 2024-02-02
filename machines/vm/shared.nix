@@ -76,6 +76,7 @@
     bat
     dbeaver
     direnv
+    elasticsearch
     git
     htop
     killall
