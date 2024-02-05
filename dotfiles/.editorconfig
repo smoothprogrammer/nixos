@@ -19,3 +19,7 @@ indent_style = unset
 [*.proto]
 indent_style = space
 indent_size = 2
+
+[*.{yml,yaml,toml,json}]
+indent_style = space
+indent_size = 2
