@@ -1,9 +1,12 @@
 local neotest = require('neotest')
 local coverage = require('coverage')
+local rest_nvim = require('rest-nvim')
 
 coverage.setup {
   commands = false,
 }
+
+rest_nvim.setup()
 
 vim.api.nvim_create_autocmd('ColorScheme', {
   desc = 'Add nvim-coverage highlight',
@@ -46,3 +49,4 @@ nmap('<Leader>tS', neotest.run.stop, '[t]est [S]top')
 nmap('<Leader>to', neotest.output.open, '[t]est [o]pen')
 nmap('<Leader>ts', neotest.summary.toggle, '[t]est [s]ummary')
 nmap('<Leader>tc', coverage.summary, '[t]est [c]overage')
+nmap('<Leader>re', '<Plug>RestNvim', 'run http [re]quest')

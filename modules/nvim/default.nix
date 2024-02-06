@@ -13,6 +13,16 @@ let
     };
   };
 
+  rest-nvim = pkgs.vimUtils.buildVimPlugin {
+    name = "rest-nvim";
+    src = pkgs.fetchFromGitHub {
+      owner = "rest-nvim";
+      repo = "rest.nvim";
+      rev = "v1.0.1";
+      sha256 = "sha256-u/N/gCVmeci3nMB/MbpgxkD41D4dS/sbomf+Vw9jBGw=";
+    };
+  };
+
   gopherjs = pkgs.buildGoModule rec {
     pname = "gopherjs";
     version = "v1.18.0-beta3";
@@ -45,6 +55,7 @@ let
       tree-sitter-html
       tree-sitter-css
       tree-sitter-javascript
+      tree-sitter-http
       tree-sitter-json
       tree-sitter-toml
       tree-sitter-yaml
@@ -74,6 +85,7 @@ let
     neotest
     neotest-go
     nvim-coverage
+    rest-nvim
   ];
 
   telescope = with pkgs.vimPlugins; [
@@ -111,6 +123,8 @@ in
     environment.systemPackages = with pkgs; [
       ripgrep
       fd
+      curl
+      jq
       tree-sitter
       gh
       editorconfig-checker
