@@ -1,4 +1,5 @@
 { nixpkgs
+, dt
 , home-manager
 , homini
 , ...
@@ -30,7 +31,10 @@ builtins.mapAttrs
       ({ config, lib, pkgs, ... }: {
         imports = import ../modules;
         nixpkgs.overlays = [ (import ./overlays.nix) ];
-        nix.registry.nixpkgs.flake = nixpkgs;
+        nix.registry = {
+          nixpkgs.flake = nixpkgs;
+          dt.flake = dt;
+        };
         nix.nixPath = [ "nixpkgs=flake:nixpkgs" ];
       })
 

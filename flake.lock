@@ -20,6 +20,26 @@
         "type": "github"
       }
     },
+    "dt": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1702374134,
+        "narHash": "sha256-S1zQu40UttaC8NTruA9F32QvQ/9ft5rYuRX08LfZ6ns=",
+        "owner": "minizilla",
+        "repo": "dt",
+        "rev": "9e33adc69510caaaf1bad8a538b55a1bb4a26536",
+        "type": "github"
+      },
+      "original": {
+        "owner": "minizilla",
+        "repo": "dt",
+        "type": "github"
+      }
+    },
     "home-manager": {
       "inputs": {
         "nixpkgs": [
@@ -79,6 +99,7 @@
     "root": {
       "inputs": {
         "darwin": "darwin",
+        "dt": "dt",
         "home-manager": "home-manager",
         "homini": "homini",
         "nixpkgs": "nixpkgs"
