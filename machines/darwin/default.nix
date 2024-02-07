@@ -66,6 +66,7 @@
     "slack"
     "telegram"
     "vmware-fusion"
+    "whatsapp"
     "zoom"
   ];
 }
