@@ -60,6 +60,7 @@
     "firefox"
     "google-chrome"
     "inkscape"
+    "mongodb-compass"
     "openvpn-connect"
     "postman"
     "slack"
