@@ -112,6 +112,8 @@
     windowManager.bspwm.enable = true;
   };
 
+  services.redis.servers."".enable = true;
+
   # Enable configured sets of packages.
   conf = {
     conky.enable = true;
