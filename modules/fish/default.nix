@@ -13,7 +13,6 @@ in
       programs.fish = {
         enable = true;
         shellAbbrs = {
-          rebuild = "sudo nixos-rebuild switch --flake ~/.config/nixos#vm-mba-m1";
           wifi = "nmcli device wifi";
           vimdev = ''vim --cmd "set rtp+=./"'';
           g = "git";
