@@ -44,6 +44,9 @@ else
 	@sudo nixos-rebuild switch --flake .#$(hostname)
 endif
 
+gc:
+	@nix store gc
+
 darwin/brew-install: is_darwin
 	@echo installing homebrew...
 	@sudo NONINTERACTIVE=1 curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh | bash
