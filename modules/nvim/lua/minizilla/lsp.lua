@@ -93,7 +93,7 @@ lspconfig.lua_ls.setup {
   },
 }
 
-lspconfig.rnix.setup {
+lspconfig.nixd.setup {
   capabilities = capabilities,
 }
 

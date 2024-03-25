@@ -131,7 +131,7 @@ in
       editorconfig-checker
       gnumake
       gcc
-      rnix-lsp
+      nixd
       manix
       luajit
       lua-language-server
