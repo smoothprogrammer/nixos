@@ -27,6 +27,11 @@ in
       urls = [{ template = "https://pkg.go.dev/search?q={searchTerms}"; }];
       definedAliases = [ "@gp" ];
     };
+    "Maven Packages" = {
+      icon = ./favicon/sonatype.ico; # https://central.sonatype.com/favicon.ico
+      urls = [{ template = "https://central.sonatype.com/search?q={searchTerms}"; }];
+      definedAliases = [ "@mp" ];
+    };
     "Nix Packages" = {
       inherit icon;
       urls = [{ template = "https://search.nixos.org/packages?type=packages&query={searchTerms}"; }];
