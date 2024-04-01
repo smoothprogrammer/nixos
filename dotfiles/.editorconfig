@@ -20,7 +20,7 @@ indent_style = unset
 indent_style = space
 indent_size = 2
 
-[*.{yml,yaml,toml,json}]
+[*.{yml,yaml,toml,xml,json}]
 indent_style = space
 indent_size = 2
 
