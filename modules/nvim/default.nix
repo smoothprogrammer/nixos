@@ -50,6 +50,7 @@ let
       tree-sitter-rust
       tree-sitter-c
       tree-sitter-cpp
+      tree-sitter-java
       tree-sitter-lua
       tree-sitter-python
       tree-sitter-html
@@ -144,6 +145,9 @@ in
       cargo
       rustfmt
       rust-analyzer
+      jdk17
+      maven
+      jdt-language-server
     ];
 
     home-manager.sharedModules = [{

@@ -116,3 +116,7 @@ lspconfig.rust_analyzer.setup {
     },
   },
 }
+
+lspconfig.jdtls.setup {
+  capabilities = capabilities,
+}
