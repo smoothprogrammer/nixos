@@ -27,6 +27,7 @@ in
           gco = "git checkout";
           gl = "git log";
           glo = "git log --oneline";
+          gdf = "git diff";
           gpl = "git pull";
           gps = "git push";
           gr = "git remote";
