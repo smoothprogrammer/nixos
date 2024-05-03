@@ -54,6 +54,7 @@
   # We still needs homebrew since nixpkgs support for darwin is lacking.
   homebrew.enable = true;
   homebrew.casks = [
+    "asana"
     "dbeaver-community"
     "discord"
     "figma"
