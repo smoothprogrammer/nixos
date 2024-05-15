@@ -32,6 +32,11 @@ in
       urls = [{ template = "https://central.sonatype.com/search?q={searchTerms}"; }];
       definedAliases = [ "@mp" ];
     };
+    "Mongo Operators" = {
+      icon = ./favicon/mongo.ico; # https://www.mongodb.com/docs/assets/favicon.ico
+      urls = [{ template = "https://www.mongodb.com/docs/manual/reference/operator/{searchTerms}"; }];
+      definedAliases = [ "@mo" ];
+    };
     "Nix Packages" = {
       inherit icon;
       urls = [{ template = "https://search.nixos.org/packages?type=packages&query={searchTerms}"; }];
