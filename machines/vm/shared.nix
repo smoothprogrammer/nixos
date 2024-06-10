@@ -74,6 +74,7 @@
   environment.systemPackages = with pkgs; [
     alacritty
     bat
+    chromium
     dbeaver
     direnv
     elasticsearch
