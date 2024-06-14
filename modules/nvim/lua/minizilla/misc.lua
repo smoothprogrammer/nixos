@@ -24,3 +24,6 @@ nmap('<Leader>2', function() ui.nav_file(2) end)
 nmap('<Leader>3', function() ui.nav_file(3) end)
 nmap('<Leader>4', function() ui.nav_file(4) end)
 nmap('<Leader>5', function() ui.nav_file(5) end)
+
+require('oil').setup()
+nmap('<Leader>fb', '<Cmd>Oil<CR>')

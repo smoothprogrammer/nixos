@@ -107,6 +107,7 @@ let
     nvim-autopairs
     leap-nvim
     harpoon
+    oil-nvim
   ];
 in
 {
