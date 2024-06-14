@@ -25,5 +25,9 @@ nmap('<Leader>3', function() ui.nav_file(3) end)
 nmap('<Leader>4', function() ui.nav_file(4) end)
 nmap('<Leader>5', function() ui.nav_file(5) end)
 
-require('oil').setup()
+require('oil').setup {
+  keymaps = {
+    ["<BS>"] = "actions.parent",
+  }
+}
 nmap('<Leader>fb', '<Cmd>Oil<CR>')
