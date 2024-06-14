@@ -3,16 +3,6 @@
 let
   cfg = config.conf.nvim;
 
-  neotest-go = pkgs.vimUtils.buildVimPlugin {
-    name = "neotest-go";
-    src = pkgs.fetchFromGitHub {
-      owner = "nvim-neotest";
-      repo = "neotest-go";
-      rev = "b6dc0b1c49569273d863d7b96b6c81b3fc153e82";
-      sha256 = "sha256-1xmdl9Me7uCXQXeZAtKP1bR/73tSt5PgF5dlOGzKpNY=";
-    };
-  };
-
   rest-nvim = pkgs.vimUtils.buildVimPlugin {
     name = "rest-nvim";
     src = pkgs.fetchFromGitHub {
