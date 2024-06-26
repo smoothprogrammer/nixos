@@ -28,13 +28,12 @@ vim.api.nvim_create_autocmd('ColorScheme', {
 neotest.setup {
   adapters = {
     require('neotest-go') {
-      args = { '-coverprofile=coverage.out' },
+      args = { "-coverprofile=" .. vim.fn.getcwd() .. "/coverage.out" },
     },
   },
   consumers = {
     always_open_output = function(client)
       client.listeners.results = function()
-        neotest.summary.open()
         coverage.load()
         coverage.show()
       end
@@ -44,7 +43,7 @@ neotest.setup {
 
 
 local nmap = Lib.keymapper('n', { silent = true })
-nmap('<Leader>tt', function() neotest.run.run(vim.fn.getcwd()) end, '[t]es[t]')
+nmap('<Leader>tt', function() neotest.run.run(vim.fn.expand('%:h')) end, '[t]es[t]')
 nmap('<Leader>tS', neotest.run.stop, '[t]est [S]top')
 nmap('<Leader>to', neotest.output.open, '[t]est [o]pen')
 nmap('<Leader>ts', neotest.summary.toggle, '[t]est [s]ummary')
