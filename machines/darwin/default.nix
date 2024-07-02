@@ -66,6 +66,7 @@
     "postman"
     "slack"
     "telegram"
+    "visual-studio-code"
     "vmware-fusion"
     "whatsapp"
     "zoom"
