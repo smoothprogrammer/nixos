@@ -37,6 +37,7 @@ let
       tree-sitter-bash
       tree-sitter-dockerfile
       tree-sitter-go
+      tree-sitter-dart
       tree-sitter-rust
       tree-sitter-c
       tree-sitter-cpp
@@ -139,6 +140,7 @@ in
       jdk17
       maven
       jdt-language-server
+      flutter
     ];
 
     home-manager.sharedModules = [{

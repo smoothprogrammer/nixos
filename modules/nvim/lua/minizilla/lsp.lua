@@ -120,3 +120,7 @@ lspconfig.rust_analyzer.setup {
 lspconfig.jdtls.setup {
   capabilities = capabilities,
 }
+
+lspconfig.dartls.setup {
+  capabilities = capabilities,
+}
