@@ -95,6 +95,14 @@ lspconfig.lua_ls.setup {
 
 lspconfig.nixd.setup {
   capabilities = capabilities,
+  settings = {
+    nixd = {
+      formatting = {
+        -- command = { "nixfmt" },
+        command = { "nixpkgs-fmt" },
+      },
+    },
+  },
 }
 
 lspconfig.gopls.setup {

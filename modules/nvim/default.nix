@@ -125,6 +125,8 @@ in
       gnumake
       gcc
       nixd
+      nixfmt
+      nixpkgs-fmt
       manix
       luajit
       lua-language-server
