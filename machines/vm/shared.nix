@@ -75,6 +75,7 @@
     alacritty
     bat
     chromium
+    camunda-modeler
     dbeaver
     direnv
     elasticsearch
