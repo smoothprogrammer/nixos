@@ -132,3 +132,7 @@ lspconfig.jdtls.setup {
 lspconfig.dartls.setup {
   capabilities = capabilities,
 }
+
+lspconfig.ast_grep.setup {
+  capabilities = capabilities,
+}

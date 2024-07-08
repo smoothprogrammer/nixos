@@ -143,6 +143,7 @@ in
       maven
       jdt-language-server
       flutter
+      ast-grep
     ];
 
     home-manager.sharedModules = [{
