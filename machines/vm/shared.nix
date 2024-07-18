@@ -89,6 +89,8 @@
     pass
     rofi
     rofi-pass
+    unzip
+    wget
     xclip
   ];
 
