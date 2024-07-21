@@ -3,6 +3,13 @@ require('nvim-treesitter.configs').setup {
     enable = true,
     additional_vim_regex_highlighting = false,
   },
+  incremental_selection = {
+    enable = true,
+    keymaps = {
+      node_incremental = "+",
+      node_decremental = "-",
+    },
+  },
 }
 
 require('treesitter-context').setup {
