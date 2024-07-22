@@ -54,6 +54,7 @@ let
       tree-sitter-markdown
     ]))
     nvim-treesitter-context
+    nvim-treesitter-textobjects
     playground
   ];
 
