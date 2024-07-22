@@ -12,6 +12,12 @@ require('nvim-treesitter.configs').setup {
   },
 }
 
+-- treesitter based folding
+vim.wo.foldmethod = 'expr'
+vim.wo.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
+vim.opt.foldlevel = 4
+vim.opt.foldlevelstart = 99
+
 require('treesitter-context').setup {
   enable = true,
   max_lines = 1,
