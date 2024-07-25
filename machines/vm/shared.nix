@@ -67,7 +67,10 @@
   programs.dconf.enable = true;
 
   # Enable Docker.
-  virtualisation.docker.enable = true;
+  virtualisation.docker = {
+    enable = true;
+    package = pkgs.docker_27;
+  };
   users.extraGroups.docker.members = [ args.user ];
 
   # Default system packages.
@@ -76,7 +79,7 @@
     bat
     chromium
     camunda-modeler
-    dbeaver
+    dbeaver-bin
     direnv
     elasticsearch
     git
@@ -103,20 +106,28 @@
   };
 
   # Default shell for /bin/sh.
-  environment.binsh = "${pkgs.dash}/bin/dash";
+  # environment.binsh = "${pkgs.dash}/bin/dash";
 
-  hardware.opengl.enable = true;
+  hardware.graphics.enable = true;
 
   services.xserver = {
     enable = true;
     excludePackages = with pkgs; [ xterm ];
     desktopManager.xterm.enable = false;
     desktopManager.wallpaper.mode = "fill";
-    displayManager.autoLogin.user = args.user;
     windowManager.bspwm.enable = true;
   };
+  services.displayManager.autoLogin.user = args.user;
 
+  # For local development
   services.redis.servers."".enable = true;
+  services.postgresql = {
+    enable = true;
+    ensureDatabases = [ "keycloak_ext_user_db" ];
+    authentication = pkgs.lib.mkOverride 10 ''
+      local all all trust
+    '';
+  };
 
   # Enable configured sets of packages.
   conf = {

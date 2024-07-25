@@ -126,7 +126,7 @@ in
       gnumake
       gcc
       nixd
-      nixfmt
+      nixfmt-classic
       nixpkgs-fmt
       manix
       luajit
