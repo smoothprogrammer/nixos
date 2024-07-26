@@ -49,6 +49,7 @@
   environment.systemPackages = with pkgs; [
     git
     vim
+    go
   ];
 
   # We still needs homebrew since nixpkgs support for darwin is lacking.
