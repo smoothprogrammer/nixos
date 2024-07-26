@@ -57,6 +57,7 @@
     "asana"
     "dbeaver-community"
     "discord"
+    "docker"
     "figma"
     "firefox"
     "google-chrome"
