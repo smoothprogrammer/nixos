@@ -56,6 +56,7 @@
   homebrew.enable = true;
   homebrew.casks = [
     "asana"
+    "chatgpt"
     "dbeaver-community"
     "discord"
     "docker"
