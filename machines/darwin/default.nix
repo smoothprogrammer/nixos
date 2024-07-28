@@ -55,6 +55,7 @@
   # We still needs homebrew since nixpkgs support for darwin is lacking.
   homebrew.enable = true;
   homebrew.casks = [
+    "another-redis-desktop-manager"
     "asana"
     "chatgpt"
     "dbeaver-community"
