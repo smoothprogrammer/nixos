@@ -34,8 +34,13 @@ in
     };
     "Mongo Operators" = {
       icon = ./favicon/mongo.ico; # https://www.mongodb.com/docs/assets/favicon.ico
-      urls = [{ template = "https://www.mongodb.com/docs/manual/reference/operator/{searchTerms}"; }];
+      urls = [{ template = "https://www.mongodb.com/docs/manual/reference/operator/{searchTerms}/"; }];
       definedAliases = [ "@mo" ];
+    };
+    "Redis Commands" = {
+      icon = ./favicon/redis.png; # https://redis.io/docs/latest/images/favicons/favicon-196x196.png
+      urls = [{ template = "https://redis.io/docs/latest/commands/{searchTerms}/"; }];
+      definedAliases = [ "@rc" ];
     };
     "Nix Packages" = {
       inherit icon;
