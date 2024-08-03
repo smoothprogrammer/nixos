@@ -37,6 +37,7 @@ let
       tree-sitter-bash
       tree-sitter-dockerfile
       tree-sitter-go
+      tree-sitter-zig
       tree-sitter-dart
       tree-sitter-rust
       tree-sitter-c
@@ -136,6 +137,8 @@ in
       gopls
       delve
       golangci-lint
+      zig_0_12
+      zls
       rustc
       cargo
       rustfmt

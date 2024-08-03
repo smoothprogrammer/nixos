@@ -114,6 +114,10 @@ lspconfig.gopls.setup {
   },
 }
 
+lspconfig.zls.setup {
+  capabilities = capabilities,
+}
+
 lspconfig.rust_analyzer.setup {
   capabilities = capabilities,
   settings = {
