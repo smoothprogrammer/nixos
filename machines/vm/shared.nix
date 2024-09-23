@@ -72,7 +72,7 @@
     package = pkgs.docker_27;
   };
   users.extraGroups.docker.members = [ args.user ];
-  # boot.binfmt.emulatedSystems = [ "x86_64-linux" ];
+  boot.binfmt.emulatedSystems = [ "x86_64-linux" ];
 
   # Default system packages.
   environment.systemPackages = with pkgs; [
