@@ -41,8 +41,11 @@ rebuild:
 ifeq ($(uname), Darwin)
 	@darwin-rebuild switch --flake .#$(hostname)
 else
-	@sudo nixos-rebuild switch --flake .#$(hostname)
+	@sudo nixos-rebuild switch --flake .#$(hostname) --show-trace
 endif
+
+update:
+	@nix flake update
 
 gc:
 	@nix store gc
