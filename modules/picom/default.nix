@@ -6,13 +6,11 @@ in
 {
   options.conf.picom.enable = lib.mkEnableOption "picom";
   config = lib.mkIf cfg.enable {
-    home-manager.sharedModules = [{
-      services.picom = {
-        enable = true;
-        vSync = true;
-        fade = true;
-        shadow = true;
-      };
-    }];
+    services.picom = {
+      enable = true;
+      vSync = true;
+      fade = false;
+      shadow = true;
+    };
   };
 }
