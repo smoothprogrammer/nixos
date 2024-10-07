@@ -35,6 +35,9 @@ in
           gs = "git status";
           gt = "git tag";
           gw = "git worktree";
+          gwl = "git worktree list";
+          gwa = "git worktree add";
+          gwr = "git worktree remove";
         };
         shellInit = ''
           set -g theme_display_date no
