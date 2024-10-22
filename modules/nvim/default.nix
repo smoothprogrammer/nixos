@@ -13,19 +13,6 @@ let
     };
   };
 
-  gopherjs = pkgs.buildGoModule rec {
-    pname = "gopherjs";
-    version = "v1.18.0-beta3";
-    src = pkgs.fetchFromGitHub {
-      owner = "gopherjs";
-      repo = "gopherjs";
-      rev = version;
-      sha256 = "sha256-ktrGnC4xFaPMlOi4wa5XtBTVueKtWBGWKLCigefgYSY=";
-    };
-    vendorHash = "sha256-dJxghd+JVSn38IllrJfQfCvvgVxPvU/C2+yOMNJSuY8=";
-    doCheck = false;
-  };
-
   colorscheme = with pkgs.vimPlugins; [
     solarized-nvim
   ];
@@ -133,7 +120,6 @@ in
       luajit
       lua-language-server
       go
-      gopherjs
       gopls
       delve
       golangci-lint
