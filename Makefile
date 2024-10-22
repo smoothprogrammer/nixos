@@ -48,7 +48,7 @@ update:
 	@nix flake update
 
 gc:
-	@nix store gc
+	@nix-collect-garbage -d
 
 darwin/brew-install: is_darwin
 	@echo installing homebrew...
