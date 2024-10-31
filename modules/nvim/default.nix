@@ -113,7 +113,6 @@ in
       curl
       jq
       tree-sitter
-      gh
       editorconfig-checker
       gnumake
       gcc

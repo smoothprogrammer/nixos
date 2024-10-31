@@ -29,7 +29,7 @@ nmap('<Leader>6', function() ui.nav_file(6) end)
 
 require('oil').setup {
   keymaps = {
-    ["<BS>"] = "actions.parent",
+    ['<BS>'] = 'actions.parent',
   }
 }
 nmap('<Leader>fb', '<Cmd>Oil<CR>')
