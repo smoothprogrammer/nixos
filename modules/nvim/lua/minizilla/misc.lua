@@ -33,3 +33,9 @@ require('oil').setup {
   }
 }
 nmap('<Leader>fb', '<Cmd>Oil<CR>')
+
+require('cmp').setup {
+  sources = {
+    { name = 'calc' }
+  }
+}

@@ -1,4 +1,4 @@
-{ config, lib, pkgs, home-manager, ... }:
+{ config, lib, pkgs, ... }:
 
 let
   cfg = config.conf.nvim;
@@ -99,6 +99,7 @@ let
     harpoon
     oil-nvim
     markdown-preview-nvim
+    cmp-calc
   ];
 in
 {
