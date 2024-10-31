@@ -13,6 +13,16 @@ let
     };
   };
 
+  cmp-sql = pkgs.vimUtils.buildVimPlugin {
+    name = "cmp-sql";
+    src = pkgs.fetchFromGitHub {
+      owner = "ray-x";
+      repo = "cmp-sql";
+      rev = "54193ac99e3855c6ffaa36f83a7c50213df03157";
+      sha256 = "sha256-ZQRomBw7Qr7ILC0B9KJx63OXi2UoG6aFvh06zLDZlR8=";
+    };
+  };
+
   colorscheme = with pkgs.vimPlugins; [
     solarized-nvim
   ];
@@ -102,6 +112,7 @@ let
     cmp-calc
     cmp-go-pkgs
     cmp-nvim-lua
+    cmp-sql
   ];
 in
 {

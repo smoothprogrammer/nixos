@@ -38,6 +38,7 @@ require('cmp').setup {
   sources = {
     { name = 'calc' },
     { name = 'go_pkgs' },
-    { name = 'nvim_lua' }
+    { name = 'nvim_lua' },
+    { name = 'sql' }
   }
 }
