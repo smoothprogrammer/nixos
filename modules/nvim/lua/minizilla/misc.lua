@@ -14,6 +14,7 @@ let g:NERDCommentEmptyLines = 1
 let g:NERDTrimTrailingWhitespace = 1
 ]]
 map('<C-/>', '<Plug>NERDCommenterToggle')
+map('<Leader>mp', '<Plug>MarkdownPreviewToggle')
 
 local mark = require('harpoon.mark')
 local ui = require('harpoon.ui')

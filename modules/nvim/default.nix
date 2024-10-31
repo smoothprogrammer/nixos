@@ -98,6 +98,7 @@ let
     leap-nvim
     harpoon
     oil-nvim
+    markdown-preview-nvim
   ];
 in
 {
