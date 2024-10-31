@@ -37,6 +37,7 @@ nmap('<Leader>fb', '<Cmd>Oil<CR>')
 require('cmp').setup {
   sources = {
     { name = 'calc' },
-    { name = 'go_pkgs' }
+    { name = 'go_pkgs' },
+    { name = 'nvim_lua' }
   }
 }

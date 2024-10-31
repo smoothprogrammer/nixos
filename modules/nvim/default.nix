@@ -101,6 +101,7 @@ let
     markdown-preview-nvim
     cmp-calc
     cmp-go-pkgs
+    cmp-nvim-lua
   ];
 in
 {
