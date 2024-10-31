@@ -36,6 +36,7 @@ nmap('<Leader>fb', '<Cmd>Oil<CR>')
 
 require('cmp').setup {
   sources = {
-    { name = 'calc' }
+    { name = 'calc' },
+    { name = 'go_pkgs' }
   }
 }
