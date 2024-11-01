@@ -101,6 +101,13 @@ telescope.setup {
         },
       },
     },
+    cmdline = {
+      mappings = {
+        complete = '<C-Tab>',
+        run_selection = '<CR>',
+        run_input = '<C-CR>',
+      },
+    },
   },
 }
 
@@ -110,6 +117,7 @@ telescope.load_extension('manix')
 telescope.load_extension('dap')
 telescope.load_extension('git_worktree')
 telescope.load_extension('rest')
+telescope.load_extension('cmdline')
 
 local nmap = Lib.keymapper('n', { silent = true })
 nmap('<C-p>', builtin.find_files)
@@ -122,3 +130,4 @@ nmap('<Leader>fk', builtin.keymaps)
 nmap('<Leader>fg', extensions.live_grep_args.live_grep_args)
 nmap('<Leader>fn', extensions.manix.manix)
 nmap('<Leader>en', extensions.rest.select_env)
+nmap('<Leader>;', '<Cmd>Telescope cmdline<CR>')
