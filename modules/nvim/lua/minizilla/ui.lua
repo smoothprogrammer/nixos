@@ -1,13 +1,20 @@
 local lualine = require('lualine')
 
 local sections = lualine.get_config().sections
-sections.lualine_c = {
-  {
-    'filename',
-    path = 1,
-    symbols = {
-      unnamed = '',
-      newfile = '',
+sections = {
+  lualine_c = {
+    {
+      'filename',
+      path = 1,
+      symbols = {
+        unnamed = '',
+        newfile = '',
+      },
+    },
+  },
+  lualine_x = {
+    {
+      'rest'
     },
   },
 }

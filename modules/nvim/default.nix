@@ -13,6 +13,29 @@ let
     };
   };
 
+  rest-nvim = pkgs.vimUtils.buildVimPlugin {
+    name = "rest-nvim";
+    src = pkgs.fetchFromGitHub {
+      owner = "rest-nvim";
+      repo = "rest.nvim";
+      rev = "v1.2.1";
+      sha256 = "sha256-fX4KIazW7iKO157cQdfBoz7g+eyOSQIFje8ZB7SeAx8=";
+    };
+  };
+
+  # TODO:
+  # 1. this is canary version, once v2 is stable, change it.
+  # 1. update config and keymap
+  hurl-nvim = pkgs.vimUtils.buildVimPlugin {
+    name = "hurl-nvim";
+    src = pkgs.fetchFromGitHub {
+      owner = "jellydn";
+      repo = "hurl.nvim";
+      rev = "canary";
+      sha256 = "sha256-RSMEInn2yUfufcHM6SKgD1EmmW2vt57o+kvTYrI/jTo=";
+    };
+  };
+
   colorscheme = with pkgs.vimPlugins; [
     solarized-nvim
   ];
@@ -40,6 +63,7 @@ let
       tree-sitter-toml
       tree-sitter-yaml
       tree-sitter-markdown
+      hurl
     ]))
     nvim-treesitter-context
     nvim-treesitter-textobjects
@@ -67,6 +91,7 @@ let
     neotest-go
     nvim-coverage
     rest-nvim
+    hurl-nvim
   ];
 
   telescope = with pkgs.vimPlugins; [
@@ -83,6 +108,7 @@ let
     lualine-nvim
     nvim-web-devicons
     nvim-colorizer-lua
+    nui-nvim
   ];
 
   git = with pkgs.vimPlugins; [
@@ -122,6 +148,7 @@ in
       manix
       luajit
       lua-language-server
+      luarocks
       go
       gopls
       delve
@@ -137,6 +164,7 @@ in
       jdt-language-server
       flutter
       ast-grep
+      hurl
     ];
 
     home-manager.sharedModules = [{
@@ -146,6 +174,7 @@ in
         vimAlias = true;
         defaultEditor = true;
         extraLuaConfig = builtins.readFile ./init.lua;
+        extraLuaPackages = ps: [ ps.luarocks ];
         plugins =
           colorscheme ++
           treesitter ++
@@ -162,6 +191,10 @@ in
         "nvim/lua" = {
           recursive = true;
           source = ./lua;
+        };
+        "nvim/ftplugin" = {
+          recursive = true;
+          source = ./ftplugin;
         };
       };
     }];
