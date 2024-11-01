@@ -1,5 +1,5 @@
 .worktree
 .direnv
-.env
+*.env
 *.out
 *_ignore.*
