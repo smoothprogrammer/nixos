@@ -105,7 +105,7 @@ telescope.setup {
       mappings = {
         complete = '<C-Tab>',
         run_selection = '<CR>',
-        run_input = '<C-CR>',
+        run_input = '<S-CR>',
       },
     },
   },
