@@ -72,6 +72,7 @@ let
       tree-sitter-json
       tree-sitter-toml
       tree-sitter-yaml
+      tree-sitter-xml
       tree-sitter-markdown
       hurl
     ]))
