@@ -67,10 +67,14 @@ require('nvim-treesitter.configs').setup {
   },
 }
 
-vim.wo.foldmethod = 'expr'
-vim.wo.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
-vim.opt.foldlevel = 4
-vim.opt.foldlevelstart = 99
+-- NVIM v0.10.2 contains annoying warning when the buffer have no treesitter parser
+-- Re-enable the fold after the fixes get merged
+-- https://github.com/neovim/neovim/pull/30382
+--
+-- vim.wo.foldmethod = 'expr'
+-- vim.wo.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
+-- vim.opt.foldlevel = 4
+-- vim.opt.foldlevelstart = 99
 
 require('treesitter-context').setup {
   enable = true,
