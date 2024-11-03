@@ -32,4 +32,4 @@ require('oil').setup {
     ['<BS>'] = 'actions.parent',
   }
 }
-nmap('<Leader>fb', '<Cmd>Oil<CR>')
+nmap('<Leader>b', '<Cmd>Oil<CR>')
