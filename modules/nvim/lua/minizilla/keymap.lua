@@ -30,6 +30,9 @@ nmap('<Leader>n', ':set invnumber<CR>')
 nmap('<Leader>v', 'ggVG')
 nmap('<Leader>=', 'mzggVG=`z')
 
+nmap('<Leader>mt', '<Cmd>make test<CR>')
+nmap('<Leader>mr', '<Cmd>make run<CR>')
+
 map('<Left>', '<Nop>')
 map('<Down>', '<Nop>')
 map('<Up>', '<Nop>')
