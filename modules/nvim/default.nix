@@ -108,7 +108,6 @@ let
   telescope = with pkgs.vimPlugins; [
     telescope-nvim
     telescope-fzf-native-nvim
-    telescope-file-browser-nvim
     telescope-live-grep-args-nvim
     telescope-manix
     telescope-github-nvim

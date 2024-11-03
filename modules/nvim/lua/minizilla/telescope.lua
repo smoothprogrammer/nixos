@@ -2,7 +2,6 @@ local telescope = require('telescope')
 local actions = require('telescope.actions')
 local builtin = require('telescope.builtin')
 local extensions = telescope.extensions
-local fb_actions = require('telescope._extensions.file_browser.actions')
 
 telescope.setup {
   defaults = {
@@ -81,26 +80,6 @@ telescope.setup {
     },
   },
   extensions = {
-    file_browser = {
-      theme = 'dropdown',
-      previewer = false,
-      path = '%:p:h',
-      cwd_to_path = true,
-      hijack_netrw = true,
-      grouped = true,
-      hidden = true,
-      follow_symlinks = true,
-      quiet = true,
-      mappings = {
-        ['i'] = {
-          ['<S-CR>'] = fb_actions.create_from_prompt,
-          ['<C-D>'] = fb_actions.remove,
-          ['<C-R>'] = fb_actions.rename,
-          ['<C-Y>'] = fb_actions.copy,
-          ['<C-P>'] = fb_actions.move,
-        },
-      },
-    },
     cmdline = {
       mappings = {
         complete = '<C-Tab>',
@@ -112,7 +91,6 @@ telescope.setup {
 }
 
 telescope.load_extension('fzf')
-telescope.load_extension('file_browser')
 telescope.load_extension('manix')
 telescope.load_extension('dap')
 telescope.load_extension('git_worktree')
@@ -126,7 +104,6 @@ nmap('<Leader>ff', builtin.treesitter)
 nmap('<Leader>fh', builtin.help_tags)
 nmap('<Leader>fo', builtin.vim_options)
 nmap('<Leader>fk', builtin.keymaps)
--- nmap('<Leader>fb', extensions.file_browser.file_browser)
 nmap('<Leader>fg', extensions.live_grep_args.live_grep_args)
 nmap('<Leader>fn', extensions.manix.manix)
 nmap('<Leader>en', extensions.rest.select_env)
