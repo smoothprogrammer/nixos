@@ -122,16 +122,6 @@
   };
   services.displayManager.autoLogin.user = args.user;
 
-  # For local development
-  services.redis.servers."".enable = true;
-  services.postgresql = {
-    enable = true;
-    ensureDatabases = [ "keycloak_ext_user_db" ];
-    authentication = pkgs.lib.mkOverride 10 ''
-      local all all trust
-    '';
-  };
-
   # Enable configured sets of packages.
   conf = {
     conky.enable = true;
