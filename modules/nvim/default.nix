@@ -3,16 +3,6 @@
 let
   cfg = config.conf.nvim;
 
-  telescope-cmdline-nvim = pkgs.vimUtils.buildVimPlugin {
-    name = "telescope-cmdline-nvim";
-    src = pkgs.fetchFromGitHub {
-      owner = "jonarrien";
-      repo = "telescope-cmdline.nvim";
-      rev = "0.2.1";
-      sha256 = "sha256-huL3BI3YKSvQtk/9PTf4108CWlR+olid515RhkXRGoA=";
-    };
-  };
-
   cmp-go-pkgs = pkgs.vimUtils.buildVimPlugin {
     name = "cmp-go-pkgs";
     src = pkgs.fetchFromGitHub {
@@ -113,7 +103,6 @@ let
     telescope-manix
     telescope-github-nvim
     telescope-dap-nvim
-    telescope-cmdline-nvim
   ];
 
   ui = with pkgs.vimPlugins; [
