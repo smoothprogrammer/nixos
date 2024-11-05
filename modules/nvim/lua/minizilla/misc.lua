@@ -50,13 +50,16 @@ noice.setup {
       ['cmp.entry.get_documentation'] = true,
     },
   },
+  routes = {
+    { filter = { event = "msg_show", find = "written" } },
+    { filter = { event = "msg_show", find = "yanked" } },
+    { filter = { event = "msg_show", find = "%d+L, %d+B" } },
+    { filter = { event = "msg_show", find = "; after #%d+" } },
+    { filter = { event = "msg_show", find = "; before #%d+" } },
+    { filter = { event = "msg_show", find = "%d fewer lines" } },
+    { filter = { event = "msg_show", find = "%d more lines" } },
+    { filter = { event = "msg_show", find = "<ed" } },
+    { filter = { event = "msg_show", find = ">ed" } },
+  },
 }
 nmap('<Leader>l', '<Cmd>Noice dismiss<CR>')
-
-vim.api.nvim_create_autocmd("CmdlineEnter", {
-  pattern = "make test,make run",
-  callback = function()
-    vim.cmd("vsplit")                             -- Opens a vertical split; change to `split` for horizontal
-    vim.cmd("term make " .. vim.fn.expand("<q>")) -- Runs the make command in the terminal
-  end,
-})
