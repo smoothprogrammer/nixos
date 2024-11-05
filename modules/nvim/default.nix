@@ -74,6 +74,7 @@ let
       tree-sitter-yaml
       tree-sitter-xml
       tree-sitter-markdown
+      tree-sitter-regex
       hurl
     ]))
     nvim-treesitter-context
@@ -139,6 +140,10 @@ let
     cmp-calc
     cmp-go-pkgs
     cmp-nvim-lua
+    noice-nvim
+    cmp-buffer
+    cmp-cmdline
+    nvim-notify
   ];
 in
 {
