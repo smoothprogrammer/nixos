@@ -49,3 +49,8 @@ map('<Up>', '<Nop>')
 map('<Right>', '<Nop>')
 map('<PageUp>', '<Nop>')
 map('<PageDown>', '<Nop>')
+
+map('<S-Up>', '<Cmd>resize +2<CR>')
+map('<S-Down>', '<Cmd>resize -2<CR>')
+map('<S-Left>', '<Cmd>vertical resize -2<CR>')
+map('<S-Right>', '<Cmd>vertical resize +2<CR>')
