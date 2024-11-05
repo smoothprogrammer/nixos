@@ -36,7 +36,7 @@ secret: is_linux
 	@echo opening secret management via syncthing...
 	@xdg-open localhost:8384
 
-rebuild:
+build:
 	@echo reconfigure $(hostname) machine...
 ifeq ($(uname), Darwin)
 	@darwin-rebuild switch --flake .#$(hostname)
