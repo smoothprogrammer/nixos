@@ -67,11 +67,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1700635991,
-        "narHash": "sha256-B7V9GiRvxFim+sHfjQjYGpgJPVlZ6RuWaKSFdh/y6ok=",
+        "lastModified": 1730955131,
+        "narHash": "sha256-aGD+5U5H8t3NDs2I9A2Jrgn0KFQ14GTECvDPt1cwX3I=",
         "owner": "minizilla",
         "repo": "homini",
-        "rev": "fb5c600706bb897e1677fb7255580405364de055",
+        "rev": "71c17bdc8b507547b13a4d28087e5811c6f86a0c",
         "type": "github"
       },
       "original": {
