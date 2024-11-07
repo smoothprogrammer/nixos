@@ -1,4 +1,4 @@
-{ config, lib, pkgs, ... }:
+{ config, lib, ... }:
 
 let
   cfg = config.conf.syncthing;
@@ -20,10 +20,22 @@ in
       configDir = "/home/${cfg.user}/.config/syncthing";
       settings = {
         folders = {
-          "ssh" = { path = "~/.ssh"; ignorePerms = false; };
-          "gnupg" = { path = "~/.gnupg"; ignorePerms = false; };
-          "password-store" = { path = "~/.password-store"; ignorePerms = false; };
-          "document" = { path = "~/.document"; ignorePerms = false; };
+          "ssh" = {
+            path = "~/.ssh";
+            ignorePerms = false;
+          };
+          "gnupg" = {
+            path = "~/.gnupg";
+            ignorePerms = false;
+          };
+          "password-store" = {
+            path = "~/.password-store";
+            ignorePerms = false;
+          };
+          "document" = {
+            path = "~/.document";
+            ignorePerms = false;
+          };
         };
       };
     };

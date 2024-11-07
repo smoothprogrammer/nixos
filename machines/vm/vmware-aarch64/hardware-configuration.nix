@@ -1,9 +1,15 @@
-{ config, lib, pkgs, modulesPath, ... }:
+{ ... }:
 
 {
   imports = [ ];
 
-  boot.initrd.availableKernelModules = [ "ahci" "xhci_pci" "nvme" "usbhid" "sr_mod" ];
+  boot.initrd.availableKernelModules = [
+    "ahci"
+    "xhci_pci"
+    "nvme"
+    "usbhid"
+    "sr_mod"
+  ];
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ ];
   boot.extraModulePackages = [ ];

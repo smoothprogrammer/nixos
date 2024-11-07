@@ -1,7 +1,1 @@
-self: super:
-let
-  callPackage = super.callPackage;
-in
-{
-  lib = (super.lib or { }) // { };
-}
+self: super: { lib = (super.lib or { }) // { }; }

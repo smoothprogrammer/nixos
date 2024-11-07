@@ -1,4 +1,9 @@
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
 let
   cfg = config.conf.nvim;
@@ -41,32 +46,34 @@ let
   ];
 
   treesitter = with pkgs.vimPlugins; [
-    (nvim-treesitter.withPlugins (p: with p; [
-      tree-sitter-nix
-      tree-sitter-make
-      tree-sitter-bash
-      tree-sitter-dockerfile
-      tree-sitter-go
-      tree-sitter-zig
-      tree-sitter-dart
-      tree-sitter-rust
-      tree-sitter-c
-      tree-sitter-cpp
-      tree-sitter-java
-      tree-sitter-lua
-      tree-sitter-python
-      tree-sitter-html
-      tree-sitter-css
-      tree-sitter-javascript
-      tree-sitter-http
-      tree-sitter-json
-      tree-sitter-toml
-      tree-sitter-yaml
-      tree-sitter-xml
-      tree-sitter-markdown
-      tree-sitter-regex
-      hurl
-    ]))
+    (nvim-treesitter.withPlugins (
+      p: with p; [
+        tree-sitter-nix
+        tree-sitter-make
+        tree-sitter-bash
+        tree-sitter-dockerfile
+        tree-sitter-go
+        tree-sitter-zig
+        tree-sitter-dart
+        tree-sitter-rust
+        tree-sitter-c
+        tree-sitter-cpp
+        tree-sitter-java
+        tree-sitter-lua
+        tree-sitter-python
+        tree-sitter-html
+        tree-sitter-css
+        tree-sitter-javascript
+        tree-sitter-http
+        tree-sitter-json
+        tree-sitter-toml
+        tree-sitter-yaml
+        tree-sitter-xml
+        tree-sitter-markdown
+        tree-sitter-regex
+        hurl
+      ]
+    ))
     nvim-treesitter-context
     nvim-treesitter-textobjects
     playground
@@ -171,36 +178,29 @@ in
       hurl
     ];
 
-    home-manager.sharedModules = [{
-      programs.neovim = {
-        enable = true;
-        viAlias = true;
-        vimAlias = true;
-        defaultEditor = true;
-        extraLuaConfig = builtins.readFile ./init.lua;
-        extraLuaPackages = ps: [ ps.luarocks ];
-        plugins =
-          colorscheme ++
-          treesitter ++
-          lsp ++
-          dap ++
-          test ++
-          telescope ++
-          ui ++
-          git ++
-          misc;
-      };
+    home-manager.sharedModules = [
+      {
+        programs.neovim = {
+          enable = true;
+          viAlias = true;
+          vimAlias = true;
+          defaultEditor = true;
+          extraLuaConfig = builtins.readFile ./init.lua;
+          extraLuaPackages = ps: [ ps.luarocks ];
+          plugins = colorscheme ++ treesitter ++ lsp ++ dap ++ test ++ telescope ++ ui ++ git ++ misc;
+        };
 
-      xdg.configFile = {
-        "nvim/lua" = {
-          recursive = true;
-          source = ./lua;
+        xdg.configFile = {
+          "nvim/lua" = {
+            recursive = true;
+            source = ./lua;
+          };
+          "nvim/ftplugin" = {
+            recursive = true;
+            source = ./ftplugin;
+          };
         };
-        "nvim/ftplugin" = {
-          recursive = true;
-          source = ./ftplugin;
-        };
-      };
-    }];
+      }
+    ];
   };
 }

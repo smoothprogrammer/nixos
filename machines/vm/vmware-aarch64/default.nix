@@ -1,4 +1,4 @@
-{ config, lib, pkgs, ... }@args:
+{ ... }@args:
 
 {
   imports = [

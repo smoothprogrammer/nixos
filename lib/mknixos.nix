@@ -1,11 +1,13 @@
-{ nixpkgs
-, dt
-, home-manager
-, homini
-, ...
-}: nixosConfigurations:
+{
+  nixpkgs,
+  dt,
+  home-manager,
+  homini,
+  ...
+}:
+nixosConfigurations:
 
-# nixosConfigurations = {
+# nixosConfigurations = mkNixOS {
 #   ${hostname} = {
 #     system = ${system};
 #     machine = ${machine};
@@ -17,28 +19,36 @@
 #   };
 # };
 
-builtins.mapAttrs
-  (hostname: settings: nixpkgs.lib.nixosSystem {
+builtins.mapAttrs (
+  hostname: settings:
+  nixpkgs.lib.nixosSystem {
     inherit (settings) system;
     specialArgs = {
       inherit hostname;
-      inherit (settings) stateVersion user hashedPassword resolution dpi;
+      inherit (settings)
+        stateVersion
+        user
+        hashedPassword
+        resolution
+        dpi
+        ;
     };
     modules = [
       home-manager.nixosModules.default
       homini.nixosModules.default
-
-      ({ config, lib, pkgs, ... }: {
-        imports = import ../modules;
-        nixpkgs.overlays = [ (import ./overlays.nix) ];
-        nix.registry = {
-          nixpkgs.flake = nixpkgs;
-          dt.flake = dt;
-        };
-        nix.nixPath = [ "nixpkgs=flake:nixpkgs" ];
-      })
-
+      (
+        { ... }:
+        {
+          imports = import ../modules;
+          nixpkgs.overlays = [ (import ./overlays.nix) ];
+          nix.registry = {
+            nixpkgs.flake = nixpkgs;
+            dt.flake = dt;
+          };
+          nix.nixPath = [ "nixpkgs=flake:nixpkgs" ];
+        }
+      )
       ../machines/${settings.machine}
     ];
-  })
-  nixosConfigurations
+  }
+) nixosConfigurations

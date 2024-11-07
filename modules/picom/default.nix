@@ -1,4 +1,4 @@
-{ config, lib, pkgs, home-manager, ... }:
+{ config, lib, ... }:
 
 let
   cfg = config.conf.picom;

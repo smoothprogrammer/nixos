@@ -19,42 +19,42 @@ in
   engines = {
     "Brave Search" = {
       icon = ./favicon/brave.png; # https://brave.com/static-assets/images/brave-favicon.png
-      urls = [{ template = "https://search.brave.com/search?q={searchTerms}"; }];
+      urls = [ { template = "https://search.brave.com/search?q={searchTerms}"; } ];
       definedAliases = [ "@b" ];
     };
     "Go Packages" = {
       icon = ./favicon/go.ico; # https://pkg.go.dev/static/shared/icon/favicon.ico
-      urls = [{ template = "https://pkg.go.dev/search?q={searchTerms}"; }];
+      urls = [ { template = "https://pkg.go.dev/search?q={searchTerms}"; } ];
       definedAliases = [ "@gp" ];
     };
     "Maven Packages" = {
       icon = ./favicon/sonatype.ico; # https://central.sonatype.com/favicon.ico
-      urls = [{ template = "https://central.sonatype.com/search?q={searchTerms}"; }];
+      urls = [ { template = "https://central.sonatype.com/search?q={searchTerms}"; } ];
       definedAliases = [ "@mp" ];
     };
     "Mongo Operators" = {
       icon = ./favicon/mongo.ico; # https://www.mongodb.com/docs/assets/favicon.ico
-      urls = [{ template = "https://www.mongodb.com/docs/manual/reference/operator/{searchTerms}/"; }];
+      urls = [ { template = "https://www.mongodb.com/docs/manual/reference/operator/{searchTerms}/"; } ];
       definedAliases = [ "@mo" ];
     };
     "Redis Commands" = {
       icon = ./favicon/redis.png; # https://redis.io/docs/latest/images/favicons/favicon-196x196.png
-      urls = [{ template = "https://redis.io/docs/latest/commands/{searchTerms}/"; }];
+      urls = [ { template = "https://redis.io/docs/latest/commands/{searchTerms}/"; } ];
       definedAliases = [ "@rc" ];
     };
     "Nix Packages" = {
       inherit icon;
-      urls = [{ template = "https://search.nixos.org/packages?type=packages&query={searchTerms}"; }];
+      urls = [ { template = "https://search.nixos.org/packages?type=packages&query={searchTerms}"; } ];
       definedAliases = [ "@np" ];
     };
     "NixOS Options" = {
       inherit icon;
-      urls = [{ template = "https://search.nixos.org/options?type=packages&query={searchTerms}"; }];
+      urls = [ { template = "https://search.nixos.org/options?type=packages&query={searchTerms}"; } ];
       definedAliases = [ "@no" ];
     };
     "NixOS Wiki" = {
       inherit icon;
-      urls = [{ template = "https://nixos.wiki/index.php?search={searchTerms}"; }];
+      urls = [ { template = "https://nixos.wiki/index.php?search={searchTerms}"; } ];
       definedAliases = [ "@nw" ];
     };
     "Bing".metaData.hidden = true;

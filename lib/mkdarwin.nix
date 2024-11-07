@@ -1,11 +1,13 @@
-{ stateVersion
-, nixpkgs
-, darwin
-, home-manager
-, ...
-}: darwinConfigurations:
+{
+  stateVersion,
+  nixpkgs,
+  darwin,
+  home-manager,
+  ...
+}:
+darwinConfigurations:
 
-# darwinConfigurations = {
+# darwinConfigurations = mkDarwin {
 #   ${hostname} = {
 #     system = ${system};
 #     machine = ${machine};
@@ -13,8 +15,9 @@
 #   };
 # };
 
-builtins.mapAttrs
-  (hostname: settings: darwin.lib.darwinSystem {
+builtins.mapAttrs (
+  hostname: settings:
+  darwin.lib.darwinSystem {
     inherit (settings) system;
     specialArgs = {
       inherit stateVersion hostname;
@@ -22,14 +25,15 @@ builtins.mapAttrs
     };
     modules = [
       home-manager.darwinModules.default
-
-      ({ config, lib, pkgs, home-manager, ... }: {
-        nixpkgs.overlays = [ (import ./overlays.nix) ];
-        nix.registry.nixpkgs.flake = nixpkgs;
-        nix.nixPath = [ "nixpkgs=flake:nixpkgs" ];
-      })
-
+      (
+        { ... }:
+        {
+          nixpkgs.overlays = [ (import ./overlays.nix) ];
+          nix.registry.nixpkgs.flake = nixpkgs;
+          nix.nixPath = [ "nixpkgs=flake:nixpkgs" ];
+        }
+      )
       ../machines/${settings.machine}
     ];
-  })
-  darwinConfigurations
+  }
+) darwinConfigurations

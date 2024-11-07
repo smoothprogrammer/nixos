@@ -3,25 +3,18 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
-    dt = {
-      url = "github:minizilla/dt";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    home-manager = {
-      url = "github:nix-community/home-manager";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    darwin = {
-      url = "github:LnL7/nix-darwin";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    homini = {
-      url = "github:minizilla/homini";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    dt.url = "github:minizilla/dt";
+    dt.inputs.nixpkgs.follows = "nixpkgs";
+    home-manager.url = "github:nix-community/home-manager";
+    home-manager.inputs.nixpkgs.follows = "nixpkgs";
+    darwin.url = "github:LnL7/nix-darwin";
+    darwin.inputs.nixpkgs.follows = "nixpkgs";
+    homini.url = "github:minizilla/homini";
+    homini.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = { self, nixpkgs, ... }@inputs:
+  outputs =
+    { nixpkgs, ... }@inputs:
     let
       # This value determines the NixOS release from which the default
       # settings for stateful data, like file locations and database versions
@@ -44,7 +37,10 @@
           system = "aarch64-linux";
           machine = "vm/vmware-aarch64";
           hashedPassword = "$y$j9T$jmTClkK2hbljvadc2kkPF/$dtnPG2OntoiGxVJ7gLXh8pXebfghHNbLBtTFm7KUvy7";
-          resolution = { x = 2880; y = 1752; };
+          resolution = {
+            x = 2880;
+            y = 1752;
+          };
           dpi = 192;
         };
 
@@ -54,7 +50,10 @@
           system = "aarch64-linux";
           machine = "vm/vmware-aarch64";
           hashedPassword = "$y$j9T$PBJ.vcjXKANpepO44J7Li/$SGY0lCPkgzTsc70/TJP9ADhkJpkqTGGCJpcF07TnmdA";
-          resolution = { x = 2880; y = 1752; };
+          resolution = {
+            x = 2880;
+            y = 1752;
+          };
           dpi = 192;
         };
       };
@@ -72,14 +71,15 @@
           machine = "darwin";
         };
       };
-    } // (
+    }
+    // (
       let
         forAllSystems = nixpkgs.lib.genAttrs nixpkgs.lib.systems.flakeExposed;
       in
       {
-        devShells = forAllSystems (system:
-          { default = import ./shell.nix { pkgs = nixpkgs.legacyPackages.${system}; }; }
-        );
+        devShells = forAllSystems (system: {
+          default = import ./shell.nix { pkgs = nixpkgs.legacyPackages.${system}; };
+        });
       }
     );
 }

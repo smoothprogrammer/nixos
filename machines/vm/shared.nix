@@ -1,4 +1,4 @@
-{ config, lib, pkgs, ... }@args:
+{ pkgs, ... }@args:
 
 {
   # Using the latest kernel, especially useful for arm64.
