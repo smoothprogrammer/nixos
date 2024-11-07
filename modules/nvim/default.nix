@@ -148,8 +148,7 @@ in
       gnumake
       gcc
       nixd
-      nixfmt-classic
-      nixpkgs-fmt
+      nixfmt-rfc-style
       manix
       luajit
       lua-language-server

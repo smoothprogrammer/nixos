@@ -103,8 +103,7 @@ lspconfig.nixd.setup {
   settings = {
     nixd = {
       formatting = {
-        -- command = { "nixfmt" },
-        command = { "nixpkgs-fmt" },
+        command = { "nixfmt" },
       },
     },
   },
