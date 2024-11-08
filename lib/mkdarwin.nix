@@ -3,6 +3,7 @@
   nixpkgs,
   darwin,
   home-manager,
+  homini,
   ...
 }:
 darwinConfigurations:
@@ -25,6 +26,7 @@ builtins.mapAttrs (
     };
     modules = [
       home-manager.darwinModules.default
+      homini.darwinModules.default
       (
         { ... }:
         {

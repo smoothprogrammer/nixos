@@ -41,7 +41,7 @@ build:
 ifeq ($(uname), Darwin)
 	@darwin-rebuild switch --flake .#$(hostname)
 else
-	@sudo nixos-rebuild switch --flake .#$(hostname) --show-trace
+	@sudo nixos-rebuild switch --flake .#$(hostname)
 endif
 
 update:
