@@ -140,6 +140,7 @@ let
     cmp-buffer
     cmp-cmdline
     nvim-notify
+    dressing-nvim
   ];
 in
 {

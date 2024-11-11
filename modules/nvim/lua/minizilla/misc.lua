@@ -34,33 +34,35 @@ require('oil').setup {
 }
 nmap('<Leader>b', '<Cmd>Oil<CR>')
 
-local noice = require('noice')
-noice.setup {
+require('noice').setup {
   presets = {
-    bottom_search = true,         -- use a classic bottom cmdline for search
-    command_palette = false,      -- position the cmdline and popupmenu together
-    long_message_to_split = true, -- long messages will be sent to a split
-    inc_rename = false,           -- enables an input dialog for inc-rename.nvim
-    lsp_doc_border = true,        -- add a border to hover docs and signature help
+    bottom_search = true,          -- use a classic bottom cmdline for search
+    command_palette = false,       -- position the cmdline and popupmenu together
+    long_message_to_split = false, -- long messages will be sent to a split
+    inc_rename = false,            -- enables an input dialog for inc-rename.nvim
+    lsp_doc_border = true,         -- add a border to hover docs and signature help
   },
+  cmdline = { format = { filter = { title = 'Shell' } } },
+  messages = { enabled = false },
+  popupmenu = { enabled = false },
+  notify = { enabled = false },
   lsp = {
-    progress = { enabled = false },
     override = {
       ['vim.lsp.util.convert_input_to_markdown_lines'] = true,
       ['vim.lsp.util.stylize_markdown'] = true,
       ['cmp.entry.get_documentation'] = true,
     },
-  },
-  routes = {
-    { filter = { event = "msg_show", find = "written" } },
-    { filter = { event = "msg_show", find = "yanked" } },
-    { filter = { event = "msg_show", find = "%d+L, %d+B" } },
-    { filter = { event = "msg_show", find = "; after #%d+" } },
-    { filter = { event = "msg_show", find = "; before #%d+" } },
-    { filter = { event = "msg_show", find = "%d fewer lines" } },
-    { filter = { event = "msg_show", find = "%d more lines" } },
-    { filter = { event = "msg_show", find = "<ed" } },
-    { filter = { event = "msg_show", find = ">ed" } },
-  },
+    progress = { enabled = false },
+    message = { enabled = false },
+  }
 }
-nmap('<Leader>l', '<Cmd>Noice dismiss<CR>')
+
+require('dressing').setup {
+  input = {
+    mappings = {
+      i = {
+        ['<Esc>'] = 'Close'
+      }
+    }
+  }
+}
