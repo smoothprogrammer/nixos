@@ -44,6 +44,7 @@ noice.setup {
     lsp_doc_border = true,        -- add a border to hover docs and signature help
   },
   lsp = {
+    progress = { enabled = false },
     override = {
       ['vim.lsp.util.convert_input_to_markdown_lines'] = true,
       ['vim.lsp.util.stylize_markdown'] = true,
