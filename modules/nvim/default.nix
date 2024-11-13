@@ -28,16 +28,14 @@ let
     };
   };
 
-  # TODO:
-  # 1. this is canary version, once v2 is stable, change it.
-  # 1. update config and keymap
+  # TODO: update config and keymap
   hurl-nvim = pkgs.vimUtils.buildVimPlugin {
     name = "hurl-nvim";
     src = pkgs.fetchFromGitHub {
       owner = "jellydn";
       repo = "hurl.nvim";
-      rev = "canary";
-      sha256 = "sha256-RSMEInn2yUfufcHM6SKgD1EmmW2vt57o+kvTYrI/jTo=";
+      rev = "v2.0.0";
+      sha256 = "sha256-rnNkWe4zRTIozBJ8iweQWYX4DH84fsjAch+/kGgAj/g=";
     };
   };
 
