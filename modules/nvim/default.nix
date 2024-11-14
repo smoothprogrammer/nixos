@@ -163,7 +163,7 @@ in
       gopls
       delve
       golangci-lint
-      zig_0_12
+      zig
       zls
       rustc
       cargo
