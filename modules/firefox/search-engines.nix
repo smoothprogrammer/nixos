@@ -17,6 +17,11 @@ in
     "Go Packages"
   ];
   engines = {
+    "Learn X in Y minutes" = {
+      icon = ./favicon/learnxinyminutes.ico; # https://learnxinyminutes.com/favicon.ico
+      urls = [ { template = "https://learnxinyminutes.com/docs/{searchTerms}/"; } ];
+      definedAliases = [ "@xy" ];
+    };
     "Brave Search" = {
       icon = ./favicon/brave.png; # https://brave.com/static-assets/images/brave-favicon.png
       urls = [ { template = "https://search.brave.com/search?q={searchTerms}"; } ];
