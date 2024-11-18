@@ -59,6 +59,7 @@ let
         tree-sitter-java
         tree-sitter-lua
         tree-sitter-python
+        tree-sitter-elm
         tree-sitter-html
         tree-sitter-css
         tree-sitter-javascript
@@ -169,6 +170,10 @@ in
       cargo
       rustfmt
       rust-analyzer
+      elmPackages.elm
+      elmPackages.elm-language-server
+      elmPackages.elm-test
+      elmPackages.elm-format
       jdk17
       maven
       jdt-language-server

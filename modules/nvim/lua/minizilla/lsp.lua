@@ -137,6 +137,10 @@ lspconfig.jdtls.setup {
   capabilities = capabilities,
 }
 
+lspconfig.elmls.setup {
+  capabilities = capabilities,
+}
+
 lspconfig.dartls.setup {
   capabilities = capabilities,
 }
