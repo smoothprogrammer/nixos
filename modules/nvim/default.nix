@@ -134,9 +134,7 @@ let
     markdown-preview-nvim
     cmp-calc
     cmp-go-pkgs
-    cmp-nvim-lua
     noice-nvim
-    cmp-buffer
     cmp-cmdline
     nvim-notify
     dressing-nvim

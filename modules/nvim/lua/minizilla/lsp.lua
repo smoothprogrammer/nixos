@@ -56,13 +56,11 @@ cmp.setup {
   },
   sources = {
     { name = 'luasnip' },
-    { name = 'buffer' },
     { name = 'nvim_lsp' },
     { name = 'nvim_lsp_signature_help' },
     { name = 'path' },
     { name = 'calc' },
     { name = 'go_pkgs' },
-    { name = 'nvim_lua' },
     { name = 'cmdline' },
   },
   snippet = {
