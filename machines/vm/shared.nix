@@ -78,7 +78,7 @@
   environment.systemPackages = with pkgs; [
     alacritty
     bat
-    chromium
+    ungoogled-chromium
     # camunda-modeler
     # dbeaver-bin
     direnv
