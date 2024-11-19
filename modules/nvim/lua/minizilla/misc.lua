@@ -61,5 +61,8 @@ require('dressing').setup {
         ['<Esc>'] = 'Close'
       }
     }
-  }
+  },
+  -- temporary disable this due to elm-language-server annoyingly spawn vim.ui.select
+  -- see: https://github.com/elm-tooling/elm-language-server/issues/1298
+  select = { enabled = false },
 }
