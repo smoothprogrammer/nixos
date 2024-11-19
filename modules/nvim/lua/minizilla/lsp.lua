@@ -37,6 +37,9 @@ vim.api.nvim_create_autocmd('LspAttach', {
         border = 'rounded',
       }
     )
+    vim.diagnostic.config {
+      float = { border = "rounded" },
+    }
   end,
 })
 
