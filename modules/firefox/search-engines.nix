@@ -32,6 +32,11 @@ in
       urls = [ { template = "https://pkg.go.dev/search?q={searchTerms}"; } ];
       definedAliases = [ "@gp" ];
     };
+    "Elm Packages" = {
+      icon = ./favicon/elm.ico; # https://elm-lang.org/favicon.ico
+      urls = [ { template = "https://klaftertief.github.io/elm-search?q={searchTerms}"; } ];
+      definedAliases = [ "@ep" ];
+    };
     "Maven Packages" = {
       icon = ./favicon/sonatype.ico; # https://central.sonatype.com/favicon.ico
       urls = [ { template = "https://central.sonatype.com/search?q={searchTerms}"; } ];
