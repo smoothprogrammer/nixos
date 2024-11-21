@@ -19,7 +19,6 @@ in
         programs.fish = {
           enable = true;
           shellAbbrs = {
-            wifi = "nmcli device wifi";
             vimdev = ''vim --cmd "set rtp+=./"'';
             g = "git";
             ga = "git add";
