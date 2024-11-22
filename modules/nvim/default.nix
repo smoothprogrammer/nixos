@@ -178,6 +178,7 @@ in
       flutter
       ast-grep
       hurl
+      http-server
     ];
 
     home-manager.sharedModules = [
