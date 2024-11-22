@@ -49,6 +49,7 @@ update:
 
 gc:
 	@nix-collect-garbage -d
+	@df /
 
 darwin/brew-install: is_darwin
 	@echo installing homebrew...
