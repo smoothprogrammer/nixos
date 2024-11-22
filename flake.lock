@@ -27,11 +27,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1731611923,
-        "narHash": "sha256-WteoakCNdK9ekZDSWpgPwqVU0llChuE5+kYP1U5loks=",
+        "lastModified": 1732270274,
+        "narHash": "sha256-A1+NhsBCPYWarPtROSaiuVwycV0r0PEgjCNQodR+ibE=",
         "owner": "minizilla",
         "repo": "dt",
-        "rev": "9a3a218b6f4e65f967148150bce97bceea4b49d2",
+        "rev": "b61aecc2462604efda75add1d904c9a1653b9385",
         "type": "github"
       },
       "original": {
