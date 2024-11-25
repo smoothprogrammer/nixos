@@ -179,7 +179,6 @@ in
       maven
       jdt-language-server
       flutter
-      ast-grep
       hurl
       http-server
     ];
