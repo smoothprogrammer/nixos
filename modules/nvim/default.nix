@@ -59,6 +59,7 @@ let
         tree-sitter-java
         tree-sitter-lua
         tree-sitter-python
+        tree-sitter-gleam
         tree-sitter-elm
         tree-sitter-html
         tree-sitter-css
@@ -168,6 +169,8 @@ in
       cargo
       rustfmt
       rust-analyzer
+      gleam
+      erlang
       elmPackages.elm
       elmPackages.elm-language-server
       elmPackages.elm-test

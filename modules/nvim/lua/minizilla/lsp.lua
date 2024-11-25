@@ -142,6 +142,10 @@ lspconfig.elmls.setup {
   capabilities = capabilities,
 }
 
+lspconfig.gleam.setup {
+  capabilities = capabilities,
+}
+
 lspconfig.dartls.setup {
   capabilities = capabilities,
 }
