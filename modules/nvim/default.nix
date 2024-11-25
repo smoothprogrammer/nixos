@@ -136,7 +136,6 @@ let
     cmp-calc
     cmp-go-pkgs
     noice-nvim
-    cmp-cmdline
     nvim-notify
     dressing-nvim
   ];

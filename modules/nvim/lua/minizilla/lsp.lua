@@ -61,7 +61,6 @@ cmp.setup {
     { name = 'path' },
     { name = 'calc' },
     { name = 'go_pkgs' },
-    { name = 'cmdline' },
   },
   snippet = {
     expand = function(args)
