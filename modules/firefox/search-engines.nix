@@ -32,6 +32,11 @@ in
       urls = [ { template = "https://pkg.go.dev/search?q={searchTerms}"; } ];
       definedAliases = [ "@gp" ];
     };
+    "Gleam Packages" = {
+      icon = ./favicon/gleam.png; # https://github.com/gleam-lang/gleam/blob/main/images/lucy.png
+      urls = [ { template = "https://packages.gleam.run/?search={searchTerms}"; } ];
+      definedAliases = [ "@glp" ];
+    };
     "Elm Packages" = {
       icon = ./favicon/elm.ico; # https://elm-lang.org/favicon.ico
       urls = [ { template = "https://klaftertief.github.io/elm-search?q={searchTerms}"; } ];
