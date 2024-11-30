@@ -170,6 +170,7 @@ in
       rust-analyzer
       gleam
       erlang
+      rebar3
       elmPackages.elm
       elmPackages.elm-language-server
       elmPackages.elm-test
