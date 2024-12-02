@@ -169,7 +169,7 @@ in
       rustfmt
       rust-analyzer
       gleam
-      erlang
+      erlang_27
       rebar3
       elmPackages.elm
       elmPackages.elm-language-server
