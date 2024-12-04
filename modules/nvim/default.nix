@@ -133,7 +133,6 @@ let
     harpoon
     oil-nvim
     markdown-preview-nvim
-    cmp-calc
     cmp-go-pkgs
     noice-nvim
     nvim-notify
