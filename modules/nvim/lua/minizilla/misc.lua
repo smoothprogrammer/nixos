@@ -62,7 +62,7 @@ require('dressing').setup {
       }
     }
   },
-  -- temporary disable this due to elm-language-server annoyingly spawn vim.ui.select
+  -- this might be enable/disable due to elm-language-server annoyingly spawn vim.ui.select
   -- see: https://github.com/elm-tooling/elm-language-server/issues/1298
-  select = { enabled = false },
+  select = { enabled = true },
 }
