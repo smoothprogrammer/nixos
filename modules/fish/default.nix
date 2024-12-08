@@ -28,7 +28,7 @@ in
             gbD = "git branch -D";
             gc = "git commit";
             gcm = "git commit -m";
-            gcsm = "git commit -S -m";
+            gcsm = "git commit -s -m";
             gca = "git commit --amend";
             gco = "git checkout";
             gl = "git log";
