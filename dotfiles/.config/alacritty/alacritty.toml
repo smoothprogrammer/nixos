@@ -22,6 +22,9 @@ yellow = "0xb58900"
 background = "0xfdf6e3"
 foreground = "0x586e75"
 
+[font]
+size = 10.0
+
 [font.normal]
 family = "MesloLGM Nerd Font Mono"
 
