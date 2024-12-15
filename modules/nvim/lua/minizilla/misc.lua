@@ -5,6 +5,14 @@ require('leap').add_default_mappings()
 
 require('nvim-autopairs').setup()
 
+-- TODO: find out why gleam commentstring is not properly set
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "gleam",
+  callback = function()
+    vim.bo.commentstring = "// %s"
+  end,
+})
+
 map('<Leader>mp', '<Plug>MarkdownPreviewToggle')
 
 local mark = require('harpoon.mark')
