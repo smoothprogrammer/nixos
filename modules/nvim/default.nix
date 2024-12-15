@@ -126,7 +126,6 @@ let
   ];
 
   misc = with pkgs.vimPlugins; [
-    nerdcommenter
     editorconfig-nvim
     nvim-autopairs
     leap-nvim

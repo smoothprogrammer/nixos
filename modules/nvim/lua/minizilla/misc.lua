@@ -5,15 +5,6 @@ require('leap').add_default_mappings()
 
 require('nvim-autopairs').setup()
 
-vim.cmd [[
-let g:NERDCreateDefaultMappings = 0
-let g:NERDSpaceDelims = 1
-let g:NERDCompactSexyComs = 1
-let g:NERDDefaultAlign = 'left'
-let g:NERDCommentEmptyLines = 1
-let g:NERDTrimTrailingWhitespace = 1
-]]
-map('<C-/>', '<Plug>NERDCommenterToggle')
 map('<Leader>mp', '<Plug>MarkdownPreviewToggle')
 
 local mark = require('harpoon.mark')
