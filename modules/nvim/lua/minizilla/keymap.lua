@@ -2,6 +2,7 @@ local map = Lib.keymapper('', { silent = true })
 local nmap = Lib.keymapper('n', { silent = true })
 local imap = Lib.keymapper('i', { silent = true })
 local vmap = Lib.keymapper('v', { silent = true })
+local nvmap = Lib.keymapper({ 'n', 'v' }, { silent = true })
 
 vim.g.mapleader = ' '
 
@@ -25,6 +26,8 @@ vmap('J', [[:m '>+1<CR>gv=gv]])
 vmap('K', [[:m '<-2<CR>gv=gv]])
 
 nmap('J', 'mzJ`z')
+
+nvmap(';', '`')
 
 nmap('<Leader>n', ':set invnumber<CR>')
 nmap('<Leader>v', 'ggVG')
