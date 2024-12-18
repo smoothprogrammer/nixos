@@ -27,9 +27,21 @@ nmap('<Leader>5', function() ui.nav_file(5) end)
 nmap('<Leader>6', function() ui.nav_file(6) end)
 
 require('oil').setup {
+  use_default_keymaps = false,
   keymaps = {
-    ['<BS>'] = 'actions.parent',
-  }
+    ['g?'] = { 'actions.show_help', mode = 'n', desc = 'Show default keymaps' },
+    ['g.'] = { 'actions.toggle_hidden', mode = 'n', desc = 'Toggle hidden files and directories' },
+    ['gp'] = { 'actions.preview', mode = 'n', desc = 'Open the entry under the cursor in a preview window, or close the preview window if already open' },
+    ['<C-l>'] = { 'actions.refresh', mode = 'n', desc = 'Refresh current directory list' },
+    ['<BS>'] = { 'actions.parent', mode = 'n', desc = 'Navigate to the parent path' },
+    ['<CR>'] = { 'actions.select', mode = 'n', desc = 'Open the entry under the cursor' },
+  },
+  view_options = {
+    show_hidden = true,
+    is_always_hidden = function(name)
+      return name == ".."
+    end,
+  },
 }
 nmap('<BS>', '<Cmd>Oil<CR>')
 
