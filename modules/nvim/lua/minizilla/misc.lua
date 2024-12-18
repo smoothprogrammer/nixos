@@ -31,7 +31,7 @@ require('oil').setup {
     ['<BS>'] = 'actions.parent',
   }
 }
-nmap('<Leader>b', '<Cmd>Oil<CR>')
+nmap('<BS>', '<Cmd>Oil<CR>')
 
 require('noice').setup {
   presets = {
