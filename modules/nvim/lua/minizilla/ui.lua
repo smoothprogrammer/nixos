@@ -12,11 +12,7 @@ sections = {
       },
     },
   },
-  lualine_x = {
-    {
-      'rest'
-    },
-  },
+  lualine_x = { 'rest', 'encoding', 'fileformat', 'filetype' },
 }
 
 local inactive_sessions = sections
