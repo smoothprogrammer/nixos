@@ -86,7 +86,6 @@
     git
     htop
     killall
-    kitty
     mermaid-cli
     neofetch
     nix-direnv
