@@ -17,6 +17,10 @@ indent_size = 2
 indent_style = space
 indent_size = 2
 
+[*.{html,css,js}]
+indent_style = space
+indent_size = 2
+
 [*.lua]
 indent_style = space
 indent_size = 2
@@ -25,8 +29,4 @@ trailing_table_separator = smart
 
 ; leave generated code alone
 [*.generated.*]
-indent_style = unset
-
-; leave arkenfox user.js alone
-[modules/firefox/*.js]
 indent_style = unset
