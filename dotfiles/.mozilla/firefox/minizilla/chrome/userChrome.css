@@ -1,0 +1,4 @@
+/* Hide Firefox View */
+#firefox-view-button {
+    display: none !important;
+}
