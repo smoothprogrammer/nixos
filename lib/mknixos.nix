@@ -3,6 +3,7 @@
   dt,
   home-manager,
   homini,
+  ghostty,
   ...
 }:
 nixosConfigurations:
@@ -46,6 +47,7 @@ builtins.mapAttrs (
             dt.flake = dt;
           };
           nix.nixPath = [ "nixpkgs=flake:nixpkgs" ];
+          environment.systemPackages = [ ghostty.packages.${settings.system}.default ];
         }
       )
       ../machines/${settings.machine}

@@ -11,6 +11,7 @@
     darwin.inputs.nixpkgs.follows = "nixpkgs";
     homini.url = "github:minizilla/homini";
     homini.inputs.nixpkgs.follows = "nixpkgs";
+    ghostty.url = "github:ghostty-org/ghostty";
   };
 
   outputs =
