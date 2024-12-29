@@ -11,13 +11,19 @@ in
 {
   options.conf.fish.enable = lib.mkEnableOption "fish";
   config = lib.mkIf cfg.enable {
-    environment.systemPackages = [ pkgs.nitch ];
+    environment.systemPackages = [
+      pkgs.nitch
+      pkgs.zoxide
+    ];
     programs.fish.enable = true;
     users.defaultUserShell = pkgs.fish;
     home-manager.sharedModules = [
       {
         programs.fish = {
           enable = true;
+          shellAliases = {
+            cd = "z";
+          };
           shellAbbrs = {
             vimdev = ''vim --cmd "set rtp+=./"'';
             g = "git";
@@ -55,6 +61,7 @@ in
           '';
           interactiveShellInit = ''
             direnv hook fish | source
+            zoxide init fish | source
             nitch
           '';
           functions = {
