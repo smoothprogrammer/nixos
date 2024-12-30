@@ -12,6 +12,7 @@ in
   options.conf.fish.enable = lib.mkEnableOption "fish";
   config = lib.mkIf cfg.enable {
     environment.systemPackages = [
+      pkgs.bat
       pkgs.nitch
       pkgs.zoxide
     ];
@@ -23,6 +24,7 @@ in
           enable = true;
           shellAliases = {
             cd = "z";
+            cat = "bat";
           };
           shellAbbrs = {
             vimdev = ''vim --cmd "set rtp+=./"'';

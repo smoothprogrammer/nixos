@@ -77,7 +77,6 @@
   # Default system packages.
   environment.systemPackages = with pkgs; [
     alacritty
-    bat
     ungoogled-chromium
     # camunda-modeler
     # dbeaver-bin
