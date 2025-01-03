@@ -18,7 +18,7 @@ in
         (nerdfonts.override {
           fonts = [
             "Meslo" # MesloLG{S,M,L}{_,DZ} Nerd Font {_,Mono}
-            "FiraCode" # FiraCode Nerd Font {_,Mono}
+            "JetBrainsMono" # JetBrainsMono{_,NL} Nerd Font {_,Mono,Propo}
           ];
         })
       ];
