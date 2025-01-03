@@ -1,4 +1,4 @@
 theme = Builtin Solarized Light
 window-decoration = false
-font-family = MesloLGM Nerd Font Mono
+font-family = JetBrainsMono Nerd Font Mono
 font-size = 10
