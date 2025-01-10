@@ -13,10 +13,15 @@
   # Allow unfree packages.
   nixpkgs.config.allowUnfree = true;
 
-  # Auto garbage collector.
-  nix.gc = {
-    automatic = true;
-    options = "--delete-older-than 14d";
+  # Auto garbage collector and storage optimizer.
+  nix = {
+    gc = {
+      automatic = true;
+      options = "--delete-older-than 7d";
+    };
+    optimise = {
+      automatic = true;
+    };
   };
 
   # Enable new nix cli and flakes.
