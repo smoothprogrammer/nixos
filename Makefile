@@ -51,6 +51,9 @@ gc:
 	@nix-collect-garbage -d
 	@df -h /
 
+gcroots:
+	@nix-store --gc --print-roots | head -n30
+
 darwin/brew-install: is_darwin
 	@echo installing homebrew...
 	@sudo NONINTERACTIVE=1 curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh | bash
