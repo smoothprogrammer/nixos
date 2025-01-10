@@ -152,9 +152,6 @@ in
       cargo
       rustfmt
       rust-analyzer
-      gleam
-      erlang_27
-      rebar3
       jdk17
       maven
       jdt-language-server
