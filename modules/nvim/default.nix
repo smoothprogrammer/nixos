@@ -146,8 +146,6 @@ in
       lua-language-server
       luarocks
       golangci-lint
-      zig
-      zls
       rustc
       cargo
       rustfmt
