@@ -8,36 +8,26 @@
 let
   cfg = config.conf.nvim;
 
-  cmp-go-pkgs = pkgs.vimUtils.buildVimPlugin {
-    name = "cmp-go-pkgs";
-    src = pkgs.fetchFromGitHub {
-      owner = "Snikimonkd";
-      repo = "cmp-go-pkgs";
-      rev = "7a76e1f9c8d5f40fe27b8d6fcac04de4456875bb";
-      sha256 = "sha256-pB7hz/md/5NVYE2FJLNcFkVfUkIxfqr1bJrCtlnIW7w=";
-    };
-  };
-
-  rest-nvim = pkgs.vimUtils.buildVimPlugin {
-    name = "rest-nvim";
-    src = pkgs.fetchFromGitHub {
-      owner = "rest-nvim";
-      repo = "rest.nvim";
-      rev = "v1.2.1";
-      sha256 = "sha256-fX4KIazW7iKO157cQdfBoz7g+eyOSQIFje8ZB7SeAx8=";
-    };
-  };
+  # rest-nvim = pkgs.vimUtils.buildVimPlugin {
+  #   name = "rest-nvim";
+  #   src = pkgs.fetchFromGitHub {
+  #     owner = "rest-nvim";
+  #     repo = "rest.nvim";
+  #     rev = "v1.2.1";
+  #     sha256 = "sha256-fX4KIazW7iKO157cQdfBoz7g+eyOSQIFje8ZB7SeAx8=";
+  #   };
+  # };
 
   # TODO: update config and keymap
-  hurl-nvim = pkgs.vimUtils.buildVimPlugin {
-    name = "hurl-nvim";
-    src = pkgs.fetchFromGitHub {
-      owner = "jellydn";
-      repo = "hurl.nvim";
-      rev = "v2.0.0";
-      sha256 = "sha256-rnNkWe4zRTIozBJ8iweQWYX4DH84fsjAch+/kGgAj/g=";
-    };
-  };
+  # hurl-nvim = pkgs.vimUtils.buildVimPlugin {
+  #   name = "hurl-nvim";
+  #   src = pkgs.fetchFromGitHub {
+  #     owner = "jellydn";
+  #     repo = "hurl.nvim";
+  #     rev = "v2.0.0";
+  #     sha256 = "sha256-rnNkWe4zRTIozBJ8iweQWYX4DH84fsjAch+/kGgAj/g=";
+  #   };
+  # };
 
   colorscheme = with pkgs.vimPlugins; [
     solarized-nvim
@@ -99,8 +89,8 @@ let
     neotest
     neotest-go
     nvim-coverage
-    rest-nvim
-    hurl-nvim
+    # rest-nvim
+    # hurl-nvim
   ];
 
   telescope = with pkgs.vimPlugins; [
@@ -132,7 +122,6 @@ let
     harpoon
     oil-nvim
     markdown-preview-nvim
-    cmp-go-pkgs
     noice-nvim
     nvim-notify
     dressing-nvim

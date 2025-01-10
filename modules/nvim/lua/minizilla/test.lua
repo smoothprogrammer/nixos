@@ -1,7 +1,7 @@
 local neotest = require('neotest')
 local coverage = require('coverage')
-local rest_nvim = require('rest-nvim')
-local hurl = require('hurl')
+-- local rest_nvim = require('rest-nvim')
+-- local hurl = require('hurl')
 
 coverage.setup {
   commands = false,
@@ -40,15 +40,15 @@ neotest.setup {
   },
 }
 
-rest_nvim.setup {
-  result = {
-    show_curl_command = true,
-  }
-}
+-- rest_nvim.setup {
+--   result = {
+--     show_curl_command = true,
+--   }
+-- }
 
-hurl.setup {
-  env_file = { '.env' },
-}
+-- hurl.setup {
+--   env_file = { '.env' },
+-- }
 
 local nmap = Lib.keymapper('n', { silent = true })
 nmap('<Leader>tt', function() neotest.run.run(vim.fn.expand('%:h')) end, '[t]es[t]')
