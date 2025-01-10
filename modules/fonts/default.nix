@@ -14,13 +14,9 @@ in
     fonts = {
       fontDir.enable = true;
       enableDefaultPackages = true;
-      packages = with pkgs; [
-        (nerdfonts.override {
-          fonts = [
-            "Meslo" # MesloLG{S,M,L}{_,DZ} Nerd Font {_,Mono}
-            "JetBrainsMono" # JetBrainsMono{_,NL} Nerd Font {_,Mono,Propo}
-          ];
-        })
+      packages = with pkgs.nerd-fonts; [
+        meslo-lg # MesloLG{S,M,L}{_,DZ} Nerd Font {_,Mono}
+        jetbrains-mono # JetBrainsMono{_,NL} Nerd Font {_,Mono,Propo}
       ];
     };
   };
