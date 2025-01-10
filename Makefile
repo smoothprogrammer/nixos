@@ -47,6 +47,9 @@ endif
 update:
 	@nix flake update
 
+update/nixpkgs:
+	@nix flake lock --override-input nixpkgs github:NixOS/nixpkgs/$(rev)
+
 gc:
 	@nix-collect-garbage -d
 	@df -h /
