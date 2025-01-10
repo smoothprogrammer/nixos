@@ -152,9 +152,6 @@ in
       cargo
       rustfmt
       rust-analyzer
-      jdk17
-      maven
-      jdt-language-server
       flutter
       hurl
       http-server
