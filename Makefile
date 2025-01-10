@@ -52,7 +52,7 @@ gc:
 	@df -h /
 
 gcroots:
-	@nix-store --gc --print-roots | head -n30
+	@nix-store --gc --print-roots
 
 darwin/brew-install: is_darwin
 	@echo installing homebrew...
