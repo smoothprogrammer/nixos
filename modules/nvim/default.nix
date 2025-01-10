@@ -145,9 +145,6 @@ in
       luajit
       lua-language-server
       luarocks
-      go
-      gopls
-      delve
       golangci-lint
       zig
       zls
