@@ -3,6 +3,7 @@
   dt,
   home-manager,
   homini,
+  zen-browser,
   ...
 }:
 nixosConfigurations:
@@ -46,6 +47,9 @@ builtins.mapAttrs (
             dt.flake = dt;
           };
           nix.nixPath = [ "nixpkgs=flake:nixpkgs" ];
+          environment.systemPackages = [
+            zen-browser.packages."${settings.system}".default
+          ];
         }
       )
       ../machines/${settings.machine}
