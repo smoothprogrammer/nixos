@@ -155,10 +155,6 @@ in
       gleam
       erlang_27
       rebar3
-      elmPackages.elm
-      elmPackages.elm-language-server
-      elmPackages.elm-test
-      elmPackages.elm-format
       jdk17
       maven
       jdt-language-server
