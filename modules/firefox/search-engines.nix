@@ -19,7 +19,7 @@ in
   engines = {
     "Learn X in Y minutes" = {
       icon = ./favicon/learnxinyminutes.ico; # https://learnxinyminutes.com/favicon.ico
-      urls = [ { template = "https://learnxinyminutes.com/docs/{searchTerms}/"; } ];
+      urls = [ { template = "https://learnxinyminutes.com/{searchTerms}/"; } ];
       definedAliases = [ "@xy" ];
     };
     "Brave Search" = {
