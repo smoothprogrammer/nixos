@@ -49,6 +49,7 @@ let
         tree-sitter-java
         tree-sitter-lua
         tree-sitter-python
+        tree-sitter-erlang
         tree-sitter-gleam
         tree-sitter-elm
         tree-sitter-html
