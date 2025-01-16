@@ -92,6 +92,7 @@
     git
     htop
     killall
+    memos
     mermaid-cli
     neofetch
     nix-direnv
