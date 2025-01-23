@@ -90,6 +90,7 @@
     direnv
     elasticsearch
     git
+    helix
     htop
     killall
     memos
