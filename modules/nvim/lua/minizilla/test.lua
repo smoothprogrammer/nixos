@@ -1,6 +1,6 @@
 local neotest = require('neotest')
 local coverage = require('coverage')
--- local rest_nvim = require('rest-nvim')
+local rest_nvim = require('rest-nvim')
 -- local hurl = require('hurl')
 
 coverage.setup {
@@ -40,11 +40,11 @@ neotest.setup {
   },
 }
 
--- rest_nvim.setup {
---   result = {
---     show_curl_command = true,
---   }
--- }
+rest_nvim.setup {
+  result = {
+    show_curl_command = true,
+  }
+}
 
 -- hurl.setup {
 --   env_file = { '.env' },

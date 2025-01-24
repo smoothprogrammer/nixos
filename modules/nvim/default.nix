@@ -8,15 +8,20 @@
 let
   cfg = config.conf.nvim;
 
-  # rest-nvim = pkgs.vimUtils.buildVimPlugin {
-  #   name = "rest-nvim";
-  #   src = pkgs.fetchFromGitHub {
-  #     owner = "rest-nvim";
-  #     repo = "rest.nvim";
-  #     rev = "v1.2.1";
-  #     sha256 = "sha256-fX4KIazW7iKO157cQdfBoz7g+eyOSQIFje8ZB7SeAx8=";
-  #   };
-  # };
+  rest-nvim = pkgs.vimUtils.buildVimPlugin {
+    name = "rest-nvim";
+    src = pkgs.fetchFromGitHub {
+      owner = "rest-nvim";
+      repo = "rest.nvim";
+      rev = "v1.2.1";
+      sha256 = "sha256-fX4KIazW7iKO157cQdfBoz7g+eyOSQIFje8ZB7SeAx8=";
+    };
+    nvimSkipModule = [
+      "rest-nvim.curl.init"
+      "rest-nvim.request.init"
+      "rest-nvim"
+    ];
+  };
 
   # TODO: update config and keymap
   # hurl-nvim = pkgs.vimUtils.buildVimPlugin {
@@ -62,7 +67,7 @@ let
         tree-sitter-xml
         tree-sitter-markdown
         tree-sitter-regex
-        hurl
+        # hurl
       ]
     ))
     nvim-treesitter-context
@@ -90,7 +95,7 @@ let
     neotest
     neotest-go
     nvim-coverage
-    # rest-nvim
+    rest-nvim
     # hurl-nvim
   ];
 
@@ -152,7 +157,7 @@ in
       rustfmt
       rust-analyzer
       flutter
-      hurl
+      # hurl
       http-server
     ];
 
