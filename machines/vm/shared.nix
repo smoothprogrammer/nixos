@@ -93,6 +93,7 @@
     helix
     htop
     killall
+    lazydocker
     memos
     mermaid-cli
     neofetch
