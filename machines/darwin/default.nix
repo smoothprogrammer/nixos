@@ -68,6 +68,7 @@
     "docker"
     "figma"
     "firefox"
+    "font-noto-sans-mono"
     "google-chrome"
     "inkscape"
     "mongodb-compass"
