@@ -102,6 +102,7 @@
     pass
     presenterm
     redis
+    redisinsight
     rofi
     rofi-pass
     unzip
