@@ -70,6 +70,7 @@
     "firefox"
     "font-noto-sans-mono"
     "google-chrome"
+    "google-drive"
     "inkscape"
     "mongodb-compass"
     "openvpn-connect"
