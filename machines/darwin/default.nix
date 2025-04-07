@@ -76,6 +76,7 @@
     "openvpn-connect"
     "postman"
     "slack"
+    "steam"
     "telegram"
     "visual-studio-code"
     "vmware-fusion"
