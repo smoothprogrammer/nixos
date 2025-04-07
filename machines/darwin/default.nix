@@ -1,9 +1,6 @@
 { pkgs, ... }@args:
 
 {
-  # Managed daemon service.
-  services.nix-daemon.enable = true;
-
   # Hostname.
   networking.hostName = args.hostname;
 
