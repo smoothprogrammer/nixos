@@ -10,15 +10,6 @@ eval "$$(/opt/homebrew/bin/brew shellenv)"
 endef
 export source_brew
 
-define source_nix
-# Nix
-if [ -e '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' ]; then
-	. '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh'
-fi
-# End Nix
-endef
-export source_nix
-
 is_darwin:
 ifneq ($(uname), Darwin)
 	@echo Darwin command only; exit 1
@@ -67,8 +58,7 @@ darwin/brew-install: is_darwin
 
 darwin/nix-install: is_darwin
 	@echo installing nix...
-	@sudo curl -L https://nixos.org/nix/install | sh -s -- --daemon --yes
-	@echo "$$source_nix" >> ~/.zprofile
+	@curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix | sh -s -- install --no-confirm
 
 darwin/nix-darwin-install: is_darwin
 	@echo installing nix-darwin...
