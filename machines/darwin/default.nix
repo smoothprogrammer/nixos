@@ -83,4 +83,6 @@
     "whatsapp"
     "zoom"
   ];
+
+  system.stateVersion = 6;
 }
