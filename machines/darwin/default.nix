@@ -1,6 +1,9 @@
 { pkgs, ... }@args:
 
 {
+  # Let nix-darwin manage nix itself.
+  nix.enable = true;
+
   # Hostname.
   networking.hostName = args.hostname;
 
@@ -80,6 +83,4 @@
     "whatsapp"
     "zoom"
   ];
-
-  system.stateVersion = 5;
 }
