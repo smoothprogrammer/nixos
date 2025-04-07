@@ -62,7 +62,7 @@ darwin/nix-install: is_darwin
 
 darwin/nix-darwin-install: is_darwin
 	@echo installing nix-darwin...
-	@nix --extra-experimental-features 'nix-command flakes' run nix-darwin -- switch --flake .#$(hostname)
+	@nix run nix-darwin -- switch --flake .#$(hostname)
 
 # TODO: rsync not installed in the vm
 vm/nixos-install:
