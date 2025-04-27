@@ -78,6 +78,7 @@
     "slack"
     "steam"
     "telegram"
+    "tomatobar"
     "visual-studio-code"
     "vmware-fusion"
     "whatsapp"
