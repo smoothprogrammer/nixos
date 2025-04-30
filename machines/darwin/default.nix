@@ -74,6 +74,7 @@
     "inkscape"
     "mongodb-compass"
     "openvpn-connect"
+    "orbstack"
     "postman"
     "slack"
     "steam"
