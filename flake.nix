@@ -1,15 +1,15 @@
 {
-  description = "Minizilla's NixOS Configurations";
+  description = "SmoothProgrammer's NixOS Configurations";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
-    dt.url = "github:minizilla/dt";
+    dt.url = "github:smoothprogrammer/dt";
     dt.inputs.nixpkgs.follows = "nixpkgs";
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     darwin.url = "github:nix-darwin/nix-darwin";
     darwin.inputs.nixpkgs.follows = "nixpkgs";
-    homini.url = "github:minizilla/homini";
+    homini.url = "github:smoothprogrammer/homini";
     homini.inputs.nixpkgs.follows = "nixpkgs";
     zen-browser.url = "github:0xc000022070/zen-browser-flake";
     zen-browser.inputs.nixpkgs.follows = "nixpkgs";

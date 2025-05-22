@@ -27,15 +27,15 @@
         ]
       },
       "locked": {
-        "lastModified": 1741946880,
-        "narHash": "sha256-LQBHI8YPj1m2g1Fgt/aTPSRQW/I3tqBQ6kJM2ukP52c=",
-        "owner": "minizilla",
+        "lastModified": 1747895296,
+        "narHash": "sha256-NFsrsJR7RLj7bdSvzgApV8piLJg7DyxqyPpazjPWPrs=",
+        "owner": "smoothprogrammer",
         "repo": "dt",
-        "rev": "210bb12139197947bdcb66d5813dde81dd1fb284",
+        "rev": "0333f2029222ea6a2983406aa54395559e86c493",
         "type": "github"
       },
       "original": {
-        "owner": "minizilla",
+        "owner": "smoothprogrammer",
         "repo": "dt",
         "type": "github"
       }
@@ -67,15 +67,15 @@
         ]
       },
       "locked": {
-        "lastModified": 1731052515,
-        "narHash": "sha256-FLQyldKhpMWzZcpsz6jgVOIh3czQk/flKoiFgQeWTLk=",
-        "owner": "minizilla",
+        "lastModified": 1747895824,
+        "narHash": "sha256-hrF60R1uPQ51vIPXPQY16H0P4EQtCe6An85ZMkeVnvA=",
+        "owner": "smoothprogrammer",
         "repo": "homini",
-        "rev": "5a894c13c9f5e2100f5a21f787920235e25b2a9c",
+        "rev": "f748e387d8261df3ac860ee5969b9cd41f568c3d",
         "type": "github"
       },
       "original": {
-        "owner": "minizilla",
+        "owner": "smoothprogrammer",
         "repo": "homini",
         "type": "github"
       }
