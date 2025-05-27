@@ -60,6 +60,7 @@ let
         tree-sitter-html
         tree-sitter-css
         tree-sitter-javascript
+        tree-sitter-scheme
         tree-sitter-http
         tree-sitter-json
         tree-sitter-toml
