@@ -5,12 +5,12 @@ let
 in
 {
   force = true;
-  default = "Google";
+  default = "google";
   order = [
-    "Google"
+    "google"
     "Brave Search"
-    "DuckDuckGo"
-    "Wikipedia (en)"
+    "ddg"
+    "wikipedia"
     "Nix Packages"
     "NixOS Options"
     "NixOS Wiki"
@@ -72,10 +72,10 @@ in
       urls = [ { template = "https://nixos.wiki/index.php?search={searchTerms}"; } ];
       definedAliases = [ "@nw" ];
     };
-    "Bing".metaData.hidden = true;
-    "Amazon.com".metaData.hidden = true;
-    "Google".metaData.alias = "@g";
-    "DuckDuckGo".metaData.alias = "@d";
-    "Wikipedia (en)".metaData.alias = "@wiki";
+    "bing".metaData.hidden = true;
+    "amazondotcom-us".metaData.hidden = true;
+    "google".metaData.alias = "@g";
+    "ddg".metaData.alias = "@d";
+    "wikipedia".metaData.alias = "@wiki";
   };
 }

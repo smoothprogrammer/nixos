@@ -20,7 +20,10 @@ in
             id = 0;
             isDefault = true;
             extraConfig = builtins.readFile ./user.js;
-            bookmarks = import ./bookmarks.nix;
+            bookmarks = {
+              force = true;
+              settings = import ./bookmarks.nix;
+            };
             search = import ./search-engines.nix { inherit pkgs; };
           };
         };
