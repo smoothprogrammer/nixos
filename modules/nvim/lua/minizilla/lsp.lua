@@ -38,7 +38,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
       }
     )
     vim.diagnostic.config {
-      float = { border = "rounded" },
+      float = { border = 'rounded' },
     }
   end,
 })
@@ -101,7 +101,7 @@ lspconfig.nixd.setup {
   settings = {
     nixd = {
       formatting = {
-        command = { "nixfmt" },
+        command = { 'nixfmt' },
       },
     },
   },
@@ -148,5 +148,9 @@ lspconfig.gleam.setup {
 }
 
 lspconfig.dartls.setup {
+  capabilities = capabilities,
+}
+
+lspconfig.guile_ls.setup {
   capabilities = capabilities,
 }
