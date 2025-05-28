@@ -17,7 +17,9 @@ vim.api.nvim_create_autocmd('LspAttach', {
     nmap('gD', telescope_builtin.lsp_type_definitions, '[g]oto type [D]efinitions')
     nmap('gi', telescope_builtin.lsp_implementations, '[g]oto [i]mplementations')
     nmap('gr', telescope_builtin.lsp_references, '[g]oto [r]eferences')
-    nmap('K', vim.lsp.buf.hover)
+    nmap('K', function()
+      vim.lsp.buf.hover({ border = 'rounded' })
+    end)
     nmap('<Leader>ds', telescope_builtin.lsp_document_symbols, '[d]ocument [s]ymbols')
     nmap('<Leader>ws', telescope_builtin.lsp_workspace_symbols, '[w]orkspace [s]ymbols')
     nmap('<Leader>rn', vim.lsp.buf.rename, '[r]e[n]ame')
@@ -32,11 +34,6 @@ vim.api.nvim_create_autocmd('LspAttach', {
     })
 
     vim.api.nvim_set_hl(0, 'FloatBorder', {})
-    vim.lsp.handlers['textDocument/hover'] = vim.lsp.with(
-      vim.lsp.handlers.hover, {
-        border = 'rounded',
-      }
-    )
     vim.diagnostic.config {
       float = { border = 'rounded' },
     }
@@ -114,6 +111,10 @@ lspconfig.gopls.setup {
       gofumpt = true,
     },
   },
+}
+
+lspconfig.clangd.setup {
+  capabilities = capabilities,
 }
 
 lspconfig.zls.setup {
