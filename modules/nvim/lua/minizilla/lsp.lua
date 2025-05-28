@@ -153,5 +153,6 @@ lspconfig.dartls.setup {
 }
 
 lspconfig.guile_ls.setup {
+  filetypes = { 'scheme' },
   capabilities = capabilities,
 }
