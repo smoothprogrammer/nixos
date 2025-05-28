@@ -27,11 +27,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1747895296,
-        "narHash": "sha256-NFsrsJR7RLj7bdSvzgApV8piLJg7DyxqyPpazjPWPrs=",
+        "lastModified": 1748435188,
+        "narHash": "sha256-lDnEHapL8lIeO6tJTeFnl8i199d90Z7zZPMaOyS/1I4=",
         "owner": "smoothprogrammer",
         "repo": "dt",
-        "rev": "0333f2029222ea6a2983406aa54395559e86c493",
+        "rev": "e69522dd022f3a6643d7093ed65022d64e5a7dce",
         "type": "github"
       },
       "original": {
