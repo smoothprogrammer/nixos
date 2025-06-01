@@ -52,6 +52,7 @@ in
             gwl = "git worktree list";
             gwa = "git worktree add";
             gwr = "git worktree remove";
+            zb = "zig build";
           };
           shellInit = ''
             set -g theme_display_date no
