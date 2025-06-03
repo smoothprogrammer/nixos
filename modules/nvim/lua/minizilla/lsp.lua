@@ -115,6 +115,7 @@ lspconfig.gopls.setup {
 
 lspconfig.clangd.setup {
   capabilities = capabilities,
+  filetypes = { 'c', 'cpp', 'objc', 'objcpp' },
 }
 
 lspconfig.zls.setup {
