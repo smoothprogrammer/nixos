@@ -2,4 +2,4 @@
 .direnv
 *.env
 *.out
-*_ignore.*
+*localtest.*
