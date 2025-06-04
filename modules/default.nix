@@ -1,5 +1,6 @@
 [
   ./conky
+  ./emacs
   ./firefox
   ./fish
   ./fonts

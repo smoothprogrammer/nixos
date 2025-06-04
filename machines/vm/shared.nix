@@ -135,6 +135,7 @@
 
   # Enable configured sets of packages.
   conf = {
+    emacs.enable = true;
     conky.enable = true;
     firefox.enable = true;
     fish.enable = true;
