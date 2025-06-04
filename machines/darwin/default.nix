@@ -57,6 +57,15 @@
     go
   ];
 
+  services.emacs = {
+    enable = true;
+    package = pkgs.emacs.pkgs.withPackages (
+      epkgs: with epkgs; [
+        solarized-theme
+      ]
+    );
+  };
+
   # We still needs homebrew since nixpkgs support for darwin is lacking.
   homebrew.enable = true;
   homebrew.casks = [
