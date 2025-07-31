@@ -12,6 +12,7 @@ in
   options.conf.fish.enable = lib.mkEnableOption "fish";
   config = lib.mkIf cfg.enable {
     environment.systemPackages = [
+      pkgs.devbox
       pkgs.bat
       pkgs.nitch
       pkgs.zoxide
@@ -63,6 +64,7 @@ in
             set -x DIRENV_LOG_FORMAT ""
           '';
           interactiveShellInit = ''
+            devbox global shellenv --init-hook | source
             direnv hook fish | source
             zoxide init fish | source
             nitch
