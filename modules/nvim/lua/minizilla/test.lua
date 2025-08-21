@@ -1,7 +1,6 @@
 local neotest = require('neotest')
 local coverage = require('coverage')
-local rest_nvim = require('rest-nvim')
--- local hurl = require('hurl')
+local hurl = require('hurl')
 
 coverage.setup {
   commands = false,
@@ -27,7 +26,7 @@ vim.api.nvim_create_autocmd('ColorScheme', {
 neotest.setup {
   adapters = {
     require('neotest-go') {
-      args = { "-coverprofile=" .. vim.fn.getcwd() .. "/coverage.out" },
+      args = { '-coverprofile=' .. vim.fn.getcwd() .. '/coverage.out' },
     },
   },
   consumers = {
@@ -40,15 +39,9 @@ neotest.setup {
   },
 }
 
-rest_nvim.setup {
-  result = {
-    show_curl_command = true,
-  }
+hurl.setup {
+  env_file = { '.env' },
 }
-
--- hurl.setup {
---   env_file = { '.env' },
--- }
 
 local nmap = Lib.keymapper('n', { silent = true })
 nmap('<Leader>tt', function() neotest.run.run(vim.fn.expand('%:h')) end, '[t]es[t]')
@@ -56,4 +49,5 @@ nmap('<Leader>tS', neotest.run.stop, '[t]est [S]top')
 nmap('<Leader>to', neotest.output.open, '[t]est [o]pen')
 nmap('<Leader>ts', neotest.summary.toggle, '[t]est [s]ummary')
 nmap('<Leader>tc', coverage.summary, '[t]est [c]overage')
-nmap('<Leader>re', '<Plug>RestNvim', 'run http [re]quest')
+nmap('<Leader>re', '<Cmd>HurlRunnerAt<CR>', 'run http [re]quest')
+nmap('<Leader>rl', '<Cmd>HurlShowLastResponse<CR>', 'show http [r]equest [l]ast response')

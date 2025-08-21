@@ -157,3 +157,7 @@ lspconfig.guile_ls.setup {
   filetypes = { 'scheme' },
   capabilities = capabilities,
 }
+
+lspconfig.sourcekit.setup {
+  capabilities = capabilities,
+}

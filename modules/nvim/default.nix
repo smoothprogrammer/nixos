@@ -8,31 +8,19 @@
 let
   cfg = config.conf.nvim;
 
-  rest-nvim = pkgs.vimUtils.buildVimPlugin {
-    name = "rest-nvim";
+  hurl-nvim = pkgs.vimUtils.buildVimPlugin {
+    name = "hurl-nvim";
     src = pkgs.fetchFromGitHub {
-      owner = "rest-nvim";
-      repo = "rest.nvim";
-      rev = "v1.2.1";
-      sha256 = "sha256-fX4KIazW7iKO157cQdfBoz7g+eyOSQIFje8ZB7SeAx8=";
+      owner = "smoothprogrammer";
+      repo = "hurl.nvim";
+      rev = "refactor-output";
+      sha256 = "sha256-tSELEjyzbRQoQCn8euVBe9W8UW9ZmLy4JVbcgrNyEtU=";
     };
     nvimSkipModule = [
-      "rest-nvim.curl.init"
-      "rest-nvim.request.init"
-      "rest-nvim"
+      "hurl.split"
+      "hurl.popup"
     ];
   };
-
-  # TODO: update config and keymap
-  # hurl-nvim = pkgs.vimUtils.buildVimPlugin {
-  #   name = "hurl-nvim";
-  #   src = pkgs.fetchFromGitHub {
-  #     owner = "jellydn";
-  #     repo = "hurl.nvim";
-  #     rev = "v2.0.0";
-  #     sha256 = "sha256-rnNkWe4zRTIozBJ8iweQWYX4DH84fsjAch+/kGgAj/g=";
-  #   };
-  # };
 
   colorscheme = with pkgs.vimPlugins; [
     solarized-nvim
@@ -61,6 +49,7 @@ let
         tree-sitter-css
         tree-sitter-javascript
         tree-sitter-scheme
+        tree-sitter-swift
         tree-sitter-http
         tree-sitter-json
         tree-sitter-toml
@@ -68,7 +57,7 @@ let
         tree-sitter-xml
         tree-sitter-markdown
         tree-sitter-regex
-        # hurl
+        hurl
       ]
     ))
     nvim-treesitter-context
@@ -96,8 +85,7 @@ let
     neotest
     neotest-go
     nvim-coverage
-    rest-nvim
-    # hurl-nvim
+    hurl-nvim
   ];
 
   telescope = with pkgs.vimPlugins; [
@@ -158,7 +146,7 @@ in
       rustfmt
       rust-analyzer
       flutter
-      # hurl
+      hurl
       http-server
     ];
 

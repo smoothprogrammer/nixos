@@ -41,6 +41,7 @@ telescope.setup {
         '--smart-case', '--follow', '--hidden', '--no-ignore',
         '-g', '!**/.git/*',
         '-g', '!**/.direnv/*',
+        '-g', '!**/.devbox/*',
         '-g', '!**/.worktree/*',
         '-g', '!**/node_modules/*',
         '-g', '!**/target/*',
@@ -86,7 +87,6 @@ telescope.load_extension('fzf')
 telescope.load_extension('manix')
 telescope.load_extension('dap')
 telescope.load_extension('git_worktree')
-telescope.load_extension('rest')
 
 local nmap = Lib.keymapper('n', { silent = true })
 nmap('<C-p>', builtin.find_files)
@@ -97,4 +97,3 @@ nmap('<Leader>fo', builtin.vim_options)
 nmap('<Leader>fk', builtin.keymaps)
 nmap('<Leader>fg', extensions.live_grep_args.live_grep_args)
 nmap('<Leader>fn', extensions.manix.manix)
-nmap('<Leader>en', extensions.rest.select_env)
